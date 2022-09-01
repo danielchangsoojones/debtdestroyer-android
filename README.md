@@ -4,7 +4,7 @@ The build of the Debtdestroyer Android App. It is written 100% in Kotlin with bo
 ## Languages, libraries and tools used
 
 * [Kotlin](https://kotlinlang.org/)
-* Android Jetpack libraries (https://developer.android.com/jetpack)
+* [Android Jetpack libraries](https://developer.android.com/jetpack)
 * [Hilt](https://github.com/googlecodelabs/android-hilt)
 * [Timber](https://github.com/JakeWharton/timber)
 
