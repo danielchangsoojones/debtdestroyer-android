@@ -4,25 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingHorizontal="@dimen/screen_horizontal_margin"
+    android:paddingVertical="@dimen/screen_vertical_margin"
     tools:context=".ui.onboarding.OnBoardingFragment">
 
-    <TextView
-        android:id="@+id/textview_first"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_first_fragment"
-        app:layout_constraintBottom_toTopOf="@id/button_first"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_margin="2dp"
+        android:src="@mipmap/ic_launcher_round"
+        app:layout_constraintBottom_toTopOf="@+id/appNameTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.debtdestroyer.android.utils.GradientTextView
+        android:id="@+id/appNameTextView"
+        style="@style/Debt.Destroyer.Gradient.Heading"
+        android:fontFamily="@font/sf_pro_rounded_bold"
+        android:text="Lava Drop"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button_first"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/next"
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/terms_text_view"
+        style="@style/Debt.Destroyer.Caption.Grey"
+        android:paddingHorizontal="@dimen/button_margin_horizontal"
+        android:paddingVertical="@dimen/screen_vertical_margin"
+        android:text="@string/label_terms"
+        app:layout_constraintBottom_toTopOf="@+id/action_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/action_login"
+        style="@style/Debt.Destroyer.Button.Secondary"
+        android:layout_width="0dp"
+        android:text="@string/label_action_login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/action_signup"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/action_signup"
+        style="@style/Debt.Destroyer.Button"
+        android:layout_width="0dp"
+        android:text="@string/label_action_signup"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_first" />
+        app:layout_constraintStart_toEndOf="@+id/action_login" />
 </androidx.constraintlayout.widget.ConstraintLayout>

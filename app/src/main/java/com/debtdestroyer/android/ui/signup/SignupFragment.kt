@@ -1,28 +1,27 @@
-package com.debtdestroyer.android.ui.login
+package com.debtdestroyer.android.ui.signup
 
 import android.os.Bundle
-import android.telephony.PhoneNumberFormattingTextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.debtdestroyer.android.R
 import com.debtdestroyer.android.databinding.FragmentLoginBinding
+import com.debtdestroyer.android.databinding.FragmentSignupBinding
 import com.debtdestroyer.android.ui.base.BaseFragment
+import com.debtdestroyer.android.ui.base.navigateTo
 import kotlinx.coroutines.launch
-import timber.log.Timber
 
-class LoginFragment : BaseFragment<FragmentLoginBinding>() {
+class SignupFragment : BaseFragment<FragmentSignupBinding>() {
 
-    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentLoginBinding
-        get() = FragmentLoginBinding::inflate
+    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentSignupBinding
+        get() = FragmentSignupBinding::inflate
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         launch {
-            binding.actionForgotPassword.setOnClickListener {
-                Timber.e("Text ${binding.signInEmailInputEditText.text.toString()}")
+            binding.actionNext.setOnClickListener {
+                navigateTo(SignupFragmentDirections.actionSignupFragmentToPhoneNumberFragment())
             }
         }
     }

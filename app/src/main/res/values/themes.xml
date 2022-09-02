@@ -10,8 +10,18 @@
         <item name="colorSecondaryVariant">@color/colorSecondary</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorOnBackground</item>
+        <!-- background. -->
+        <item name="colorSurface">@color/colorBackgroundLight</item>
+        <item name="colorPrimarySurface">@color/colorBackgroundLight</item>
+
+        <item name="colorOnBackground">@color/colorBackgroundLight</item>
+        <item name="android:colorBackground">@color/colorBackgroundLight</item>
+
+        <!--Labels-->
+        <item name="android:editTextColor">@color/textDarkGrey</item>
+        <item name="android:textColorPrimary">@color/textDarkGrey</item>
+        <item name="android:textColorSecondary">@color/textDarkGrey</item>
     </style>
 
     <style name="Theme.Debtdestroyer.NoActionBar">

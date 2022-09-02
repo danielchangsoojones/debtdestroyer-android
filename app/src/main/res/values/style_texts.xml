@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--Gradient Styles-->
+    <declare-styleable name="GradientTextView">
+        <attr name="isVertical" format="boolean" />
+        <attr name="startColor" format="color" />
+        <attr name="endColor" format="color" />
+    </declare-styleable>
+
+    <!--Gradient Heading-->
+    <style name="Debt.Destroyer.Gradient.Heading" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/heading_bigger_text_size</item>
+        <item name="fontFamily">@font/sf_pro_rounded_bold</item>
+        <item name="startColor">@color/colorSecondary</item>
+        <item name="endColor">@color/colorPrimary</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Debt.Destroyer.Gradient.Body" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/body_text_size</item>
+        <item name="fontFamily">@font/sf_pro_rounded_bold</item>
+        <item name="startColor">@color/colorSecondary</item>
+        <item name="endColor">@color/colorPrimary</item>
+        <item name="android:gravity">center</item>
+    </style>
+
     <!--Heading Styles-->
     <style name="Debt.Destroyer.Heading" parent="TextAppearance.MaterialComponents.Headline6">
         <item name="android:layout_width">match_parent</item>
@@ -30,13 +58,6 @@
         <item name="fontFamily">@font/sf_pro_regular</item>
     </style>
 
-    <style name="bodyMedium" parent="TextAppearance.MaterialComponents.Body2">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">@dimen/body_text_size</item>
-        <item name="fontFamily">@font/sf_pro_semibold</item>
-    </style>
-
     <!--Caption-->
     <style name="Debt.Destroyer.Caption" parent="TextAppearance.MaterialComponents.Caption">
         <item name="android:layout_width">match_parent</item>
@@ -45,11 +66,30 @@
         <item name="fontFamily">@font/sf_pro_regular</item>
     </style>
 
+    <style name="Debt.Destroyer.Caption.Grey" parent="Debt.Destroyer.Caption">
+        <item name="android:textColor">@color/textLightGrey</item>
+    </style>
+
+    <!--ActionBar text Styles-->
+    <style name="Debt.Destroyer.Toolbar" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/action_bar_text_size</item>
+        <item name="fontFamily">@font/sf_pro_semibold</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
     <!--Button Text Styles-->
     <style name="Debt.Destroyer.ButtonTextStyle" parent="TextAppearance.MaterialComponents.Button">
         <item name="fontFamily">@font/sf_pro_semibold</item>
         <item name="android:textSize">@dimen/buttons_text_size</item>
         <item name="android:textColor">@color/textWhite</item>
+    </style>
+
+    <style name="Debt.Destroyer.TextButton.TextStyle" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/sf_pro_regular</item>
+        <item name="android:textSize">@dimen/buttons_text_size</item>
+        <item name="android:textColor">@color/textDarkGrey</item>
     </style>
 
 </resources>

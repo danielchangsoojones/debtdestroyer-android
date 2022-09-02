@@ -1,18 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--Auth Screen-->
-    <style name="AuthTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+    <style name="DebtDestroyer.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="errorTextAppearance">@style/AuthErrorAppearance</item>
         <item name="endIconMode">clear_text</item>
         <item name="boxCornerRadiusTopEnd">@dimen/input_fields_corners</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/input_fields_corners</item>
         <item name="boxCornerRadiusTopStart">@dimen/input_fields_corners</item>
         <item name="boxCornerRadiusBottomStart">@dimen/input_fields_corners</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="android:colorFocusedHighlight">@color/textRed</item>
         <item name="boxStrokeWidth">0dp</item>
     </style>
 
     <style name="AuthErrorAppearance" parent="Debt.Destroyer.Caption">
         <item name="android:textColor">@color/textRed</item>
     </style>
+
+    <style name="DebtDestroyerTextInputEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/Debt.Destroyer.Body</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:backgroundTint">@color/cardBackgroundColor</item>
+        <item name="fontFamily">@font/sf_pro_regular</item>
+    </style>
+
 
 </resources>
