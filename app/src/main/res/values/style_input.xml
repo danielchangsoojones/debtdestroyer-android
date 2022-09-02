@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Auth Screen-->
+    <style name="AuthTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="errorTextAppearance">@style/AuthErrorAppearance</item>
+        <item name="endIconMode">clear_text</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/input_fields_corners</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/input_fields_corners</item>
+        <item name="boxCornerRadiusTopStart">@dimen/input_fields_corners</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/input_fields_corners</item>
+        <item name="boxStrokeWidth">0dp</item>
+    </style>
+
+    <style name="AuthErrorAppearance" parent="Debt.Destroyer.Caption">
+        <item name="android:textColor">@color/textRed</item>
+    </style>
+
+</resources>

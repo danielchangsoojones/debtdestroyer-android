@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Heading Styles-->
+    <style name="Debt.Destroyer.Heading" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/headings_text_size</item>
+        <item name="fontFamily">@font/sf_pro_semibold</item>
+    </style>
+
+    <style name="Debt.Destroyer.Heading.White" parent="Debt.Destroyer.Heading">
+        <item name="android:textColor">@color/textWhite</item>
+    </style>
+
+    <!--SubHeading Styles-->
+    <style name="Debt.Destroyer.SubHeading" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/subheading_text_size</item>
+        <item name="fontFamily">@font/sf_pro_regular</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <!--Body-->
+    <style name="Debt.Destroyer.Body" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/body_text_size</item>
+        <item name="fontFamily">@font/sf_pro_regular</item>
+    </style>
+
+    <style name="bodyMedium" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/body_text_size</item>
+        <item name="fontFamily">@font/sf_pro_semibold</item>
+    </style>
+
+    <!--Caption-->
+    <style name="Debt.Destroyer.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/caption_text_size</item>
+        <item name="fontFamily">@font/sf_pro_regular</item>
+    </style>
+
+    <!--Button Text Styles-->
+    <style name="Debt.Destroyer.ButtonTextStyle" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/sf_pro_semibold</item>
+        <item name="android:textSize">@dimen/buttons_text_size</item>
+        <item name="android:textColor">@color/textWhite</item>
+    </style>
+
+</resources>

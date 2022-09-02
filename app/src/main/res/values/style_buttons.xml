@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Primary button-->
+    <style name="Debt.Destroyer.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_height">@dimen/buttons_height_primary</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_marginStart">@dimen/button_margin_horizontal</item>
+        <item name="android:layout_marginEnd">@dimen/button_margin_horizontal</item>
+        <item name="android:textAppearance">@style/Debt.Destroyer.ButtonTextStyle</item>
+        <item name="android:background">@drawable/bg_button_primary</item>
+        <item name="backgroundTint">@null</item>
+        <item name="shapeAppearance">@style/AppShapeAppearance.SmallComponent</item>
+        <item name="android:layout_marginBottom">3dp</item>
+    </style>
+
+    <style name="Debt.Destroyer.Button.Secondary" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:maxLines">1</item>
+        <item name="strokeColor">@color/colorPrimary</item>
+        <item name="barrierMargin">0dp</item>
+        <item name="android:layout_height">@dimen/buttons_height_primary</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="android:layout_marginStart">@dimen/button_margin_horizontal</item>
+        <item name="android:layout_marginEnd">@dimen/button_margin_horizontal</item>
+        <item name="android:textAppearance">@style/Debt.Destroyer.ButtonTextStyle</item>
+        <item name="shapeAppearance">@style/AppShapeAppearance.SmallComponent</item>
+        <item name="android:layout_marginBottom">3dp</item>
+
+    </style>
+
+    <!--Button Shapes-->
+    <style name="AppShapeAppearance.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">6dp</item>
+    </style>
+
+    <style name="AppShapeAppearance.IconComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">@dimen/input_fields_corners</item>
+    </style>
+
+</resources>

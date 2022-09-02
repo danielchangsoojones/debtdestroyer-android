@@ -1,0 +1,30 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!--New Text Size-->
+    <dimen name="heading_bigger_text_size">22sp</dimen>
+    <dimen name="headings_text_size">17sp</dimen>
+    <dimen name="subheading_text_size">15sp</dimen>
+    <dimen name="body_text_size">13sp</dimen>
+    <dimen name="caption_text_size">12sp</dimen>
+    <dimen name="footnote_text_size">10sp</dimen>
+    <dimen name="action_bar_text_size">12sp</dimen>
+
+    <!--New Button-->
+    <dimen name="buttons_height_primary">45dp</dimen>
+    <dimen name="buttons_height_small">35dp</dimen>
+    <dimen name="buttons_text_size">13sp</dimen>
+    <dimen name="buttons_small_text_size">11sp</dimen>
+    <dimen name="image_buttons_height">35dp</dimen>
+    <dimen name="image_buttons_width">35dp</dimen>
+
+    <!--Margins-->
+    <dimen name="screen_horizontal_margin">15dp</dimen>
+    <dimen name="screen_vertical_margin">15dp</dimen>
+    <dimen name="button_margin_horizontal">5dp</dimen>
+    <dimen name="button_margin_vertical">5dp</dimen>
+
+    <!--Input Fields-->
+    <dimen name="input_fields_corners">15dp</dimen>
+
+</resources>
