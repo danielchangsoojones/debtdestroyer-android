@@ -10,6 +10,7 @@ import android.view.animation.AnimationSet
 import android.view.animation.AnimationUtils
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.createViewModelLazy
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
@@ -18,18 +19,22 @@ import androidx.viewbinding.ViewBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import java.lang.reflect.ParameterizedType
 
 
-abstract class BaseFragment<LayoutBinding : ViewBinding> :
-    Fragment(), CoroutineScope by CoroutineScope(Dispatchers.Main) {
+abstract class BaseFragment<LayoutBinding : ViewBinding> : Fragment(),//VM : ViewModel
+    CoroutineScope by CoroutineScope(Dispatchers.Main) {
 
     private var animationWrapper: AnimationSet? = null
 
-    protected lateinit var binding: LayoutBinding
-        private set
+    protected lateinit var binding: LayoutBinding private set
 
+    //protected lateinit var viewModel: VM private set
+    //private val type = (javaClass.genericSuperclass as ParameterizedType)
+    //private val classVB = type.actualTypeArguments[0] as Class<LayoutBinding>
+    //private val classVM = type.actualTypeArguments[1] as Class<VM>
+    //private val inflateMethod = classVB.getMethod("inflate", LayoutInflater::class.java, ViewGroup::class.java, Boolean::class.java)
     abstract val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> LayoutBinding
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,6 +42,8 @@ abstract class BaseFragment<LayoutBinding : ViewBinding> :
         savedInstanceState: Bundle?
     ): View? {
         binding = bindingInflater.invoke(inflater, container, false)
+        //binding = inflateMethod.invoke(null, inflater, container, false) as LayoutBinding
+        //viewModel = createViewModelLazy(classVM.kotlin, { viewModelStore }).value
         return binding.root
     }
 

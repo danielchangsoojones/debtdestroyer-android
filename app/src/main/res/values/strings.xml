@@ -15,10 +15,16 @@
     <string name="label_action_login">Log In</string>
     <string name="label_action_signup">Sign Up</string>
     <string name="label_terms">By signing up, you agree to our Terms of Service &amp; Privacy Policy</string>
+    <string name="hyperlink">By signing up, you agree to our <a href="https://www.geeksforgeeks.org/">Terms of Service &amp; Privacy Policy.</a></string>
+
     <string name="hint_email_input">Email</string>
     <string name="hint_password_input">Password</string>
     <string name="hint_phone_input">Phone Number</string>
     <string name="action_forgot_password">Forgot Password?</string>
     <string name="label_help">help?</string>
+    <string name="title_activity_bottom_nav_main">BottomNavMainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 
 </resources>

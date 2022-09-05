@@ -11,6 +11,7 @@
         <item name="colorOnSecondary">@color/black</item>
 
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorOnBackground</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">false</item>
 
         <!-- Background -->
         <item name="colorSurface">@color/colorBackgroundDark</item>

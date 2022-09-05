@@ -43,6 +43,27 @@
         android:name="com.debtdestroyer.android.ui.phonenumber.PhoneNumberFragment"
         android:label="@string/phone_number_fragment_label"
         tools:layout="@layout/fragment_phone_number">
+        <action
+            android:id="@+id/action_PhoneNumberFragment_to_HomeFragment"
+            app:destination="@id/HomeFragment" />
 
     </fragment>
+
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.debtdestroyer.android.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.debtdestroyer.android.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.debtdestroyer.android.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
 </navigation>

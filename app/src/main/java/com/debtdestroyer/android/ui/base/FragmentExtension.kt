@@ -3,6 +3,7 @@ package com.debtdestroyer.android.ui.base
 import android.content.Intent
 import android.net.Uri
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions
@@ -25,6 +26,15 @@ fun Fragment.navigateTo(directions: NavDirections) {
         val navBuilder = NavOptions.Builder()
         navBuilder.setEnterAnim(R.anim.from_right).setExitAnim(R.anim.to_left)
             .setPopEnterAnim(R.anim.from_left).setPopExitAnim(R.anim.to_right).build()
+        findNavController().navigate(directions, navBuilder.build())
+    } catch (e: IllegalArgumentException) {
+        Timber.e("Fragment Catching potential duplicate navigation event")
+    }
+}
+
+fun DialogFragment.navigateTo(directions: NavDirections) {
+    try {
+        val navBuilder = NavOptions.Builder()
         findNavController().navigate(directions, navBuilder.build())
     } catch (e: IllegalArgumentException) {
         Timber.e("Fragment Catching potential duplicate navigation event")
