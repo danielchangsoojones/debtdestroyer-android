@@ -52,6 +52,7 @@
         app:layout_constraintTop_toBottomOf="@+id/signInPasswordInputLayout" />
 
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/action_next"
         android:layout_width="@dimen/image_buttons_height"
         android:layout_height="@dimen/image_buttons_height"
         android:layout_marginTop="@dimen/margin_xlarge"

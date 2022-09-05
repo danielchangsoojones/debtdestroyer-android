@@ -25,6 +25,10 @@
         android:label="@string/login_fragment_label"
         tools:layout="@layout/fragment_login">
 
+        <action
+            android:id="@+id/action_LoginFragment_to_HomeFragment"
+            app:destination="@id/HomeFragment" />
+
     </fragment>
 
     <fragment
