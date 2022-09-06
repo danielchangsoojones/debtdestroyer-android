@@ -10,8 +10,10 @@ import com.debtdestroyer.android.databinding.FragmentLoginBinding
 import com.debtdestroyer.android.databinding.FragmentSignupBinding
 import com.debtdestroyer.android.ui.base.BaseFragment
 import com.debtdestroyer.android.ui.base.navigateTo
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class SignupFragment : BaseFragment<FragmentSignupBinding>() {
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentSignupBinding

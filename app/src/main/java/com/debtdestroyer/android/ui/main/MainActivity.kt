@@ -11,15 +11,18 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.debtdestroyer.android.R
 import com.debtdestroyer.android.databinding.ActivityMainBinding
 import com.debtdestroyer.android.ui.base.BaseActivity
 import com.debtdestroyer.android.ui.base.getSmsIntent
 import com.debtdestroyer.android.utils.GradientTextView
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
-
+@AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(),
     NavController.OnDestinationChangedListener {
 
@@ -35,13 +38,14 @@ class MainActivity : BaseActivity<ActivityMainBinding>(),
         super.onViewBindingCreated(savedInstanceState)
         launch {
             setSupportActionBar(binding.toolbar)
-            binding.toolbar.setNavigationOnClickListener {
-            }
 
             val navController = findNavController(R.id.nav_host_fragment_content_main)
             appBarConfiguration = AppBarConfiguration(navController.graph)
             setupActionBarWithNavController(navController, appBarConfiguration)
             navController.addOnDestinationChangedListener(this@MainActivity)
+
+            val navView: BottomNavigationView = binding.content.navView
+            navView.setupWithNavController(navController)
         }
     }
 
@@ -83,6 +87,15 @@ class MainActivity : BaseActivity<ActivityMainBinding>(),
         destination: NavDestination,
         arguments: Bundle?
     ) {
-        binding.toolbarTitle.setText(binding.toolbar.title)
+        binding.toolbarTitle.text = binding.toolbar.title
+
+        when (controller.currentDestination?.id) {
+            R.id.OnBoardingFragment, R.id.LoginFragment, R.id.SignupFragment, R.id.PhoneNumberFragment -> {
+                binding.isLoggedIn = false
+            }
+            else -> {
+                binding.isLoggedIn = true
+            }
+        }
     }
 }

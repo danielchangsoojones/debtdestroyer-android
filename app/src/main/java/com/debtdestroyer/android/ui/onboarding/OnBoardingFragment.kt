@@ -8,9 +8,10 @@ import com.debtdestroyer.android.databinding.FragmentOnBoardingBinding
 import com.debtdestroyer.android.ui.base.BaseDialogFragment
 import com.debtdestroyer.android.ui.base.getUrlFromIntent
 import com.debtdestroyer.android.ui.base.navigateTo
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
-
+@AndroidEntryPoint
 class OnBoardingFragment : BaseDialogFragment<FragmentOnBoardingBinding>() {
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentOnBoardingBinding

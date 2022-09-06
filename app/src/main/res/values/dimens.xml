@@ -8,7 +8,7 @@
     <dimen name="body_text_size">13sp</dimen>
     <dimen name="caption_text_size">12sp</dimen>
     <dimen name="footnote_text_size">10sp</dimen>
-    <dimen name="action_bar_text_size">15sp</dimen>
+    <dimen name="action_bar_text_size">20sp</dimen>
 
     <!--New Button-->
     <dimen name="buttons_height_primary">45dp</dimen>
@@ -32,5 +32,8 @@
 
     <!--Input Fields-->
     <dimen name="input_fields_corners">10dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
 
 </resources>
