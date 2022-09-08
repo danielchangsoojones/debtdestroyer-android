@@ -13,6 +13,11 @@
     <color name="colorBackgroundDark">#161616</color>
     <color name="cardBackgroundColor">#ffffff</color>
     <color name="transparent">#00000000</color>
+    <color name="yellow">#FED321</color>
+
+    <color name="creamCenter">#EED387</color>
+    <color name="creamEnd">#DCA851</color>
+    <color name="creamStart">#DDA951</color>
 
 
     <color name="textColor">@color/darkgrey</color>

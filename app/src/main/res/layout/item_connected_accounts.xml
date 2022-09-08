@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.debtdestroyer.android.model.Accounts" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/CardStyle"
+        android:layout_marginHorizontal="@dimen/margin_medium"
+        android:layout_marginVertical="@dimen/margin_small"
+        android:layout_margin="@dimen/margin_small">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_large">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/bank_image_view"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="1dp"
+                android:src="@drawable/ic_plus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/item_title_textview"
+                style="@style/Debt.Destroyer.SubHeading"
+                android:layout_width="0dp"
+                android:layout_marginStart="@dimen/margin_large"
+                android:text="@{item.title}"
+                app:layout_constraintStart_toEndOf="@+id/bank_image_view"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/balance_textview"
+                style="@style/Debt.Destroyer.Heading"
+                android:layout_width="0dp"
+                android:layout_margin="@dimen/margin_small"
+                android:text="@{item.balance}"
+                app:layout_constraintStart_toStartOf="@+id/item_title_textview"
+                app:layout_constraintTop_toBottomOf="@+id/item_title_textview" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

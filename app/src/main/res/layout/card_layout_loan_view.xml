@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/banner_height"
+    android:background="@drawable/ic_rectangle_yellow"
+    android:padding="@dimen/margin_medium">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/home_banner_title_text_view"
+        style="@style/Debt.Destroyer.SubHeading.Bold.White"
+        android:drawableRight="@drawable/ic_info"
+        android:paddingStart="@dimen/margin_medium"
+        android:paddingEnd="@dimen/margin_small"
+        android:text="@string/banner_title_amount_paid_to_student_loans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/home_banner_footnote_text_view"
+        style="@style/Debt.Destroyer.Caption.White"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/banner_footnote_tickets_enter_to_weekly_pool"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/home_banner_value_text_view"
+        style="@style/Debt.Destroyer.Heading.White"
+        android:layout_width="wrap_content"
+        android:layout_margin="@dimen/margin_medium"
+        android:text="$32.12"
+        android:textSize="@dimen/heading_bigger_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_banner_title_text_view" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/home_banner_tickets_text_view"
+        style="@style/Debt.Destroyer.Button.Tickets"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_medium"
+        app:icon="@drawable/ic_ticket"
+        app:layout_constraintBottom_toBottomOf="@+id/home_banner_value_text_view"
+        app:layout_constraintStart_toEndOf="@+id/home_banner_value_text_view"
+        app:layout_constraintTop_toTopOf="@+id/home_banner_value_text_view"
+        tools:text="34 Tickets" />
+</androidx.constraintlayout.widget.ConstraintLayout>

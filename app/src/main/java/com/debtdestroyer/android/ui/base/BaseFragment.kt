@@ -19,6 +19,7 @@ import androidx.viewbinding.ViewBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import timber.log.Timber
 import java.lang.reflect.ParameterizedType
 
 
@@ -61,7 +62,10 @@ abstract class BaseFragment<LayoutBinding : ViewBinding> : Fragment(),//VM : Vie
     }
 
     override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): AnimationSet? {
+        Timber.e("enter $enter nextAnim $nextAnim")
         val anim: Animation = try {
+            if (nextAnim == 0)
+                return null
             AnimationUtils.loadAnimation(activity, nextAnim)
         } catch (e: Resources.NotFoundException) {
             return null

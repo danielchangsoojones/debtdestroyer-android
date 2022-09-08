@@ -2,7 +2,9 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <!--New Text Size-->
-    <dimen name="heading_bigger_text_size">25sp</dimen>
+    <dimen name="heading_biggest_text_size">40sp</dimen>
+    <dimen name="heading_bigger_text_size">28sp</dimen>
+    <dimen name="heading_medium_text_size">22sp</dimen>
     <dimen name="headings_text_size">17sp</dimen>
     <dimen name="subheading_text_size">15sp</dimen>
     <dimen name="body_text_size">13sp</dimen>
@@ -12,7 +14,7 @@
 
     <!--New Button-->
     <dimen name="buttons_height_primary">45dp</dimen>
-    <dimen name="buttons_height_small">35dp</dimen>
+    <dimen name="buttons_height_small">28dp</dimen>
     <dimen name="buttons_text_size">13sp</dimen>
     <dimen name="buttons_small_text_size">11sp</dimen>
     <dimen name="image_buttons_height">45dp</dimen>
@@ -30,10 +32,12 @@
     <dimen name="margin_large">16dp</dimen>
     <dimen name="margin_xlarge">30dp</dimen>
 
+    <dimen name="background_corners">22dp</dimen>
     <!--Input Fields-->
     <dimen name="input_fields_corners">10dp</dimen>
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="banner_height">200dp</dimen>
 
 </resources>

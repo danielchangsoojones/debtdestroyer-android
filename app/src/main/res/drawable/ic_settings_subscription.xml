@@ -1,0 +1,33 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="39dp"
+    android:height="41dp"
+    android:viewportWidth="39"
+    android:viewportHeight="41">
+  <path
+      android:pathData="M12.316,0L26.684,0A12.316,12.316 0,0 1,39 12.316L39,27.711A12.316,12.316 0,0 1,26.684 40.026L12.316,40.026A12.316,12.316 0,0 1,0 27.711L0,12.316A12.316,12.316 0,0 1,12.316 0z"
+      android:fillColor="#64C367"/>
+  <path
+      android:pathData="M15.185,27.605L15.721,26.761C15.467,26.6 15.154,26.561 14.869,26.656L15.185,27.605ZM11,29L10.051,28.684C9.932,29.043 10.025,29.439 10.293,29.707C10.561,29.975 10.957,30.069 11.316,29.949L11,29ZM12.395,24.815L13.344,25.131C13.439,24.846 13.4,24.533 13.239,24.279L12.395,24.815ZM20,30C25.523,30 30,25.523 30,20H28C28,24.418 24.418,28 20,28V30ZM14.649,28.449C16.197,29.431 18.034,30 20,30V28C18.424,28 16.958,27.545 15.721,26.761L14.649,28.449ZM14.869,26.656L10.684,28.051L11.316,29.949L15.501,28.554L14.869,26.656ZM11.949,29.316L13.344,25.131L11.446,24.499L10.051,28.684L11.949,29.316ZM10,20C10,21.966 10.568,23.803 11.551,25.351L13.239,24.279C12.455,23.042 12,21.576 12,20H10ZM20,10C14.477,10 10,14.477 10,20H12C12,15.582 15.582,12 20,12V10ZM30,20C30,14.477 25.523,10 20,10V12C24.418,12 28,15.582 28,20H30Z"
+      android:fillColor="#ffffff"/>
+  <path
+      android:pathData="M24,20H24.002V20.002H24V20Z"
+      android:strokeLineJoin="round"
+      android:strokeWidth="2"
+      android:fillColor="#00000000"
+      android:strokeColor="#ffffff"
+      android:strokeLineCap="round"/>
+  <path
+      android:pathData="M20,20H20.002V20.002H20V20Z"
+      android:strokeLineJoin="round"
+      android:strokeWidth="2"
+      android:fillColor="#00000000"
+      android:strokeColor="#ffffff"
+      android:strokeLineCap="round"/>
+  <path
+      android:pathData="M16,20H16.002V20.002H16V20Z"
+      android:strokeLineJoin="round"
+      android:strokeWidth="2"
+      android:fillColor="#00000000"
+      android:strokeColor="#ffffff"
+      android:strokeLineCap="round"/>
+</vector>

@@ -33,4 +33,18 @@
     <style name="Theme.Debtdestroyer.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Debtdestroyer.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <!--CardView-->
+    <style name="CardStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="android:outlineProvider">background</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="cardCornerRadius">@dimen/card_radius</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="cardBackgroundColor">@color/cardBackgroundColor</item>
+    </style>
+
+    <dimen name="card_radius">12dp</dimen>
+    <dimen name="card_elevation">10dp</dimen>
 </resources>
