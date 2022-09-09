@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_medium"
+    android:layout_marginTop="@dimen/margin_medium">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/privacy_policy_textview"
+        style="@style/Debt.Destroyer.SubHeading"
+        android:layout_width="match_parent"
+        android:drawableStart="@drawable/ic_settings_disclosure"
+        android:drawableEnd="@drawable/ic_arrow_outward"
+        android:drawablePadding="@dimen/margin_medium"
+        android:gravity="center_vertical"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/privacy_policy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        style="@style/DividerStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/privacy_policy_textview" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/terms_of_service_textview"
+        style="@style/Debt.Destroyer.SubHeading"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/margin_small"
+        android:drawableStart="@drawable/ic_settings_disclosure"
+        android:drawableEnd="@drawable/ic_arrow_outward"
+        android:drawablePadding="@dimen/margin_medium"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/terms_of_service"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/privacy_policy_textview" />
+
+    <View
+        style="@style/DividerStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/terms_of_service_textview" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/sweepstake_rules_textview"
+        style="@style/Debt.Destroyer.SubHeading"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/margin_small"
+        android:drawableStart="@drawable/ic_settings_disclosure"
+        android:drawableEnd="@drawable/ic_arrow_outward"
+        android:drawablePadding="@dimen/margin_medium"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/sweepstake_rules"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/terms_of_service_textview" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

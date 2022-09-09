@@ -11,10 +11,12 @@
         android:id="@+id/home_prize_title_text_view"
         style="@style/Debt.Destroyer.Heading.Bold.White"
         android:paddingHorizontal="@dimen/margin_medium"
+        android:layout_width="wrap_content"
         android:text="@string/banner_this_weeks_prize"
-        android:textSize="@dimen/heading_bigger_text_size"
+        android:textSize="@dimen/heading_medium_text_size"
+        android:drawableEnd="@drawable/ic_info"
+        android:drawablePadding="@dimen/margin_medium"
         app:fontFamily="@font/sf_pro_rounded_bold"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

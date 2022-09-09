@@ -31,7 +31,7 @@
         android:layout_width="@dimen/image_buttons_height"
         android:layout_height="@dimen/image_buttons_height"
         android:layout_marginTop="@dimen/margin_xlarge"
-        android:background="@drawable/bg_button_primary_round"
+        android:background="@drawable/bg_button_primary_circular"
         android:padding="@dimen/margin_medium"
         android:src="@drawable/ic_chevron_right"
         app:layout_constraintEnd_toEndOf="parent"

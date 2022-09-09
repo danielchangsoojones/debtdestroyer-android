@@ -49,7 +49,9 @@ class SettingsFragment : BaseFragmentNoAnim<FragmentSettingsBinding>() {
                         navigateTo(SettingsFragmentDirections.actionSettingsFragmentToConnectedAccountsFragment())
                     }
                     Setting.CONTACT_US -> {}
-                    Setting.LEGAL_DISCLOSURE -> {}
+                    Setting.LEGAL_DISCLOSURE -> {
+                        navigateTo(SettingsFragmentDirections.actionSettingsFragmentToLDFragment())
+                    }
                     Setting.LEAVE_FEEDBACK -> {}
                     Setting.LOGOUT -> {}
                     Setting.DELETE_ACCOUNT -> {}

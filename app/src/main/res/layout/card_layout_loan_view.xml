@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/banner_height"
+    android:layout_height="wrap_content"
     android:background="@drawable/ic_rectangle_yellow"
     android:padding="@dimen/margin_medium">
 
@@ -19,15 +19,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/home_banner_footnote_text_view"
-        style="@style/Debt.Destroyer.Caption.White"
-        android:padding="@dimen/margin_medium"
-        android:text="@string/banner_footnote_tickets_enter_to_weekly_pool"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/home_banner_value_text_view"
         style="@style/Debt.Destroyer.Heading.White"
         android:layout_width="wrap_content"
@@ -37,15 +28,51 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_banner_title_text_view" />
 
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/home_banner_tickets_text_view"
         style="@style/Debt.Destroyer.Button.Tickets"
         android:layout_width="0dp"
         android:layout_marginStart="@dimen/margin_large"
         android:layout_marginTop="@dimen/margin_medium"
+        android:text="34 Tickets"
         app:icon="@drawable/ic_ticket"
         app:layout_constraintBottom_toBottomOf="@+id/home_banner_value_text_view"
         app:layout_constraintStart_toEndOf="@+id/home_banner_value_text_view"
-        app:layout_constraintTop_toTopOf="@+id/home_banner_value_text_view"
-        tools:text="34 Tickets" />
+        app:layout_constraintTop_toTopOf="@+id/home_banner_value_text_view" />
+
+
+    <com.debtdestroyer.android.utils.RangeSeekBar
+        android:id="@+id/seek_bar_indicator_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_banner_tickets_text_view"
+        app:rsb_gravity="center"
+        app:rsb_indicator_show_mode="alwaysShow"
+        app:rsb_progress_drawable="@drawable/progress"
+        app:rsb_progress_drawable_default="@drawable/progress_defalut"
+        app:rsb_progress_height="35dp"
+        app:rsb_step_auto_bonding="true"
+        app:rsb_step_drawable="@color/white"
+        app:rsb_step_height="35dp"
+        app:rsb_indicator_height="35dp"
+        app:rsb_indicator_width="35dp"
+
+        app:rsb_indicator_drawable="@drawable/ic_ticket_indicator"
+        app:rsb_indicator_radius="@dimen/background_corners"
+        app:rsb_step_width="1dp"
+        app:rsb_steps="5"
+        app:rsb_thumb_drawable="@drawable/ic_ticket_indicator"
+        app:rsb_thumb_height="40dp"
+        app:rsb_thumb_width="40dp"
+        app:rsb_tick_mark_in_range_text_color="@color/colorSecondary"
+        app:rsb_tick_mark_layout_gravity="bottom"
+        app:rsb_tick_mark_mode="other"
+        app:rsb_tick_mark_text_array="@array/wordsArray"
+        app:rsb_tick_mark_text_color="@color/white"
+        app:rsb_tick_mark_text_size="@dimen/body_text_size" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

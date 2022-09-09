@@ -1,7 +1,9 @@
 package com.debtdestroyer.android.ui.base
 
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
@@ -42,9 +44,15 @@ fun DialogFragment.navigateTo(directions: NavDirections) {
 }
 
 fun Fragment.getUrlFromIntent(url: String) {
-    val i = Intent(Intent.ACTION_VIEW)
-    i.data = Uri.parse(url)
-    startActivity(i)
+    try {
+        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        startActivity(browserIntent)
+    } catch (e: ActivityNotFoundException) {
+        Toast.makeText(
+            context, "No application can handle this request." + " Please install a webbrowser", Toast.LENGTH_LONG
+        ).show()
+        e.printStackTrace()
+    }
 }
 
 fun Fragment.getSmsIntent(phoneNumber: String) {

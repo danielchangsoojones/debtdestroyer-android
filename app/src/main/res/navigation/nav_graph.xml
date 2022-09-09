@@ -98,6 +98,10 @@
             android:id="@+id/action_SettingsFragment_to_ConnectedAccountsFragment"
             app:destination="@id/ConnectedAccountsFragment" />
 
+        <action
+            android:id="@+id/action_SettingsFragment_to_LDFragment"
+            app:destination="@id/LDFragment" />
+
     </fragment>
 
 
@@ -105,15 +109,13 @@
         android:id="@+id/ConnectedAccountsFragment"
         android:name="com.debtdestroyer.android.ui.settings.connectedaccount.ConnectedAccountsFragment"
         android:label=""
-        tools:layout="@layout/fragment_list">
+        tools:layout="@layout/fragment_list"/>
 
-        <action
-            android:id="@+id/settings_animation"
-            app:enterAnim="@anim/from_right"
-            app:exitAnim="@anim/to_left"
-            app:launchSingleTop="false"
-            app:popEnterAnim="@anim/from_left"
-            app:popExitAnim="@anim/to_right" />
+    <fragment
+        android:id="@+id/LDFragment"
+        android:name="com.debtdestroyer.android.ui.settings.ld.LDFragment"
+        android:label=""
+        tools:layout="@layout/fragment_list">
 
     </fragment>
 

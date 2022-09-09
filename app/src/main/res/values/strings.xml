@@ -29,7 +29,19 @@
     <string name="banner_this_weeks_prize">This Week\’s Prize</string>
     <string name="banner_winner_will_be_announce">The winner will be announced Tuesday at 10am PT </string>
     <string name="banner_how_to_earn_tickets">How to earn tickets?</string>
+    <string name="earn_tickets_for_this_week_prize">Earn Tickets For This\nWeek\'s Prize</string>
+    <string name="past_weekly_winners">Past Weekly Winners</string>
+    <string name="earning_round_ups_1">Round Ups (2x Tickets)</string>
+    <string name="earning_round_ups_2">One Time Payment</string>
 
+    <string-array name="wordsArray">
+        <item></item>
+        <item>$10</item>
+        <item>$20</item>
+        <item>$30</item>
+        <item>$40</item>
+        <item></item>
+    </string-array>
 
     <!--Settings-->
     <string name="settings_connected_accounts">Connected Accounts</string>
@@ -39,10 +51,16 @@
     <string name="settings_logout">Logout</string>
     <string name="settings_delete_account">Delete Account</string>
 
+    <!--Disclosure-->
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_of_service">Terms of Service</string>
+    <string name="sweepstake_rules">Sweepstake Rules</string>
+
     <string name="title_activity_bottom_nav_main">BottomNavMainActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Bank</string>
     <string name="title_settings">Settings</string>
     <string name="set_up">Set up</string>
+
 
 </resources>

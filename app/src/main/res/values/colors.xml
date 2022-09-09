@@ -6,6 +6,7 @@
     <color name="teal_200">@color/colorPrimary</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="alphaWhite">#80FFFFFF</color>
     <color name="grey">#636366</color>
     <color name="darkgrey">#1C1C1E</color>
     <color name="lightgrey">#8E8E93</color>

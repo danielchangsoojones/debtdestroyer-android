@@ -67,6 +67,9 @@
     <style name="AppShapeAppearance.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerSize">6dp</item>
     </style>
+    <style name="AppShapeAppearance.Rounded" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">20dp</item>
+    </style>
 
     <style name="AppShapeAppearance.IconComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerSize">@dimen/input_fields_corners</item>
