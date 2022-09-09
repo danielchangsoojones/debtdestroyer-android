@@ -63,6 +63,9 @@
         <item name="android:gravity">center_vertical</item>
     </style>
 
+    <style name="Debt.Destroyer.SubHeading.White" parent="Debt.Destroyer.SubHeading">
+        <item name="android:textColor">@color/textWhite</item>
+    </style>
     <style name="Debt.Destroyer.SubHeading.Bold" parent="Debt.Destroyer.SubHeading">
         <item name="fontFamily">@font/sf_pro_bold</item>
     </style>
