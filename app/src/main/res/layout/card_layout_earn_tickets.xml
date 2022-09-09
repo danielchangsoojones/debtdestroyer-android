@@ -38,8 +38,7 @@
                 android:id="@+id/item_title_textview"
                 style="@style/Debt.Destroyer.Body"
                 android:layout_width="0dp"
-                android:paddingVertical="@dimen/margin_medium"
-                android:text="@string/banner_title_amount_paid_to_student_loans"
+                android:text="@string/earning_round_ups_1"
                 app:layout_constraintBottom_toBottomOf="@+id/action_setup"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/action_setup" />
@@ -48,7 +47,6 @@
                 android:id="@+id/action_setup"
                 style="@style/Debt.Destroyer.Button.Small"
                 android:layout_width="wrap_content"
-                android:layout_marginVertical="10dp"
                 android:layout_marginEnd="0dp"
                 android:padding="1dp"
                 android:text="@string/set_up"
@@ -69,7 +67,7 @@
                 style="@style/Debt.Destroyer.Body"
                 android:layout_width="0dp"
                 android:paddingVertical="@dimen/margin_medium"
-                android:text="@string/banner_title_amount_paid_to_student_loans"
+                android:text="@string/earning_round_ups_2"
                 app:layout_constraintBottom_toBottomOf="@+id/action_setup_2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/action_setup_2" />
