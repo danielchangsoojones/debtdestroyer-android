@@ -38,10 +38,12 @@
                 <com.debtdestroyer.android.utils.GradientTextView
                     android:id="@+id/toolbar_title"
                     style="@style/Debt.Destroyer.Gradient.Body"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textSize="@dimen/action_bar_text_size" />
+                    android:gravity="center"
+                    android:textSize="@dimen/action_bar_text_size"
+                    app:fontFamily="@font/sf_pro_rounded_bold" />
             </com.google.android.material.appbar.MaterialToolbar>
         </com.google.android.material.appbar.AppBarLayout>
 

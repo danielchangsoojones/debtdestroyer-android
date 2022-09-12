@@ -66,20 +66,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(),
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
-    }
-
-    fun hideTitleBar() {
-        supportActionBar?.setDisplayShowTitleEnabled(false)
-    }
-
-    fun homeAsUpEnabled(enabled: Boolean) {
-        supportActionBar?.setDisplayHomeAsUpEnabled(enabled)
-    }
-
-    fun getSupportBar(): ActionBar? {
-        return supportActionBar
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
     override fun onDestinationChanged(
@@ -87,6 +74,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(),
         destination: NavDestination,
         arguments: Bundle?
     ) {
+        Timber.e("Title ${binding.toolbar.title}")
         binding.toolbarTitle.text = binding.toolbar.title
 
         when (controller.currentDestination?.id) {

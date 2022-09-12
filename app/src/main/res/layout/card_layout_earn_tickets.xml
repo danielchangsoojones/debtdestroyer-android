@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_medium"
+    android:padding="@dimen/margin_small">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/home_how_to_earn_tickets_text_view"
+            style="@style/Debt.Destroyer.Heading.Bold.White"
+            android:background="@drawable/bg_cream_gradient_top_rounded"
+            android:drawableEnd="@drawable/ic_info"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/margin_large"
+            android:paddingVertical="15dp"
+            android:text="@string/banner_how_to_earn_tickets"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_earnings_option_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_bottom_rounded_corners"
+            android:paddingBottom="@dimen/margin_large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_how_to_earn_tickets_text_view">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/item_title_textview"
+                style="@style/Debt.Destroyer.Body"
+                android:layout_width="0dp"
+                android:text="@string/earning_round_ups_1"
+                app:layout_constraintBottom_toBottomOf="@+id/action_setup"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/action_setup" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/action_setup"
+                style="@style/Debt.Destroyer.Button.Small"
+                android:layout_width="wrap_content"
+                android:layout_marginEnd="0dp"
+                android:padding="1dp"
+                android:text="@string/set_up"
+                android:textSize="@dimen/footnote_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view"
+                style="@style/DividerStyle"
+                android:layout_marginTop="@dimen/margin_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/action_setup" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/item_title_textview_2"
+                style="@style/Debt.Destroyer.Body"
+                android:layout_width="0dp"
+                android:paddingVertical="@dimen/margin_medium"
+                android:text="@string/earning_round_ups_2"
+                app:layout_constraintBottom_toBottomOf="@+id/action_setup_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/action_setup_2" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/action_setup_2"
+                style="@style/Debt.Destroyer.Button.Small"
+                android:layout_width="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginEnd="0dp"
+                android:padding="1dp"
+                android:text="@string/set_up"
+                android:textSize="@dimen/footnote_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

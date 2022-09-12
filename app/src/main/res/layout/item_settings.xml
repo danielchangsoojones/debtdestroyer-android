@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.debtdestroyer.android.model.DataSettings" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/margin_medium"
+        android:paddingVertical="@dimen/margin_small">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/item_title_textview"
+            style="@style/Debt.Destroyer.SubHeading"
+            android:layout_width="0dp"
+            android:drawableStart="@drawable/ic_settings_disclosure"
+            android:drawableEnd="@drawable/ic_arrow_outward"
+            android:drawablePadding="@dimen/margin_medium"
+            android:padding="@dimen/margin_medium"
+            android:text="@{item.title}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

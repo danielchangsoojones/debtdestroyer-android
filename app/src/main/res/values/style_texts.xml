@@ -37,7 +37,20 @@
         <item name="fontFamily">@font/sf_pro_semibold</item>
     </style>
 
+    <style name="Debt.Destroyer.Heading.Yellow" parent="Debt.Destroyer.Heading">
+        <item name="android:textColor">@color/yellow</item>
+    </style>
+
     <style name="Debt.Destroyer.Heading.White" parent="Debt.Destroyer.Heading">
+        <item name="android:textColor">@color/textWhite</item>
+    </style>
+
+    <style name="Debt.Destroyer.Heading.Black" parent="Debt.Destroyer.Heading">
+        <item name="android:textColor">@color/textBlack</item>
+    </style>
+
+    <style name="Debt.Destroyer.Heading.Bold.White" parent="Debt.Destroyer.Heading">
+        <item name="fontFamily">@font/sf_pro_bold</item>
         <item name="android:textColor">@color/textWhite</item>
     </style>
 
@@ -48,6 +61,17 @@
         <item name="android:textSize">@dimen/subheading_text_size</item>
         <item name="fontFamily">@font/sf_pro_regular</item>
         <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="Debt.Destroyer.SubHeading.White" parent="Debt.Destroyer.SubHeading">
+        <item name="android:textColor">@color/textWhite</item>
+    </style>
+    <style name="Debt.Destroyer.SubHeading.Bold" parent="Debt.Destroyer.SubHeading">
+        <item name="fontFamily">@font/sf_pro_bold</item>
+    </style>
+
+    <style name="Debt.Destroyer.SubHeading.Bold.White" parent="Debt.Destroyer.SubHeading.Bold">
+        <item name="android:textColor">@color/textWhite</item>
     </style>
 
     <!--Body-->
@@ -64,6 +88,10 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/caption_text_size</item>
         <item name="fontFamily">@font/sf_pro_regular</item>
+    </style>
+
+    <style name="Debt.Destroyer.Caption.White" parent="Debt.Destroyer.Caption">
+        <item name="android:textColor">@color/textWhite</item>
     </style>
 
     <style name="Debt.Destroyer.Caption.Grey" parent="Debt.Destroyer.Caption">
