@@ -22,8 +22,8 @@ class OnBoardingFragment : BaseDialogFragment<FragmentOnBoardingBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val user = ParseUser.getCurrentUser()
-        if (user != null){
-            //navigateTo(OnBoardingFragmentDirections.ac())
+        if (user != null) {
+            navigateTo(OnBoardingFragmentDirections.actionOnBoardingFragmentToHomeFragment())
             return
         }
 
