@@ -24,6 +24,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAppearance">@style/Debt.Destroyer.Body</item>
         <item name="android:textSize">14sp</item>
+        <item name="android:maxLines">1</item>
         <item name="android:backgroundTint">@color/cardBackgroundColor</item>
         <item name="fontFamily">@font/sf_pro_regular</item>
     </style>

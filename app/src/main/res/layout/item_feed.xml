@@ -25,7 +25,6 @@
                 android:id="@+id/ivMediaCoverImage"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
-                android:background="@android:color/white"
                 android:scaleType="centerCrop" />
 
 

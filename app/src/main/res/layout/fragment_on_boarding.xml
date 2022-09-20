@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:paddingHorizontal="@dimen/screen_horizontal_margin"
     android:paddingVertical="@dimen/screen_vertical_margin"
-    tools:context=".ui.onboarding.OnBoardingFragment">
+    tools:context=".ui.onboarding.welcome.OnBoardingFragment">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="150dp"

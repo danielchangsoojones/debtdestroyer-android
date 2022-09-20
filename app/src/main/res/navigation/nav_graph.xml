@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/OnBoardingFragment"
-        android:name="com.debtdestroyer.android.ui.onboarding.OnBoardingFragment"
+        android:name="com.debtdestroyer.android.ui.onboarding.welcome.OnBoardingFragment"
         android:label=""
         tools:layout="@layout/fragment_on_boarding">
 
@@ -17,11 +17,14 @@
         <action
             android:id="@+id/action_onBoardingFragment_to_SignupFragment"
             app:destination="@id/SignupFragment" />
+        <action
+            android:id="@+id/action_onBoardingFragment_to_HomeFragment"
+            app:destination="@id/HomeFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/LoginFragment"
-        android:name="com.debtdestroyer.android.ui.login.LoginFragment"
+        android:name="com.debtdestroyer.android.ui.onboarding.login.LoginFragment"
         android:label="@string/login_fragment_label"
         tools:layout="@layout/fragment_login">
 
@@ -33,7 +36,7 @@
 
     <fragment
         android:id="@+id/SignupFragment"
-        android:name="com.debtdestroyer.android.ui.signup.SignupFragment"
+        android:name="com.debtdestroyer.android.ui.onboarding.signup.SignupFragment"
         android:label="@string/signup_fragment_label"
         tools:layout="@layout/fragment_signup">
 
@@ -109,7 +112,7 @@
         android:id="@+id/ConnectedAccountsFragment"
         android:name="com.debtdestroyer.android.ui.settings.connectedaccount.ConnectedAccountsFragment"
         android:label=""
-        tools:layout="@layout/fragment_list"/>
+        tools:layout="@layout/fragment_list" />
 
     <fragment
         android:id="@+id/LDFragment"

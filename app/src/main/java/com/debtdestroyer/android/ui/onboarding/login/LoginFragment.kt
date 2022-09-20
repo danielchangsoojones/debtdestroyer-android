@@ -1,4 +1,4 @@
-package com.debtdestroyer.android.ui.phonenumber
+package com.debtdestroyer.android.ui.onboarding.login
 
 import android.os.Bundle
 import android.telephony.PhoneNumberFormattingTextWatcher
@@ -6,26 +6,32 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.debtdestroyer.android.R
+import com.debtdestroyer.android.callback.AuthResponseCallback
 import com.debtdestroyer.android.callback.Status
-import com.debtdestroyer.android.databinding.FragmentPhoneNumberBinding
+import com.debtdestroyer.android.databinding.FragmentLoginBinding
+import com.debtdestroyer.android.model.User
 import com.debtdestroyer.android.ui.base.*
+import com.parse.LogInCallback
+import com.parse.ParseUser
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
+import timber.log.Timber
 
 @AndroidEntryPoint
-class PhoneNumberFragment : BaseFragment<FragmentPhoneNumberBinding>() {
+class LoginFragment : BaseFragment<FragmentLoginBinding>() {
 
-    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentPhoneNumberBinding
-        get() = FragmentPhoneNumberBinding::inflate
-    private val viewModel: PhoneNumberVM by viewModels()
+    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentLoginBinding
+        get() = FragmentLoginBinding::inflate
+
+    private val viewModel: LoginVM by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.phoneNumberInputEditText.addTextChangedListener(PhoneNumberFormattingTextWatcher())
         binding.viewModel = viewModel
 
         setupObserver()
-
     }
 
     private fun setupObserver() {
@@ -33,7 +39,7 @@ class PhoneNumberFragment : BaseFragment<FragmentPhoneNumberBinding>() {
             when (it.status) {
                 Status.SUCCESS -> {
                     hideProgressBar()
-                    navigateTo(PhoneNumberFragmentDirections.actionPhoneNumberFragmentToHomeFragment())
+                    navigateTo(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
                 }
                 Status.ERROR -> {
                     showError(it.message)
@@ -50,4 +56,6 @@ class PhoneNumberFragment : BaseFragment<FragmentPhoneNumberBinding>() {
         super.onDestroy()
         viewModel.res.removeObservers(this)
     }
+
+
 }
