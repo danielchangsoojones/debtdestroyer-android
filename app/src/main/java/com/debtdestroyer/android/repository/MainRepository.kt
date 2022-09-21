@@ -24,4 +24,7 @@ class MainRepository @Inject constructor(private val user: User) {
     fun savePhoneNumber(parseUser: ParseUser, authResponseCallback: AuthResponseCallback<ParseUser>) =
         user.savePhoneNumber(parseUser, authResponseCallback)
 
+    fun logoutUser(parseUser: ParseUser, authResponseCallback: AuthResponseCallback<ParseUser>) =
+        user.savePhoneNumber(parseUser, authResponseCallback)
+
 }

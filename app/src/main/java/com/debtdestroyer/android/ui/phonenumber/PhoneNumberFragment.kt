@@ -10,6 +10,7 @@ import com.debtdestroyer.android.callback.Status
 import com.debtdestroyer.android.databinding.FragmentPhoneNumberBinding
 import com.debtdestroyer.android.ui.base.*
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
 
 @AndroidEntryPoint
 class PhoneNumberFragment : BaseFragment<FragmentPhoneNumberBinding>() {
@@ -20,12 +21,18 @@ class PhoneNumberFragment : BaseFragment<FragmentPhoneNumberBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.phoneNumberInputEditText.addTextChangedListener(PhoneNumberFormattingTextWatcher())
         binding.viewModel = viewModel
 
         setupObserver()
 
+        addWatcherOnNumberFormatOnInputField()
+    }
+
+    /**
+         *us specific format remove ${Locale.US.country} to support all country phone format
+         */
+    private fun addWatcherOnNumberFormatOnInputField() {
+        binding.phoneNumberInputEditText.addTextChangedListener(PhoneNumberFormattingTextWatcher(Locale.US.country))
     }
 
     private fun setupObserver() {

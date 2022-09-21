@@ -20,26 +20,6 @@ class User @Inject constructor() : ParseUser() {
         get() = "android"
         set(value) = putOrIgnore(KEY_DEVICE_TYPE, "android")
 
-    // logIn
-    fun mlogIn(mEmail: String, mPassword: String, response: AuthResponseCallback<ParseUser>) =
-        logInInBackground(mEmail, mPassword) { user, e ->
-            response.onReceive(Resource.loading())
-            if (e != null) {
-                response.onReceive(Resource.error(e.localizedMessage, null))
-            }
-            if (user != null) {
-                response.onReceive(Resource.success(user))
-            }
-        }
-
-    fun msignup(parseUser: User, response: AuthResponseCallback<User>) =
-        parseUser.signUpInBackground {
-            if (it != null)
-                response.onReceive(Resource.error(it.localizedMessage!!, null))
-            else {
-                response.onReceive(Resource.success(parseUser))
-            }
-        }
 
     fun logIn(mEmail: String, mPassword: String, response: AuthResponseCallback<ParseUser>) =
         logInInBackground(mEmail, mPassword) { user, e ->
@@ -72,18 +52,20 @@ class User @Inject constructor() : ParseUser() {
                 // Hooray! Let them use the app now.
                 response.onReceive(Resource.success(parseUser))
             } else {
-                // Sign up didn't succeed. Look at the ParseException to figure out what went wrong
+                // Save phone number didn't succeed. Look at the ParseException to figure out what went wrong
                 response.onReceive(Resource.error(e.localizedMessage!!, null))
             }
         }
 
 
-    // logOut
-    fun logOut() = logOutInBackground() ?: Timber.e("logOut Error")
+    fun logoutUser(parseUser: ParseUser, response: AuthResponseCallback<ParseUser>) =
+        logOutInBackground { e ->
+            response.onReceive(Resource.loading())
+            if (e == null) {
+                response.onReceive(Resource.success(parseUser))
+            } else {
+                response.onReceive(Resource.error(e.localizedMessage!!, null))
+            }
+        }
 
-    // Delete and Logout
-    fun deleteUser() = getCurrentUser().apply {
-        deleteInBackground()
-        logOut()
-    } ?: Timber.e("Delete failed")
 }
