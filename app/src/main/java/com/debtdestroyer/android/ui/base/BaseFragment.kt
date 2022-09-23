@@ -8,19 +8,14 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationSet
 import android.view.animation.AnimationUtils
-import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.createViewModelLazy
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
-import timber.log.Timber
-import java.lang.reflect.ParameterizedType
 
 
 abstract class BaseFragment<LayoutBinding : ViewBinding> : Fragment(),//VM : ViewModel
@@ -62,7 +57,6 @@ abstract class BaseFragment<LayoutBinding : ViewBinding> : Fragment(),//VM : Vie
     }
 
     override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): AnimationSet? {
-        Timber.e("enter $enter nextAnim $nextAnim")
         val anim: Animation = try {
             if (nextAnim == 0)
                 return null

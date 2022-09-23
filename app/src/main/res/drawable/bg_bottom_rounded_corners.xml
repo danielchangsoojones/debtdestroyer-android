@@ -3,7 +3,7 @@
     <corners
         android:bottomLeftRadius="@dimen/background_corners"
         android:bottomRightRadius="@dimen/background_corners" />
-    <solid android:color="@color/white" />
+    <solid android:color="@color/cardBackgroundColor" />
     <padding
         android:bottom="@dimen/margin_medium"
         android:left="@dimen/margin_large"

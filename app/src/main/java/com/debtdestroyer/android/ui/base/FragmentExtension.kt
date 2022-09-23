@@ -12,6 +12,7 @@ import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.debtdestroyer.android.R
 import com.debtdestroyer.android.ui.base.adapter.ItemSelectionCallback
+import com.debtdestroyer.android.ui.main.MainActivity
 import timber.log.Timber
 
 
@@ -34,6 +35,26 @@ fun Fragment.navigateTo(directions: NavDirections) {
     }
 }
 
+fun BaseFragment<*>.hideProgressBar() {
+    (activity as? MainActivity)?.hideProgressBar()
+}
+
+fun BaseFragment<*>.showProgressBar() {
+    (activity as? MainActivity)?.showProgressBar()
+}
+
+fun BaseFragment<*>.showError(error: String) {
+    (activity as? MainActivity)?.showError(error)
+}
+
+fun BaseFragment<*>.showMessage(message: String) {
+    (activity as? MainActivity)?.showMessage(message)
+}
+
+fun BaseFragment<*>.showWarning(warning: String) {
+    (activity as? MainActivity)?.showWarning(warning)
+}
+
 fun DialogFragment.navigateTo(directions: NavDirections) {
     try {
         val navBuilder = NavOptions.Builder()
@@ -49,7 +70,9 @@ fun Fragment.getUrlFromIntent(url: String) {
         startActivity(browserIntent)
     } catch (e: ActivityNotFoundException) {
         Toast.makeText(
-            context, "No application can handle this request." + " Please install a webbrowser", Toast.LENGTH_LONG
+            context,
+            "No application can handle this request." + " Please install a webbrowser",
+            Toast.LENGTH_LONG
         ).show()
         e.printStackTrace()
     }

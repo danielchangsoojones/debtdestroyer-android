@@ -1,5 +1,6 @@
 package com.debtdestroyer.android.ui.main
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -54,7 +55,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(),
         val item = menu.findItem(R.id.action_help)
         val mButton: GradientTextView = item.actionView.findViewById(R.id.title_help_textview)
 
-        mButton.setOnClickListener { view ->
+        mButton.setOnClickListener {
             getSmsIntent()
         }
         return true
@@ -74,7 +75,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(),
         destination: NavDestination,
         arguments: Bundle?
     ) {
-        Timber.e("Title ${binding.toolbar.title}")
         binding.toolbarTitle.text = binding.toolbar.title
 
         when (controller.currentDestination?.id) {
@@ -85,5 +85,25 @@ class MainActivity : BaseActivity<ActivityMainBinding>(),
                 binding.isLoggedIn = true
             }
         }
+    }
+
+    fun hideProgressBar() {
+        binding.content.showProgress = false
+    }
+
+    fun showProgressBar() {
+        binding.content.showProgress = true
+    }
+
+    fun showError(error: String) {
+        showSnackBar(Color.parseColor("#efd539"), error)
+    }
+
+    fun showWarning(warning: String) {
+        showSnackBar(Color.parseColor("#efd539"), warning)
+    }
+
+    fun showMessage(message: String) {
+        showSnackBar(Color.parseColor("#efd539"), message)
     }
 }

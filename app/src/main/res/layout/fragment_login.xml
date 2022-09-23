@@ -1,67 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingHorizontal="@dimen/screen_horizontal_margin"
-    android:paddingVertical="@dimen/screen_vertical_margin"
-    tools:context=".ui.login.LoginFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/signInEmailInputLayout"
-        style="@style/DebtDestroyer.TextInputLayout"
-        android:layout_marginTop="@dimen/margin_large"
-        android:hint="@string/hint_email_input"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <data>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/sign_in_email_input_edit_text"
-            style="@style/DebtDestroyerTextInputEditText"
-            android:inputType="textEmailAddress"
-            android:nextFocusForward="@+id/sign_in_password_input_edit_text" />
+        <variable
+            name="viewModel"
+            type="com.debtdestroyer.android.ui.onboarding.login.LoginVM" />
+    </data>
 
-    </com.google.android.material.textfield.TextInputLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/screen_horizontal_margin"
+        android:paddingVertical="@dimen/screen_vertical_margin"
+        tools:context=".ui.onboarding.login.LoginFragment">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/signInPasswordInputLayout"
-        style="@style/DebtDestroyer.TextInputLayout"
-        android:layout_marginTop="@dimen/margin_large"
-        android:hint="@string/hint_password_input"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signInEmailInputLayout">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signInEmailInputLayout"
+            style="@style/DebtDestroyer.TextInputLayout"
+            android:layout_marginTop="@dimen/margin_large"
+            android:hint="@string/hint_email_input"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/sign_in_password_input_edit_text"
-            style="@style/DebtDestroyerTextInputEditText"
-            android:imeOptions="actionDone"
-            android:inputType="textPassword" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sign_in_email_input_edit_text"
+                style="@style/DebtDestroyerTextInputEditText"
+                android:inputType="textEmailAddress"
+                android:nextFocusForward="@+id/sign_in_password_input_edit_text"
+                android:text="@={viewModel.email}" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/action_forgot_password"
-        style="@style/Debt.Destroyer.TextButton"
-        android:layout_width="wrap_content"
-        android:layout_marginStart="@dimen/margin_small"
-        android:text="@string/action_forgot_password"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signInPasswordInputLayout" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signInPasswordInputLayout"
+            style="@style/DebtDestroyer.TextInputLayout"
+            android:layout_marginTop="@dimen/margin_large"
+            android:hint="@string/hint_password_input"
+            app:endIconMode="password_toggle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signInEmailInputLayout">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/action_next"
-        android:layout_width="@dimen/image_buttons_height"
-        android:layout_height="@dimen/image_buttons_height"
-        android:layout_marginTop="@dimen/margin_xlarge"
-        android:background="@drawable/bg_button_primary_circular"
-        android:padding="@dimen/margin_medium"
-        android:src="@drawable/ic_chevron_right"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/action_forgot_password"
-        app:useCompatPadding="true" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sign_in_password_input_edit_text"
+                style="@style/DebtDestroyerTextInputEditText"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:text="@={viewModel.password}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/action_forgot_password"
+            style="@style/Debt.Destroyer.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:text="@string/action_forgot_password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signInPasswordInputLayout" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/action_next"
+            android:layout_width="@dimen/image_buttons_height"
+            android:layout_height="@dimen/image_buttons_height"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:background="@drawable/bg_button_primary_circular"
+            android:onClickListener="@{viewModel::onLoginClicked}"
+            android:padding="@dimen/margin_medium"
+            android:src="@drawable/ic_chevron_right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/action_forgot_password"
+            app:useCompatPadding="true" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

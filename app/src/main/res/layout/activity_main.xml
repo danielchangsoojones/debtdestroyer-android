@@ -8,6 +8,9 @@
         <variable
             name="isLoggedIn"
             type="Boolean" />
+        <variable
+            name="showProgress"
+            type="Boolean" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -49,7 +52,8 @@
 
         <include
             android:id="@+id/content"
-            bind:isLoggedIn="@{isLoggedIn}"
+            app:showProgress="@{showProgress}"
+            app:isLoggedIn="@{isLoggedIn}"
             layout="@layout/content_main" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
