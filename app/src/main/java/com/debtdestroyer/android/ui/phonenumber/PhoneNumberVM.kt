@@ -35,7 +35,7 @@ class PhoneNumberVM @Inject constructor(
 
     private fun callUpdateAPI() = viewModelScope.launch {
         val parseUser = ParseUser.getCurrentUser()
-        parseUser.put("phone", phoneNumber.value.toString().trim())
+        parseUser.put(User.KEY_PHONE_NUMBER, phoneNumber.value.toString().trim())
 
         repository.savePhoneNumber(parseUser, this@PhoneNumberVM)
     }

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.debtdestroyer.android.ui.bank.BankVM" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="50dp"
+            tools:context=".ui.home.HomeFragment">
+
+            <include
+                android:id="@+id/top_layout"
+                layout="@layout/card_layout_loan_view" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Debt.Destroyer.Heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/margin_large"
+                android:paddingVertical="@dimen/margin_medium"
+                android:text="@string/settings_connected_accounts" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_accounts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_medium" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Debt.Destroyer.Heading"
+                android:paddingHorizontal="@dimen/margin_large"
+                android:paddingVertical="@dimen/margin_medium"
+                android:text="@string/power_ups" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_power_ups"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_medium" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Debt.Destroyer.Heading"
+                android:paddingHorizontal="@dimen/margin_large"
+                android:paddingVertical="@dimen/margin_medium"
+                android:text="@string/transaction_history" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_transaction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_medium"
+                tools:listitem="@layout/item_transaction_history" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

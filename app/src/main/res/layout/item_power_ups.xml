@@ -12,28 +12,16 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/margin_medium">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/account_type_text_view"
-            style="@style/Debt.Destroyer.Caption.White"
-            android:layout_width="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_large"
-            android:background="@drawable/bg_top_rounded_corners"
-            android:backgroundTint="@color/colorBlue"
-            android:paddingHorizontal="@dimen/margin_medium"
-            android:paddingVertical="@dimen/margin_small"
-            android:text="@string/loan_account"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginVertical="@dimen/margin_medium_small">
 
         <com.google.android.material.card.MaterialCardView
             style="@style/CardStyle"
             android:layout_marginHorizontal="@dimen/margin_medium"
             android:layout_marginBottom="@dimen/margin_medium"
+            app:cardElevation="@dimen/margin_small"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/account_type_text_view">
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -51,32 +39,23 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/bank_image_view"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:padding="1dp"
-                    android:layout_marginStart="@dimen/margin_small"
-                    android:src="@drawable/ic_lavadrop"
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/item_title_textview"
+                    style="@style/Debt.Destroyer.SubHeading"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:text="@string/earn_10x_tickets_and_more"
+                    app:layout_constraintEnd_toStartOf="@+id/arrow_image_view"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/item_title_textview"
-                    style="@style/Debt.Destroyer.Heading"
-                    android:layout_width="0dp"
-                    android:layout_marginStart="@dimen/margin_large"
-                    android:text="@{item.title}"
-                    app:layout_constraintEnd_toStartOf="@+id/arrow_image_view"
-                    app:layout_constraintStart_toEndOf="@+id/bank_image_view"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/balance_textview"
-                    style="@style/Debt.Destroyer.SubHeading"
+                    style="@style/Debt.Destroyer.Body"
                     android:layout_width="0dp"
+                    android:textColor="@color/textRed"
                     android:layout_margin="@dimen/margin_small"
-                    android:text="@{item.balance}"
+                    android:text="@string/when_you_upgrade_to_the_diamond_subscription"
                     app:layout_constraintEnd_toStartOf="@+id/arrow_image_view"
                     app:layout_constraintStart_toStartOf="@+id/item_title_textview"
                     app:layout_constraintTop_toBottomOf="@+id/item_title_textview" />

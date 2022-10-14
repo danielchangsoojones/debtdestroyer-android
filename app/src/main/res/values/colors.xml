@@ -3,6 +3,7 @@
     <color name="colorPrimary">#FF8204</color>
     <color name="colorPrimaryDark">#DC6F01</color>
     <color name="colorSecondary">#FF2078</color>
+    <color name="colorBlue">#38C4F6</color>
     <color name="teal_200">@color/colorPrimary</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>

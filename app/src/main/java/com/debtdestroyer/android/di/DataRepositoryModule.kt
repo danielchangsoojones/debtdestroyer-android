@@ -1,5 +1,6 @@
 package com.debtdestroyer.android.di
 
+import com.debtdestroyer.android.model.SuperParseObject
 import com.debtdestroyer.android.model.User
 import com.debtdestroyer.android.repository.MainRepository
 import dagger.Module

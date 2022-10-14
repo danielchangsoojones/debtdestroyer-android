@@ -94,6 +94,11 @@
         <item name="android:textColor">@color/textWhite</item>
     </style>
 
+
+    <style name="Debt.Destroyer.Caption.Red" parent="Debt.Destroyer.Caption">
+        <item name="android:textColor">@color/textRed</item>
+    </style>
+
     <style name="Debt.Destroyer.Caption.Grey" parent="Debt.Destroyer.Caption">
         <item name="android:textColor">@color/textLightGrey</item>
     </style>

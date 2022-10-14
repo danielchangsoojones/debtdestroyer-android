@@ -26,6 +26,7 @@
     <dimen name="button_margin_horizontal">10dp</dimen>
     <dimen name="button_margin_vertical">5dp</dimen>
     <dimen name="margin_small">2dp</dimen>
+    <dimen name="margin_medium_small">5dp</dimen>
     <dimen name="margin_medium">8dp</dimen>
     <dimen name="margin_large">16dp</dimen>
     <dimen name="margin_xlarge">30dp</dimen>

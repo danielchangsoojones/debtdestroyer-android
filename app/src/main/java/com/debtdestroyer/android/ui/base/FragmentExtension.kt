@@ -55,6 +55,27 @@ fun BaseFragment<*>.showWarning(warning: String) {
     (activity as? MainActivity)?.showWarning(warning)
 }
 
+
+fun BaseFragmentNoAnim<*>.hideProgressBar() {
+    (activity as? MainActivity)?.hideProgressBar()
+}
+
+fun BaseFragmentNoAnim<*>.showProgressBar() {
+    (activity as? MainActivity)?.showProgressBar()
+}
+
+fun BaseFragmentNoAnim<*>.showError(error: String) {
+    (activity as? MainActivity)?.showError(error)
+}
+
+fun BaseFragmentNoAnim<*>.showMessage(message: String) {
+    (activity as? MainActivity)?.showMessage(message)
+}
+
+fun BaseFragmentNoAnim<*>.showWarning(warning: String) {
+    (activity as? MainActivity)?.showWarning(warning)
+}
+
 fun DialogFragment.navigateTo(directions: NavDirections) {
     try {
         val navBuilder = NavOptions.Builder()

@@ -24,6 +24,8 @@
     <string name="label_help">help?</string>
 
     <!--Home-->
+    <string name="savings_loan_amount_paid">$%1$d</string>
+    <string name="savings_number_of_tickets">%1$s Tickets</string>
     <string name="banner_title_amount_paid_to_student_loans">Amount Paid To Your Student Loans This Week</string>
     <string name="banner_footnote_tickets_enter_to_weekly_pool">your tickets are automatically entered into the weekly prize pool</string>
     <string name="banner_this_weeks_prize">This Week\’s Prize</string>
@@ -58,9 +60,17 @@
 
     <string name="title_activity_bottom_nav_main">BottomNavMainActivity</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Bank</string>
+    <string name="title_dashboard">Balance</string>
     <string name="title_settings">Settings</string>
+
     <string name="set_up">Set up</string>
+    <!--Balance-->
+    <string name="power_ups">Power ups</string>
+    <string name="transaction_history">Transaction History</string>
+    <string name="loan_account">Loan Account</string>
+    <string name="earn_10x_tickets_and_more">Earn 10x tickets and more...</string>
+    <string name="when_you_upgrade_to_the_diamond_subscription">When you upgrade to the Diamond subscription</string>
+    <string name="loan_payment">Loan Payment</string>
 
 
 </resources>
