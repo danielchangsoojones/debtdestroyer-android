@@ -11,7 +11,7 @@ import com.debtdestroyer.android.ui.base.*
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class TriviaFragment : BaseFragment<FragmentTriviaBinding>() {
+class TriviaFragment : BaseFragmentNoAnim<FragmentTriviaBinding>() {
     private val viewModel: TriviaHomeVM by viewModels()
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentTriviaBinding
@@ -32,6 +32,7 @@ class TriviaFragment : BaseFragment<FragmentTriviaBinding>() {
     }
 
     private fun setupObservers() {
+        setupShowEarningsObserver()
         setupQuizDataObserver()
     }
 
@@ -41,8 +42,25 @@ class TriviaFragment : BaseFragment<FragmentTriviaBinding>() {
             when (it.status) {
                 Status.SUCCESS -> {
                     hideProgressBar()
-                    val map = it.data
                     navigateTo(TriviaFragmentDirections.actionOnTriviaFragmentToQuizFragment())
+                }
+                Status.ERROR -> {
+                    hideProgressBar()
+                    showError(it.message)
+                }
+                Status.LOADING -> {
+                    showProgressBar()
+                }
+            }
+        }
+    }
+
+    private fun setupShowEarningsObserver() {
+        viewModel.showEarnings.observe(viewLifecycleOwner) {
+            when (it.status) {
+                Status.SUCCESS -> {
+                    hideProgressBar()
+
                 }
                 Status.ERROR -> {
                     hideProgressBar()

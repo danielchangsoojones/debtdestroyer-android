@@ -11,6 +11,7 @@
     <color name="grey">#636366</color>
     <color name="darkgrey">#1C1C1E</color>
     <color name="lightgrey">#8E8E93</color>
+    <color name="buttongrey">#F5F6FA</color>
     <color name="colorBackgroundLight">#F1F1F1</color>
     <color name="colorBackgroundDark">#161616</color>
     <color name="cardBackgroundColor">#ffffff</color>

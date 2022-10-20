@@ -7,14 +7,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.debtdestroyer.android.databinding.FragmentScoreBinding
 import com.debtdestroyer.android.ui.adapter.ScoreAdapter
-import com.debtdestroyer.android.ui.base.BaseFragment
+import com.debtdestroyer.android.ui.base.BaseFragmentNoAnim
 
 
-class ScoreFragment : BaseFragment<FragmentScoreBinding>() {
+class ScoreFragment : BaseFragmentNoAnim<FragmentScoreBinding>() {
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentScoreBinding
         get() = FragmentScoreBinding::inflate
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -31,6 +30,19 @@ class ScoreFragment : BaseFragment<FragmentScoreBinding>() {
         val list = arrayListOf<String>()
         list.add("Kristen Stewart")
         list.add("John Jacob")
+        list.add("Chrome mac")
+        list.add("Issihi Issiac")
+        list.add("Kristen Stewart")
+        list.add("John Jacob")
+        list.add("Chrome mac")
+        list.add("Kristen Stewart")
+        list.add("John Jacob")
+        list.add("Chrome mac")
+        list.add("Issihi Issiac")
+        list.add("Kristen Stewart")
+        list.add("John Jacob")
+        list.add("Chrome mac")
+        list.add("Issihi Issiac")
         list.add("Chrome mac")
         list.add("Issihi Issiac")
         list.add("Kristen Stewart")

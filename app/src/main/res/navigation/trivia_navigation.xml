@@ -17,6 +17,14 @@
     </fragment>
 
     <fragment
+        android:id="@+id/ScoreFragment"
+        android:name="com.debtdestroyer.android.ui.score.ScoreFragment"
+        android:label="Score"
+        tools:layout="@layout/fragment_score">
+
+    </fragment>
+
+    <fragment
         android:id="@+id/QuizFragment"
         android:name="com.debtdestroyer.android.ui.quiz.QuizFragment"
         android:label="Quiz"
@@ -24,12 +32,5 @@
 
     </fragment>
 
-    <fragment
-        android:id="@+id/ScoreFragment"
-        android:name="com.debtdestroyer.android.ui.score.ScoreFragment"
-        android:label="Score"
-        tools:layout="@layout/fragment_score">
-
-    </fragment>
 
 </navigation>
