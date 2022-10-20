@@ -17,6 +17,10 @@
         <item name="android:layout_marginBottom">3dp</item>
     </style>
 
+    <style name="Debt.Destroyer.RoundedButton" parent="Debt.Destroyer.Button">
+        <item name="shapeAppearance">@style/AppShapeAppearance.Rounded</item>
+    </style>
+
     <style name="Debt.Destroyer.Button.Small" parent="Debt.Destroyer.Button">
         <item name="android:layout_height">@dimen/buttons_height_small</item>
         <item name="android:background">@drawable/bg_button_primary_rounded</item>
@@ -68,7 +72,7 @@
         <item name="cornerSize">6dp</item>
     </style>
     <style name="AppShapeAppearance.Rounded" parent="ShapeAppearance.MaterialComponents.SmallComponent">
-        <item name="cornerSize">20dp</item>
+        <item name="cornerSize">@dimen/_25sdp</item>
     </style>
 
     <style name="AppShapeAppearance.IconComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">

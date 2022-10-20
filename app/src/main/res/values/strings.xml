@@ -72,5 +72,18 @@
     <string name="when_you_upgrade_to_the_diamond_subscription">When you upgrade to the Diamond subscription</string>
     <string name="loan_payment">Loan Payment</string>
 
+    <!--Trivia-->
+    <string name="trivia">Trivia</string>
+    <string name="debt_destroyed">Debt Destroyed</string>
+    <string name="play_daily_trivia">Play Daily Trivia</string>
+    <string name="trivia_subtitle">Compete once per day in a 15-question quiz! Whoever gets the most questions correct in the shortest amount of time, wins $50 towards their student loan. \n\nWinner is chosen at  midnight PT and will be Venmo\'ed, Cash Applied, or Zelle\’d the prize.</string>
+    <string name="start_trivia">Start Trivia</string>
+    <string name="score">Score</string>
+    <string name="current_leading_score">Current Leading Score</string>
+    <string name="the_winner_will_be_announced_tomorrow">the winner will be announced tomorrow</string>
+    <string name="points">Points</string>
+    <string name="time">Time</string>
+    <string name="start_next_trivia">Start Next Trivia</string>
+
 
 </resources>

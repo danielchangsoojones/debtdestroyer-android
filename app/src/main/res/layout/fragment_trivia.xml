@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/start_text_view"
+            style="@style/Debt.Destroyer.Body"
+            android:drawableStart="@drawable/ic_drop_image"
+            android:drawablePadding="@dimen/_5sdp"
+            android:paddingHorizontal="@dimen/_20sdp"
+            android:paddingVertical="@dimen/_20sdp"
+            android:text="@string/debt_destroyed"
+            android:gravity="center_vertical"
+            app:fontFamily="@font/montserrat_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/heading_text_view"
+            style="@style/Debt.Destroyer.SubHeading"
+            android:paddingHorizontal="@dimen/_20sdp"
+            android:text="@string/play_daily_trivia"
+            android:textSize="@dimen/_20sdp"
+            app:fontFamily="@font/montserratmedium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/start_text_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/sub_heading_text_view"
+            style="@style/Debt.Destroyer.Body"
+            android:paddingHorizontal="@dimen/_20sdp"
+            android:paddingVertical="@dimen/_5sdp"
+            android:text="@string/trivia_subtitle"
+            app:fontFamily="@font/montserrat_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/heading_text_view" />
+
+        <FrameLayout
+            android:id="@+id/user_image_view_holder"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sub_heading_text_view">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/user_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_trivia" />
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/action_start_trivia"
+            style="@style/Debt.Destroyer.RoundedButton"
+            android:layout_margin="@dimen/screen_horizontal_margin"
+            android:text="@string/start_trivia"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

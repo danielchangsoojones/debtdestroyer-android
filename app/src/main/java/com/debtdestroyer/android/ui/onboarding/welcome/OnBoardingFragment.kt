@@ -1,5 +1,6 @@
 package com.debtdestroyer.android.ui.onboarding.welcome
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import com.debtdestroyer.android.ui.base.BaseDialogFragment
 import com.debtdestroyer.android.ui.base.getUrlFromIntent
 import com.debtdestroyer.android.ui.base.navigateTo
 import com.debtdestroyer.android.ui.onboarding.login.LoginFragmentDirections
+import com.debtdestroyer.android.ui.trivia.TriviaActivity
 import com.parse.ParseUser
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -23,14 +25,15 @@ class OnBoardingFragment : BaseDialogFragment<FragmentOnBoardingBinding>() {
         super.onViewCreated(view, savedInstanceState)
         val user = ParseUser.getCurrentUser()
         if (user != null) {
-            navigateTo(OnBoardingFragmentDirections.actionOnBoardingFragmentToHomeFragment())
+            startActivity(Intent(requireContext(), TriviaActivity::class.java))
+            activity?.finish()
+            //navigateTo(OnBoardingFragmentDirections.actionOnBoardingFragmentToHomeFragment())
             return
         }
 
         binding.termsTextView.setOnClickListener {
             getUrlFromIntent("http://www.google.com")
         }
-
 
         binding.actionLogin.setOnClickListener {
             navigateTo(OnBoardingFragmentDirections.actionOnBoardingFragmentToLoginFragment())

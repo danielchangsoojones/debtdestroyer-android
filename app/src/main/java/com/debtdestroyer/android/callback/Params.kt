@@ -19,5 +19,7 @@ object Params {
     const val API_GET_DEBT_ACCOUNTS = "getDebtAccounts"
     const val API_GET_TRANSACTION = "getTransactions"
 
+    //Trivia
+    const val API_GET_QUIZ_DATA = "getQuizData"
 }
 

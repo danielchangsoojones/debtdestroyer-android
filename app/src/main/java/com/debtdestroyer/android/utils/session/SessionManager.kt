@@ -1,3 +1,4 @@
+/*
 package com.debtdestroyer.android.utils.session
 
 import android.content.Context
@@ -200,3 +201,4 @@ class SessionManager @Inject constructor(@ApplicationContext context: Context) {
     }
 
 }
+*/

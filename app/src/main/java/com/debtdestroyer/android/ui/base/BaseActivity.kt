@@ -64,4 +64,5 @@ abstract class BaseActivity<B : ViewBinding> : AppCompatActivity(),
         } catch (ex: Exception) {
         }
     }
+
 }

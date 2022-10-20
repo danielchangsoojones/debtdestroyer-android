@@ -23,6 +23,7 @@
         <item name="android:editTextColor">@color/textDarkGrey</item>
         <item name="android:textColorPrimary">@color/textDarkGrey</item>
         <item name="android:textColorSecondary">@color/textDarkGrey</item>
+        <item name="radioButtonStyle">@style/TriviaRadioButtonStyle</item>
     </style>
 
     <style name="Theme.Debtdestroyer.NoActionBar">

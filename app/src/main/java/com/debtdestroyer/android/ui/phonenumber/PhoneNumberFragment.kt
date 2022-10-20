@@ -1,5 +1,6 @@
 package com.debtdestroyer.android.ui.phonenumber
 
+import android.content.Intent
 import android.os.Bundle
 import android.telephony.PhoneNumberFormattingTextWatcher
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import androidx.fragment.app.viewModels
 import com.debtdestroyer.android.callback.Status
 import com.debtdestroyer.android.databinding.FragmentPhoneNumberBinding
 import com.debtdestroyer.android.ui.base.*
+import com.debtdestroyer.android.ui.trivia.TriviaActivity
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
@@ -40,7 +42,8 @@ class PhoneNumberFragment : BaseFragment<FragmentPhoneNumberBinding>() {
             when (it.status) {
                 Status.SUCCESS -> {
                     hideProgressBar()
-                    navigateTo(PhoneNumberFragmentDirections.actionPhoneNumberFragmentToHomeFragment())
+                    startActivity(Intent(requireContext(), TriviaActivity::class.java))
+                    activity?.finish()
                 }
                 Status.ERROR -> {
                     showError(it.message)

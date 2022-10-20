@@ -1,5 +1,6 @@
 package com.debtdestroyer.android.ui.onboarding.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.telephony.PhoneNumberFormattingTextWatcher
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import com.debtdestroyer.android.callback.Status
 import com.debtdestroyer.android.databinding.FragmentLoginBinding
 import com.debtdestroyer.android.model.User
 import com.debtdestroyer.android.ui.base.*
+import com.debtdestroyer.android.ui.trivia.TriviaActivity
 import com.parse.LogInCallback
 import com.parse.ParseUser
 import dagger.hilt.android.AndroidEntryPoint
@@ -39,7 +41,8 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
             when (it.status) {
                 Status.SUCCESS -> {
                     hideProgressBar()
-                    navigateTo(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
+                    startActivity(Intent(requireContext(), TriviaActivity::class.java))
+                    activity?.finish()
                 }
                 Status.ERROR -> {
                     showError(it.message)

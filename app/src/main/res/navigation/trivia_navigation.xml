@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/TriviaFragment">
+
+    <fragment
+        android:id="@+id/TriviaFragment"
+        android:name="com.debtdestroyer.android.ui.home.TriviaFragment"
+        android:label="Trivia"
+        tools:layout="@layout/fragment_trivia">
+
+        <action
+            android:id="@+id/action_onTriviaFragment_to_QuizFragment"
+            app:destination="@id/QuizFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/QuizFragment"
+        android:name="com.debtdestroyer.android.ui.quiz.QuizFragment"
+        android:label="Quiz"
+        tools:layout="@layout/fragment_quiz_options">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/ScoreFragment"
+        android:name="com.debtdestroyer.android.ui.score.ScoreFragment"
+        android:label="Score"
+        tools:layout="@layout/fragment_score">
+
+    </fragment>
+
+</navigation>
