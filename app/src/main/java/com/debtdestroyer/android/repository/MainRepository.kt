@@ -141,7 +141,7 @@ class MainRepository @Inject constructor(
         }
     }
 
-    fun shouldShowEarning(response: ResponseCallback<ArrayList<String>>) = ParseCloud.callFunctionInBackground<ArrayList<String>>(
+    fun shouldShowEarning(response: ResponseCallback<Boolean>) = ParseCloud.callFunctionInBackground<Boolean>(
         Params.API_SHOULD_SHOW_EARNINGS,
         emptyParams
     ) { result, e ->

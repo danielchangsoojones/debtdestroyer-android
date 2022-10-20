@@ -16,13 +16,21 @@ class TriviaHomeVM @Inject constructor(
 ) : ViewModel(), LifecycleObserver, ResponseCallback<ArrayList<String>> {
 
     fun load() = viewModelScope.launch {
-        repository.shouldShowEarning(this@TriviaHomeVM)
-        repository.getQuizData(this@TriviaHomeVM)
+        repository.shouldShowEarning(object : ResponseCallback<Boolean> {
+            override fun onReceive(res: Resource<Boolean>) {
+                _showEarnings.postValue(res)
+            }
+        })
+        //repository.getQuizData(this@TriviaHomeVM)
     }
 
     private val _res = MutableLiveData<Resource<ArrayList<String>>>()
     val res: LiveData<Resource<ArrayList<String>>>
         get() = _res
+
+    private val _showEarnings = MutableLiveData<Resource<Boolean>>()
+    val showEarnings: LiveData<Resource<Boolean>>
+        get() = _showEarnings
 
     override fun onReceive(res: Resource<ArrayList<String>>) {
         _res.postValue(res)

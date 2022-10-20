@@ -21,6 +21,6 @@ object Params {
 
     //Trivia
     const val API_GET_QUIZ_DATA = "getQuizData"
-    const val API_SHOULD_SHOW_EARNINGS = "shouldShowEarning"
+    const val API_SHOULD_SHOW_EARNINGS = "shouldShowEarnings"
 }
 
