@@ -13,16 +13,18 @@ import javax.inject.Inject
 @HiltViewModel
 class TriviaHomeVM @Inject constructor(
     private val repository: MainRepository
-) : ViewModel(), LifecycleObserver, ResponseCallback<Map<String, *>> {
+) : ViewModel(), LifecycleObserver, ResponseCallback<ArrayList<String>> {
 
     fun load() = viewModelScope.launch {
+        repository.shouldShowEarning(this@TriviaHomeVM)
         repository.getQuizData(this@TriviaHomeVM)
     }
 
-    private val _res = MutableLiveData<Resource<Map<String, *>>>()
-    val res: LiveData<Resource<Map<String, *>>>
+    private val _res = MutableLiveData<Resource<ArrayList<String>>>()
+    val res: LiveData<Resource<ArrayList<String>>>
         get() = _res
-    override fun onReceive(res: Resource<Map<String, *>>) {
+
+    override fun onReceive(res: Resource<ArrayList<String>>) {
         _res.postValue(res)
     }
 }

@@ -127,8 +127,22 @@ class MainRepository @Inject constructor(
     //Trivia
 
     //Home Screen Apis
-    fun getQuizData(response: ResponseCallback<Map<String,*>>) = ParseCloud.callFunctionInBackground<Map<String, *>>(
+    fun getQuizData(response: ResponseCallback<ArrayList<String>>) = ParseCloud.callFunctionInBackground<ArrayList<String>>(
         Params.API_GET_QUIZ_DATA,
+        emptyParams
+    ) { result, e ->
+        response.onReceive(Resource.loading())
+        if (e == null) {
+            response.onReceive(Resource.success(result))
+            Timber.e("Yoooohhhoo!! $result")
+        } else {
+            response.onReceive(Resource.error(e.localizedMessage, null))
+            Timber.e("exception ${e.localizedMessage}")
+        }
+    }
+
+    fun shouldShowEarning(response: ResponseCallback<ArrayList<String>>) = ParseCloud.callFunctionInBackground<ArrayList<String>>(
+        Params.API_SHOULD_SHOW_EARNINGS,
         emptyParams
     ) { result, e ->
         response.onReceive(Resource.loading())
