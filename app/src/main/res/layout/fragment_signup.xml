@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.debtdestroyer.android.ui.onboarding.signup.SignupVM" />
+            type="com.debtdestroyer.android.ui.auth.signup.SignupVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:paddingHorizontal="@dimen/screen_horizontal_margin"
         android:paddingVertical="@dimen/screen_vertical_margin"
-        tools:context=".ui.onboarding.signup.SignupFragment">
+        tools:context=".ui.auth.signup.SignupFragment">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signUpEmailInputLayout"

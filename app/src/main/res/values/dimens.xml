@@ -3,7 +3,7 @@
 
     <!--New Text Size-->
     <dimen name="heading_biggest_text_size">40sp</dimen>
-    <dimen name="heading_bigger_text_size">28sp</dimen>
+    <dimen name="heading_bigger_text_size">30sp</dimen>
     <dimen name="heading_medium_text_size">22sp</dimen>
     <dimen name="headings_text_size">17sp</dimen>
     <dimen name="subheading_text_size">15sp</dimen>
@@ -30,7 +30,7 @@
     <dimen name="margin_large">16dp</dimen>
     <dimen name="margin_xlarge">30dp</dimen>
 
-    <dimen name="background_corners">25dp</dimen>
+    <dimen name="background_corners">22dp</dimen>
     <dimen name="card_radius">10dp</dimen>
     <dimen name="card_elevation">10dp</dimen>
 

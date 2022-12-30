@@ -3,8 +3,8 @@ package com.debtdestroyer.android.ui.base
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
+import android.view.View
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
@@ -12,7 +12,8 @@ import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.debtdestroyer.android.R
 import com.debtdestroyer.android.ui.base.adapter.ItemSelectionCallback
-import com.debtdestroyer.android.ui.main.MainActivity
+import com.debtdestroyer.android.ui.auth.AuthActivity
+import com.debtdestroyer.android.utils.showCustomToast
 import timber.log.Timber
 
 
@@ -36,23 +37,59 @@ fun Fragment.navigateTo(directions: NavDirections) {
 }
 
 fun BaseFragment<*>.hideProgressBar() {
-    (activity as? MainActivity)?.hideProgressBar()
+    (activity as? AuthActivity)?.hideProgressBar()
 }
 
 fun BaseFragment<*>.showProgressBar() {
-    (activity as? MainActivity)?.showProgressBar()
+    (activity as? AuthActivity)?.showProgressBar()
 }
 
 fun BaseFragment<*>.showError(error: String) {
-    (activity as? MainActivity)?.showError(error)
+    (activity as? AuthActivity)?.showError(error)
 }
 
 fun BaseFragment<*>.showMessage(message: String) {
-    (activity as? MainActivity)?.showMessage(message)
+    (activity as? AuthActivity)?.showMessage(message)
 }
 
 fun BaseFragment<*>.showWarning(warning: String) {
-    (activity as? MainActivity)?.showWarning(warning)
+    (activity as? AuthActivity)?.showWarning(warning)
+}
+
+fun BaseFragment<*>.showToast(title: String, error: String) {
+    (activity as? AuthActivity)?.showToast(title, error)
+}
+
+fun BaseFragment<*>.hideKeyBoard(view: View) {
+    (activity as? AuthActivity)?.hideKeyBoard(view)
+}
+
+fun BaseFragmentNoAnim<*>.showToast(title: String, error: String) {
+    (activity as? AuthActivity)?.showToast(title, error)
+}
+
+fun BaseFragmentNoAnim<*>.hideProgressBar() {
+    (activity as? AuthActivity)?.hideProgressBar()
+}
+
+fun BaseFragmentNoAnim<*>.showProgressBar() {
+    (activity as? AuthActivity)?.showProgressBar()
+}
+
+fun BaseFragmentNoAnim<*>.showError(error: String) {
+    (activity as? AuthActivity)?.showError(error)
+}
+
+fun BaseFragmentNoAnim<*>.showMessage(message: String) {
+    (activity as? AuthActivity)?.showMessage(message)
+}
+
+fun BaseFragmentNoAnim<*>.showWarning(warning: String) {
+    (activity as? AuthActivity)?.showWarning(warning)
+}
+
+fun BaseFragmentNoAnim<*>.hideKeyBoard(view: View) {
+    (activity as? AuthActivity)?.hideKeyBoard(view)
 }
 
 fun DialogFragment.navigateTo(directions: NavDirections) {
@@ -69,16 +106,12 @@ fun Fragment.getUrlFromIntent(url: String) {
         val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
         startActivity(browserIntent)
     } catch (e: ActivityNotFoundException) {
-        Toast.makeText(
-            context,
-            "No application can handle this request." + " Please install a webbrowser",
-            Toast.LENGTH_LONG
-        ).show()
+        Toast(context).showCustomToast("No application can handle this request!", " Please install a web browser.", requireActivity())
         e.printStackTrace()
     }
 }
 
-fun Fragment.getSmsIntent(phoneNumber: String) {
+fun Fragment.getSmsIntent() {
     val uri = Uri.parse("smsto:3176905323")
     val i = Intent(Intent.ACTION_SENDTO, uri)
     i.putExtra("sms_body", "Please help me reset my password for debtdestroyer")

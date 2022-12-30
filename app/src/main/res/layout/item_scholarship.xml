@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.debtdestroyer.android.model.ScholarshipModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_medium">
+
+        <RelativeLayout
+            android:id="@+id/amount_layout"
+            android:layout_width="@dimen/_55sdp"
+            android:layout_height="@dimen/_55sdp"
+            android:background="@drawable/bg_primary_gradient"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/sub_heading_text_view"
+                style="@style/Debt.Destroyer.Body.White"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:padding="@dimen/_4sdp"
+                android:text="$2,000" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/title_text_view"
+            style="@style/Debt.Destroyer.SubHeading"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:drawableEnd="@drawable/ic_arrow_outward"
+            android:drawableRight="@drawable/ic_arrow_outward"
+            android:drawablePadding="@dimen/margin_medium"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingTop="@dimen/margin_small"
+            android:text="@{data.scholarshipName}"
+            app:fontFamily="@font/montserratmedium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/amount_layout"
+            app:layout_constraintTop_toTopOf="@+id/amount_layout" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/margin_small"
+            app:layout_constraintBottom_toBottomOf="@+id/amount_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/title_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/title_text_view">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/subtitle_text_view"
+                style="@style/Debt.Destroyer.SubHeading.Grey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:text="Due date: " />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Debt.Destroyer.SubHeading.Grey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:text="@{data.deadline}" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:background="@color/dividerGrey"
+            app:layout_constraintEnd_toEndOf="@+id/title_text_view"
+            app:layout_constraintStart_toStartOf="@+id/amount_layout"
+            app:layout_constraintTop_toBottomOf="@+id/amount_layout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

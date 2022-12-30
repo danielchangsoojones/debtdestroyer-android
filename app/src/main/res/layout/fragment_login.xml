@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.debtdestroyer.android.ui.onboarding.login.LoginVM" />
+            type="com.debtdestroyer.android.ui.auth.login.LoginVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:paddingHorizontal="@dimen/screen_horizontal_margin"
         android:paddingVertical="@dimen/screen_vertical_margin"
-        tools:context=".ui.onboarding.login.LoginFragment">
+        tools:context=".ui.auth.login.LoginFragment">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signInEmailInputLayout"
@@ -58,8 +58,10 @@
             android:id="@+id/action_forgot_password"
             style="@style/Debt.Destroyer.TextButton"
             android:layout_width="wrap_content"
+            android:layout_marginVertical="@dimen/margin_medium"
             android:layout_marginStart="@dimen/margin_small"
             android:text="@string/action_forgot_password"
+            android:textColor="@color/colorPrimary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/signInPasswordInputLayout" />
 

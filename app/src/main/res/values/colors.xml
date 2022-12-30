@@ -3,19 +3,24 @@
     <color name="colorPrimary">#FF8204</color>
     <color name="colorPrimaryDark">#DC6F01</color>
     <color name="colorSecondary">#FF2078</color>
+    <color name="colorBlue">#38C4F6</color>
+    <color name="colorPurple">#B54C9F</color>
     <color name="teal_200">@color/colorPrimary</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="alphaWhite">#80FFFFFF</color>
+    <color name="alphaBlack">#80000000</color>
     <color name="grey">#636366</color>
     <color name="darkgrey">#1C1C1E</color>
-    <color name="lightgrey">#8E8E93</color>
+    <color name="lightgrey">#8A8A8C</color>
+    <color name="buttongrey">#F5F6FA</color>
     <color name="colorBackgroundLight">#F1F1F1</color>
     <color name="colorBackgroundDark">#161616</color>
     <color name="cardBackgroundColor">#ffffff</color>
     <color name="transparent">#00000000</color>
     <color name="yellow">#FED321</color>
 
+    <color name="dividerGrey">@color/grey</color>
     <color name="creamCenter">#EED387</color>
     <color name="creamEnd">#DCA851</color>
     <color name="creamStart">#DDA951</color>

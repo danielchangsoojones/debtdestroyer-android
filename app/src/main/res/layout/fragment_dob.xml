@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.debtdestroyer.android.ui.dob.DobVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/screen_horizontal_margin"
+        android:paddingVertical="@dimen/screen_vertical_margin">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/title_text_view"
+            style="@style/Debt.Destroyer.Heading"
+            android:layout_marginHorizontal="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_large"
+            android:paddingVertical="@dimen/margin_medium"
+            android:text="@string/label_whats_your_date_of_birth"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/monthInputLayout"
+            style="@style/DebtDestroyer.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:hint="@string/hint_month_input"
+            app:layout_constraintEnd_toStartOf="@+id/ddInputLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_text_view">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/mm_input_edit_text"
+                style="@style/DebtDestroyerTextInputEditText"
+                android:inputType="textPersonName"
+                android:nextFocusForward="@+id/lname_input_edit_text"
+                android:text="@={viewModel.month}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ddInputLayout"
+            style="@style/DebtDestroyer.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_marginHorizontal="@dimen/margin_medium"
+            android:hint="@string/hint_date_input"
+            app:layout_constraintEnd_toStartOf="@id/yearInputLayout"
+            app:layout_constraintStart_toEndOf="@+id/monthInputLayout"
+            app:layout_constraintTop_toTopOf="@+id/monthInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/dd_input_edit_text"
+                style="@style/DebtDestroyerTextInputEditText"
+                android:inputType="textPersonName"
+                android:nextFocusForward="@+id/lname_input_edit_text"
+                android:text="@={viewModel.day}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/yearInputLayout"
+            style="@style/DebtDestroyer.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:hint="@string/hint_year_input"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ddInputLayout"
+            app:layout_constraintTop_toTopOf="@+id/monthInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/year_input_edit_text"
+                style="@style/DebtDestroyerTextInputEditText"
+                android:inputType="textPersonName"
+                android:nextFocusForward="@+id/lname_input_edit_text"
+                android:text="@={viewModel.year}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/action_next"
+            android:layout_width="@dimen/image_buttons_height"
+            android:layout_height="@dimen/image_buttons_height"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:background="@drawable/bg_button_primary_circular"
+            android:onClickListener="@{viewModel::onNextClicked}"
+            android:padding="@dimen/margin_medium"
+            android:src="@drawable/ic_chevron_right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/yearInputLayout"
+            app:useCompatPadding="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

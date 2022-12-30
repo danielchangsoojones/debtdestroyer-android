@@ -116,6 +116,9 @@ dependencies {
     implementation "com.github.parse-community.Parse-SDK-Android:coroutines:$parseVersion"
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0' // for logging API calls to LogCat
 
+    //json
+    implementation 'com.google.code.gson:gson:2.9.0'
+
     //Player view
     implementation 'com.google.android.exoplayer:exoplayer:2.18.1'
 

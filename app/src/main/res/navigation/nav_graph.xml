@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/OnBoardingFragment"
-        android:name="com.debtdestroyer.android.ui.onboarding.welcome.OnBoardingFragment"
+        android:name="com.debtdestroyer.android.ui.auth.onboarding.OnBoardingFragment"
         android:label=""
         tools:layout="@layout/fragment_on_boarding">
 
@@ -24,7 +24,7 @@
 
     <fragment
         android:id="@+id/LoginFragment"
-        android:name="com.debtdestroyer.android.ui.onboarding.login.LoginFragment"
+        android:name="com.debtdestroyer.android.ui.auth.login.LoginFragment"
         android:label="@string/login_fragment_label"
         tools:layout="@layout/fragment_login">
 
@@ -32,11 +32,23 @@
             android:id="@+id/action_LoginFragment_to_HomeFragment"
             app:destination="@id/HomeFragment" />
 
+        <action
+            android:id="@+id/action_LoginFragment_to_ForgotPasswordFragment"
+            app:destination="@id/ForgotPasswordFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/ForgotPasswordFragment"
+        android:name="com.debtdestroyer.android.ui.auth.forgotpassword.ForgotPasswordFragment"
+        android:label="@string/login_fragment_label"
+        tools:layout="@layout/fragment_forgot_password">
+
     </fragment>
 
     <fragment
         android:id="@+id/SignupFragment"
-        android:name="com.debtdestroyer.android.ui.onboarding.signup.SignupFragment"
+        android:name="com.debtdestroyer.android.ui.auth.signup.SignupFragment"
         android:label="@string/signup_fragment_label"
         tools:layout="@layout/fragment_signup">
 
@@ -51,14 +63,22 @@
         android:label="@string/phone_number_fragment_label"
         tools:layout="@layout/fragment_phone_number">
         <action
-            android:id="@+id/action_PhoneNumberFragment_to_HomeFragment"
-            app:destination="@id/HomeFragment" />
+            android:id="@+id/action_PhoneNumberFragment_to_UserInfoFragment"
+            app:destination="@id/UserInfoFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/UserInfoFragment"
+        android:name="com.debtdestroyer.android.ui.userinfo.UserInfoFragment"
+        android:label="@string/phone_number_fragment_label"
+        tools:layout="@layout/fragment_user_info">
 
     </fragment>
 
     <fragment
         android:id="@+id/HomeFragment"
-        android:name="com.debtdestroyer.android.ui.home.HomeFragment"
+        android:name="com.debtdestroyer.android.ui.trivia.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home">
         <action
@@ -81,45 +101,6 @@
             app:exitAnim="@anim/to_left"
             app:popEnterAnim="@anim/from_left"
             app:popExitAnim="@anim/to_right" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/navigationSettings"
-        android:name="com.debtdestroyer.android.ui.settings.SettingsFragment"
-        android:label="@string/title_settings"
-        tools:layout="@layout/fragment_settings">
-
-        <action
-            android:id="@+id/settings_animation"
-            app:enterAnim="@anim/from_right"
-            app:exitAnim="@anim/to_left"
-            app:launchSingleTop="false"
-            app:popEnterAnim="@anim/from_left"
-            app:popExitAnim="@anim/to_right" />
-
-        <action
-            android:id="@+id/action_SettingsFragment_to_ConnectedAccountsFragment"
-            app:destination="@id/ConnectedAccountsFragment" />
-
-        <action
-            android:id="@+id/action_SettingsFragment_to_LDFragment"
-            app:destination="@id/LDFragment" />
-
-    </fragment>
-
-
-    <fragment
-        android:id="@+id/ConnectedAccountsFragment"
-        android:name="com.debtdestroyer.android.ui.settings.connectedaccount.ConnectedAccountsFragment"
-        android:label=""
-        tools:layout="@layout/fragment_list" />
-
-    <fragment
-        android:id="@+id/LDFragment"
-        android:name="com.debtdestroyer.android.ui.settings.ld.LDFragment"
-        android:label=""
-        tools:layout="@layout/fragment_list">
-
     </fragment>
 
 
