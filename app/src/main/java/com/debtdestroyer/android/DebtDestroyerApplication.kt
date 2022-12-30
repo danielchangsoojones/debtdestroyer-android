@@ -1,7 +1,7 @@
 package com.debtdestroyer.android
 
 import android.app.Application
-import com.debtdestroyer.android.model.User
+import com.debtdestroyer.android.model.*
 import com.parse.Parse
 import com.parse.ParseObject
 import dagger.hilt.android.HiltAndroidApp
@@ -10,6 +10,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import timber.log.Timber.DebugTree
 import timber.log.Timber.Forest.plant
 import timber.log.Timber.Tree
+import java.util.concurrent.TimeUnit
 
 
 @HiltAndroidApp
@@ -32,14 +33,30 @@ class DebtDestroyerApplication : Application() {
 
     private fun setUpParse() {
         ParseObject.registerSubclass(User::class.java)
+        ParseObject.registerSubclass(SweepParse::class.java)
+        ParseObject.registerSubclass(TransactionParse::class.java)
+
+        val logger = HttpLoggingInterceptor()
+        logger.level = HttpLoggingInterceptor.Level.BODY
+
+        val httpsClient = OkHttpClient.Builder()
+            .addInterceptor(logger)
+            .readTimeout(100, TimeUnit.SECONDS)
+            .connectTimeout(100, TimeUnit.SECONDS)
+
 
         Parse.initialize(
             Parse.Configuration.Builder(this)
+                .clientBuilder(httpsClient)
                 .applicationId(BuildConfig.P_APP_ID) // if defined
                 .clientKey(BuildConfig.P_CLIENT_ID)
                 .server(BuildConfig.SERVER_ENDPOINT)
                 .build()
         )
+    }
+
+    private fun setUpParseQueryClient() {
+
     }
 
     private class CrashReportingTree : Tree() {

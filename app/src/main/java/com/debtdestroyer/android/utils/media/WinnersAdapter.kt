@@ -5,19 +5,19 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.debtdestroyer.android.databinding.ItemFeedBinding
-import com.debtdestroyer.android.model.MediaObject
+import com.debtdestroyer.android.model.WinnersParse
 
 
-class FeedsAdapter(
-    private val onItemClick: (MediaObject) -> Unit,
-) : ListAdapter<MediaObject, PlayerViewHolder>(
-    object : DiffUtil.ItemCallback<MediaObject>() {
-        override fun areItemsTheSame(oldItem: MediaObject, newItem: MediaObject): Boolean {
-            return oldItem.id == newItem.id
+class WinnersAdapter(
+    private val onItemClick: (WinnersParse) -> Unit,
+) : ListAdapter<WinnersParse, PlayerViewHolder>(
+    object : DiffUtil.ItemCallback<WinnersParse>() {
+        override fun areItemsTheSame(oldItem: WinnersParse, newItem: WinnersParse): Boolean {
+            return oldItem == newItem
         }
 
-        override fun areContentsTheSame(oldItem: MediaObject, newItem: MediaObject): Boolean {
-            return oldItem.id == newItem.id
+        override fun areContentsTheSame(oldItem: WinnersParse, newItem: WinnersParse): Boolean {
+            return oldItem == newItem
         }
     }
 ) {

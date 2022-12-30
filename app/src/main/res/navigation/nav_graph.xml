@@ -90,10 +90,10 @@
     </fragment>
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.debtdestroyer.android.ui.dashboard.DashboardFragment"
+        android:id="@+id/navigation_bank"
+        android:name="com.debtdestroyer.android.ui.bank.BankFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard">
+        tools:layout="@layout/fragment_bank">
 
         <action
             android:id="@+id/bank_animation"

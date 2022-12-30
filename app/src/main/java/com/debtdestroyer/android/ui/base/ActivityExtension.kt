@@ -17,6 +17,18 @@ inline fun <reified T : Any> Context.launchActivity(
 
 }
 
+fun Context.launchActivity(
+    cls: Class<*>,
+    flags: Int = 0,
+    intentTransformer: Intent.() -> Unit = {}
+) {
+    val intent = Intent(this, cls).apply {
+        addFlags(flags)
+        intentTransformer()
+    }
+    this.startActivity(intent)
+}
+
 inline fun <reified T : Any> newIntent(context: Context): Intent = Intent(context, T::class.java)
 
 fun Context.getSmsIntent() {

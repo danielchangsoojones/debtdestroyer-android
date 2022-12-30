@@ -8,6 +8,7 @@ import com.debtdestroyer.android.callback.ResponseCallback
 import com.debtdestroyer.android.repository.MainRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import timber.log.Timber
 import javax.inject.Inject
 
 
@@ -38,9 +39,9 @@ class DailyVM @Inject constructor(
 
 
     fun getDemoQuizData() = viewModelScope.launch {
-        repository.getDemoQuizData(object : ResponseCallback<Map<String, *>> {
-            override fun onReceive(res: Resource<Map<String, *>>) {
-                _quiz.postValue(res)
+        repository.getDemoQuizData(object : ResponseCallback<Boolean> {
+            override fun onReceive(res: Resource<Boolean>) {
+                _res.postValue(res)
             }
         })
     }
@@ -49,8 +50,8 @@ class DailyVM @Inject constructor(
     val res: LiveData<Resource<Boolean>>
         get() = _res
 
-    private val _quiz = MutableLiveData<Resource<Map<String, *>>>()
-    val quiz: LiveData<Resource<Map<String, *>>>
+    private val _quiz = MutableLiveData<Resource<Boolean>>()
+    val quiz: LiveData<Resource<Boolean>>
         get() = _quiz
 
     override fun onReceive(res: Resource<Boolean>) {
