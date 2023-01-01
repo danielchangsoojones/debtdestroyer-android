@@ -39,9 +39,9 @@ class DailyVM @Inject constructor(
 
 
     fun getDemoQuizData() = viewModelScope.launch {
-        repository.getDemoQuizData(object : ResponseCallback<Boolean> {
-            override fun onReceive(res: Resource<Boolean>) {
-                _res.postValue(res)
+        repository.getDemoQuizData(object : ResponseCallback<Map<String, *>> {
+            override fun onReceive(res: Resource<Map<String, *>>) {
+                _quiz.postValue(res)
             }
         })
     }
@@ -50,8 +50,8 @@ class DailyVM @Inject constructor(
     val res: LiveData<Resource<Boolean>>
         get() = _res
 
-    private val _quiz = MutableLiveData<Resource<Boolean>>()
-    val quiz: LiveData<Resource<Boolean>>
+    private val _quiz = MutableLiveData<Resource<Map<String, *>>>()
+    val quiz: LiveData<Resource<Map<String, *>>>
         get() = _quiz
 
     override fun onReceive(res: Resource<Boolean>) {
