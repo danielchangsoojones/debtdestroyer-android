@@ -83,8 +83,8 @@ class MainRepository @Inject constructor(
             }
         }
 
-    fun getDemoQuizData(response: ResponseCallback<Map<String, *>>) =
-        ParseCloud.callFunctionInBackground<Map<String, *>>(
+    fun getDemoQuizData(response: ResponseCallback<ArrayList<QuizDataParse>>) =
+        ParseCloud.callFunctionInBackground<ArrayList<QuizDataParse>>(
             Params.API_GET_DEMO_QUIZ_DATA,
             emptyParams
         ) { result, e ->

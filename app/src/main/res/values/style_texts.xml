@@ -13,7 +13,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/heading_bigger_text_size</item>
-        <item name="fontFamily">@font/sf_pro_rounded_bold</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
         <item name="startColor">@color/colorSecondary</item>
         <item name="endColor">@color/colorPrimary</item>
         <item name="android:gravity">center</item>
@@ -23,7 +23,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/body_text_size</item>
-        <item name="fontFamily">@font/sf_pro_rounded_bold</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
         <item name="startColor">@color/colorSecondary</item>
         <item name="endColor">@color/colorPrimary</item>
         <item name="android:gravity">center</item>
@@ -34,7 +34,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/headings_text_size</item>
-        <item name="fontFamily">@font/sf_pro_semibold</item>
+        <item name="fontFamily">@font/montserratsemibold</item>
     </style>
 
     <style name="Debt.Destroyer.Heading.Yellow" parent="Debt.Destroyer.Heading">
@@ -49,8 +49,11 @@
         <item name="android:textColor">@color/textBlack</item>
     </style>
 
-    <style name="Debt.Destroyer.Heading.Bold.White" parent="Debt.Destroyer.Heading">
-        <item name="fontFamily">@font/sf_pro_bold</item>
+    <style name="Debt.Destroyer.Heading.Bold" parent="Debt.Destroyer.Heading">
+        <item name="fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <style name="Debt.Destroyer.Heading.Bold.White" parent="Debt.Destroyer.Heading.Bold">
         <item name="android:textColor">@color/textWhite</item>
     </style>
 
@@ -59,15 +62,19 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/subheading_text_size</item>
-        <item name="fontFamily">@font/sf_pro_regular</item>
+        <item name="fontFamily">@font/montserrat_regular</item>
         <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="Debt.Destroyer.SubHeading.Grey" parent="Debt.Destroyer.SubHeading">
+        <item name="android:textColor">@color/textLightGrey</item>
     </style>
 
     <style name="Debt.Destroyer.SubHeading.White" parent="Debt.Destroyer.SubHeading">
         <item name="android:textColor">@color/textWhite</item>
     </style>
     <style name="Debt.Destroyer.SubHeading.Bold" parent="Debt.Destroyer.SubHeading">
-        <item name="fontFamily">@font/sf_pro_bold</item>
+        <item name="fontFamily">@font/montserratsemibold</item>
     </style>
 
     <style name="Debt.Destroyer.SubHeading.Bold.White" parent="Debt.Destroyer.SubHeading.Bold">
@@ -79,7 +86,27 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/body_text_size</item>
-        <item name="fontFamily">@font/sf_pro_regular</item>
+        <item name="fontFamily">@font/montserrat_regular</item>
+    </style>
+
+
+    <style name="Debt.Destroyer.Body.White" parent="Debt.Destroyer.Body">
+        <item name="android:textColor">@color/textWhite</item>
+    </style>
+
+    <style name="Debt.Destroyer.Body.Medium" parent="Debt.Destroyer.Body">
+        <item name="fontFamily">@font/montserratmedium</item>
+    </style>
+    <style name="Debt.Destroyer.Body.Medium.White" parent="Debt.Destroyer.Body.Medium">
+        <item name="android:textColor">@color/textWhite</item>
+    </style>
+
+    <!--Footnote-->
+    <style name="Debt.Destroyer.Footnote" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/footnote_text_size</item>
+        <item name="fontFamily">@font/montserrat_regular</item>
     </style>
 
     <!--Caption-->
@@ -87,11 +114,15 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/caption_text_size</item>
-        <item name="fontFamily">@font/sf_pro_regular</item>
+        <item name="fontFamily">@font/montserrat_regular</item>
     </style>
 
     <style name="Debt.Destroyer.Caption.White" parent="Debt.Destroyer.Caption">
         <item name="android:textColor">@color/textWhite</item>
+    </style>
+
+    <style name="Debt.Destroyer.Caption.Red" parent="Debt.Destroyer.Caption">
+        <item name="android:textColor">@color/textRed</item>
     </style>
 
     <style name="Debt.Destroyer.Caption.Grey" parent="Debt.Destroyer.Caption">

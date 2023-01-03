@@ -29,5 +29,12 @@
         <item name="fontFamily">@font/sf_pro_regular</item>
     </style>
 
-
+    <style name="TriviaRadioButtonStyle" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:textColor">@color/radio_text_color</item>
+        <item name="fontFamily">@font/sf_pro_medium</item>
+        <item name="android:background">@drawable/trivia_radio_button_selector</item>
+        <item name="buttonTint">@color/radio_icon_color</item>
+        <item name="background">@drawable/trivia_radio_button_selector</item>
+        <item name="android:gravity">center</item>
+    </style>
 </resources>
