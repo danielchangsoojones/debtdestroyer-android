@@ -5,12 +5,16 @@ import com.parse.ParseObject
 
 @ParseClassName("QuizTopic")
 data class QuizTopicParse(
-    var prize_amount: Int,
-    var name: String,
-    var ticker: String,
+    var prize_amount: Int = 0,
+    var name: String = "",
+    var ticker: String = "",
     var start_time: StartTime,
-    var current_time_seconds: Int,
-    var createdAt: String,
-    var updatedAt: String) : ParseObject()
+    var current_time_seconds: Int = 0
+) : SuperParseObject() {
 
-data class StartTime(var iso: String)
+    override fun toString(): String {
+        return "QuizTopicParse(prize_amount=$prize_amount, name='$name', ticker='$ticker', start_time=$start_time, current_time_seconds=$current_time_seconds)"
+    }
+}
+
+data class StartTime(var iso: String = "")

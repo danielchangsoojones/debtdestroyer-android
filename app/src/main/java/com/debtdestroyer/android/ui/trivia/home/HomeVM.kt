@@ -30,7 +30,7 @@ class HomeVM @Inject constructor(
                 _winnerRes.postValue(res)
             }
         })*/
-        //repository.getHomeSavingsInfo(this@HomeVM)
+        repository.getHomeSavingsInfo(this@HomeVM)
     }
 
     private val _res = MutableLiveData<Resource<Map<String, *>>>()

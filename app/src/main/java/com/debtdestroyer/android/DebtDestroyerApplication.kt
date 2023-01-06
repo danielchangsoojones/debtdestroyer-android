@@ -33,8 +33,11 @@ class DebtDestroyerApplication : Application() {
 
     private fun setUpParse() {
         ParseObject.registerSubclass(User::class.java)
+        ParseObject.registerSubclass(QuizDataParse::class.java)
+        ParseObject.registerSubclass(QuizTopicParse::class.java)
         ParseObject.registerSubclass(SweepParse::class.java)
         ParseObject.registerSubclass(TransactionParse::class.java)
+
 
         val logger = HttpLoggingInterceptor()
         logger.level = HttpLoggingInterceptor.Level.BODY
