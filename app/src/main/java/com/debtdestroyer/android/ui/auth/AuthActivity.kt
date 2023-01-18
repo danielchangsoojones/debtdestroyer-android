@@ -20,8 +20,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class AuthActivity : BaseActivity<ActivityMainBinding>(),
-    NavController.OnDestinationChangedListener {
+class AuthActivity : BaseActivity<ActivityMainBinding>(), NavController.OnDestinationChangedListener {
 
     override val bindingInflater: (LayoutInflater) -> ActivityMainBinding = ActivityMainBinding::inflate
 
