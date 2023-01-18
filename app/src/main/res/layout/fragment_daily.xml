@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.debtdestroyer.android.ui.trivia.daily.DailyVM" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/alphaBlack"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/title_text_view"
+                style="@style/Debt.Destroyer.Heading.White"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/margin_large"
+                android:paddingVertical="@dimen/margin_large"
+                android:text="@string/next_game_starts_in"
+                android:textSize="@dimen/heading_medium_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textAllCaps="true" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/countdown_text_view"
+                style="@style/Debt.Destroyer.Heading.White"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/margin_large"
+                android:text="10:00:078"
+                android:textSize="@dimen/heading_biggest_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_text_view"
+                app:textAllCaps="true" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/date_text_view"
+                style="@style/Debt.Destroyer.SubHeading.White"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/margin_large"
+                android:paddingVertical="@dimen/margin_large"
+                android:text="Saturday 8pm PST"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/countdown_text_view" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/action_price"
+                style="@style/Debt.Destroyer.RoundedButtonPurple"
+                android:layout_width="wrap_content"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:layout_marginStart="1dp"
+                android:layout_marginEnd="1dp"
+                android:paddingHorizontal="@dimen/_25sdp"
+                android:text="$16,000 Prize"
+                app:layout_constraintBottom_toTopOf="@+id/title_bottom_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/title_bottom_text_view"
+                style="@style/Debt.Destroyer.Heading.Bold.White"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:text="Complete in our live trivia."
+                android:textSize="@dimen/heading_medium_text_size"
+                app:fontFamily="@font/montserratsemibold"
+                app:layout_constraintBottom_toTopOf="@+id/sub_title_bottom_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/sub_title_bottom_text_view"
+                style="@style/Debt.Destroyer.Heading.White"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingTop="@dimen/margin_medium"
+                android:paddingBottom="@dimen/margin_large"
+                android:text="Answer all 15 questions correctly to win $14000 towards your loans!"
+                app:fontFamily="@font/montserrat_regular"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

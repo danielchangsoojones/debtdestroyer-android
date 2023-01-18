@@ -1,79 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/ic_rectangle_yellow"
-    android:padding="@dimen/margin_medium">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/home_banner_title_text_view"
-        style="@style/Debt.Destroyer.SubHeading.White"
-        android:drawableRight="@drawable/ic_info"
-        android:paddingStart="@dimen/margin_medium"
-        android:layout_width="wrap_content"
-        android:drawablePadding="@dimen/margin_medium"
-        android:paddingEnd="@dimen/margin_small"
-        android:text="@string/banner_title_amount_paid_to_student_loans"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
+        <variable
+            name="sweep"
+            type="com.debtdestroyer.android.model.SweepParse" />
+    </data>
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/home_banner_value_text_view"
-        style="@style/Debt.Destroyer.Heading.White"
-        android:layout_width="wrap_content"
-        android:layout_margin="12dp"
-        android:text="$32.12"
-        android:textSize="@dimen/heading_bigger_text_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_banner_title_text_view" />
-
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/home_banner_tickets_text_view"
-        style="@style/Debt.Destroyer.Button.Tickets"
-        android:layout_width="0dp"
-        android:layout_marginStart="@dimen/margin_large"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:text="34 Tickets"
-        app:icon="@drawable/ic_ticket"
-        app:layout_constraintBottom_toBottomOf="@+id/home_banner_value_text_view"
-        app:layout_constraintStart_toEndOf="@+id/home_banner_value_text_view"
-        app:layout_constraintTop_toTopOf="@+id/home_banner_value_text_view" />
-
-
-    <com.debtdestroyer.android.utils.RangeSeekBar
-        android:id="@+id/seek_bar_indicator_main"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_banner_tickets_text_view"
-        app:rsb_gravity="center"
-        app:rsb_indicator_show_mode="alwaysShow"
-        app:rsb_progress_drawable="@drawable/progress"
-        app:rsb_progress_drawable_default="@drawable/progress_defalut"
-        app:rsb_progress_height="35dp"
-        app:rsb_step_auto_bonding="true"
-        app:rsb_step_drawable="@color/white"
-        app:rsb_step_height="35dp"
-        app:rsb_indicator_height="35dp"
-        app:rsb_indicator_width="35dp"
+        android:layout_margin="@dimen/margin_medium"
+        android:background="@drawable/bg_primary_gradient"
+        android:padding="@dimen/_10sdp">
 
-        app:rsb_indicator_drawable="@drawable/ic_ticket_indicator"
-        app:rsb_indicator_radius="@dimen/background_corners"
-        app:rsb_step_width="1dp"
-        app:rsb_steps="5"
-        app:rsb_thumb_drawable="@drawable/ic_ticket_indicator"
-        app:rsb_thumb_height="40dp"
-        app:rsb_thumb_width="40dp"
-        app:rsb_tick_mark_in_range_text_color="@color/colorSecondary"
-        app:rsb_tick_mark_layout_gravity="bottom"
-        app:rsb_tick_mark_mode="other"
-        app:rsb_tick_mark_text_array="@array/wordsArray"
-        app:rsb_tick_mark_text_color="@color/white"
-        app:rsb_tick_mark_text_size="@dimen/body_text_size" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/home_banner_title_text_view"
+            style="@style/Debt.Destroyer.Heading.White"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_small"
+            android:text="@{sweep.title}"
+            android:textSize="@dimen/heading_bigger_text_size"
+            app:layout_constraintBottom_toBottomOf="@+id/action_tickets"
+            app:layout_constraintEnd_toStartOf="@+id/action_tickets"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="You have" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/action_tickets"
+            style="@style/Debt.Destroyer.Button.Tickets"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:background="@drawable/bg_button_primary_circular"
+            android:backgroundTint="@color/white"
+            android:maxLines="2"
+            android:layout_marginEnd="0dp"
+            app:icon="@drawable/ic_tickets"
+            app:iconPadding="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/home_banner_title_text_view"
+            tools:text="3 Tickets" />
+<!--            android:text="@{@string/savings_number_of_tickets(sweep.)}"-->
+
+        <View
+            android:id="@+id/divider_view"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_margin="@dimen/margin_medium"
+            android:alpha="0.5"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/action_tickets" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/label_monthly_price_text_view"
+            style="@style/Debt.Destroyer.Heading.White"
+            android:layout_width="wrap_content"
+            android:gravity="center_vertical"
+            android:text="This Months Prize"
+            android:layout_marginTop="@dimen/margin_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/label_monthly_price_subtitle_text_view"
+            style="@style/Debt.Destroyer.SubHeading.White"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:gravity="center_vertical"
+            android:text="@{sweep.deadlineTxt}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_monthly_price_text_view" />
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/CardStyle"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_monthly_price_subtitle_text_view">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/home_banner_value_text_view"
+                    style="@style/Debt.Destroyer.Heading"
+                    android:gravity="center"
+                    android:textColor="@color/colorPurple"
+                    android:textSize="@dimen/heading_bigger_text_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="$32.12" />
+<!--                    android:text="@{@string/savings_loan_amount_paid(sweep.prizeAmountTxt)}"-->
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/amount_subtitle_text_view"
+                    style="@style/Debt.Destroyer.SubHeading"
+                    android:gravity="center"
+                    android:text="towards your student loans"
+                    android:textColor="@color/colorPurple"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/home_banner_value_text_view" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.debtdestroyer.android.utils.RangeSeekBar
+            android:id="@+id/seek_bar_indicator_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/action_tickets"
+            app:rsb_gravity="center"
+            app:rsb_indicator_drawable="@drawable/ic_ticket_indicator"
+            app:rsb_indicator_height="35dp"
+            app:rsb_indicator_radius="@dimen/background_corners"
+            app:rsb_indicator_show_mode="alwaysShow"
+            app:rsb_indicator_width="35dp"
+            app:rsb_progress_drawable="@drawable/progress"
+            app:rsb_progress_drawable_default="@drawable/progress_defalut"
+            app:rsb_progress_height="35dp"
+            app:rsb_step_auto_bonding="true"
+
+            app:rsb_step_drawable="@color/white"
+            app:rsb_step_height="35dp"
+            app:rsb_step_width="1dp"
+            app:rsb_steps="5"
+            app:rsb_thumb_drawable="@drawable/ic_ticket_indicator"
+            app:rsb_thumb_height="40dp"
+            app:rsb_thumb_width="40dp"
+            app:rsb_tick_mark_in_range_text_color="@color/colorSecondary"
+            app:rsb_tick_mark_layout_gravity="bottom"
+            app:rsb_tick_mark_mode="other"
+            app:rsb_tick_mark_text_array="@array/wordsArray"
+            app:rsb_tick_mark_text_color="@color/white"
+            app:rsb_tick_mark_text_size="@dimen/body_text_size" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

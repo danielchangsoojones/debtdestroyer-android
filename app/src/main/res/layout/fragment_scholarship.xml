@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.debtdestroyer.android.ui.trivia.scholarship.ScholarshipVM" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/title_text_view"
+            style="@style/Debt.Destroyer.Heading.Bold"
+            android:padding="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/find_scholarships_grants"
+            android:textSize="@dimen/heading_bigger_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/sub_heading_text_view"
+            style="@style/Debt.Destroyer.SubHeading"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:text="@string/find_scholarships_grants_subtitle"
+            android:textSize="@dimen/heading_medium_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingVertical="@dimen/margin_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_text_view" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listRecyclerView"
+            android:layout_width="match_parent"
+            android:padding="@dimen/margin_medium_small"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sub_heading_text_view"
+            tools:listitem="@layout/item_scholarship" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

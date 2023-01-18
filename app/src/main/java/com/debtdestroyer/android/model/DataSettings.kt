@@ -13,6 +13,7 @@ data class DataSettings(
 }
 
 enum class Setting {
+    WINNER_INFORMATION,
     CONNECTED_ACCOUNTS,
     CONTACT_US,
     LEGAL_DISCLOSURE,

@@ -1,44 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/bg_primary_gradient"
-    android:padding="@dimen/margin_medium">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/home_prize_title_text_view"
-        style="@style/Debt.Destroyer.Heading.Bold.White"
-        android:paddingHorizontal="@dimen/margin_medium"
-        android:layout_width="wrap_content"
-        android:text="@string/banner_this_weeks_prize"
-        android:textSize="@dimen/heading_medium_text_size"
-        android:drawableEnd="@drawable/ic_info"
-        android:drawablePadding="@dimen/margin_medium"
-        app:fontFamily="@font/sf_pro_rounded_bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
+        <variable
+            name="sweep"
+            type="com.debtdestroyer.android.model.SweepParse" />
+    </data>
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/home_prize_value_text_view"
-        style="@style/Debt.Destroyer.Heading.Yellow"
-        android:layout_width="wrap_content"
-        android:layout_marginHorizontal="@dimen/margin_medium"
-        android:text="WIN $2,500 \ntowards your student loans!"
-        android:textSize="@dimen/heading_biggest_text_size"
-        app:fontFamily="@font/sf_pro_rounded_bold"
-        app:layout_constraintBottom_toTopOf="@+id/home_price_footnote_text_view"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_prize_title_text_view" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_primary_gradient"
+        android:padding="@dimen/margin_medium">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/home_price_footnote_text_view"
-        style="@style/Debt.Destroyer.Caption.White"
-        android:padding="@dimen/margin_medium"
-        android:text="@string/banner_winner_will_be_announce"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/home_prize_title_text_view"
+            style="@style/Debt.Destroyer.Heading.Bold.White"
+            android:layout_width="wrap_content"
+            android:drawableEnd="@drawable/ic_info"
+            android:drawablePadding="@dimen/margin_medium"
+            android:paddingHorizontal="@dimen/margin_medium"
+            android:text="@{sweep.title}"
+            android:textSize="@dimen/heading_medium_text_size"
+            app:fontFamily="@font/sf_pro_rounded_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/home_prize_value_text_view"
+            style="@style/Debt.Destroyer.Heading.Yellow"
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_medium"
+            android:text="@{sweep.prizeAmountTxt}"
+            android:textSize="@dimen/heading_biggest_text_size"
+            app:fontFamily="@font/sf_pro_rounded_bold"
+            app:layout_constraintBottom_toTopOf="@+id/home_price_footnote_text_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_prize_title_text_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/home_price_footnote_text_view"
+            style="@style/Debt.Destroyer.Caption.White"
+            android:padding="@dimen/margin_medium"
+            android:text="@{sweep.deadlineTxt}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/HomeFragment">
+
+    <!--Home-->
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.debtdestroyer.android.ui.trivia.daily.DailyFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_onTriviaFragment_to_QuizFragment"
+            app:destination="@id/TriviaFragment" />
+    </fragment>
+
+    <!--Start Trivia-->
+
+    <fragment
+        android:id="@+id/TriviaFragment"
+        android:name="com.debtdestroyer.android.ui.trivia.start.TriviaFragment"
+        android:label="Quiz"
+        tools:layout="@layout/fragment_trivia">
+
+    </fragment>
+
+    <!--Leaderboard-->
+    <fragment
+        android:id="@+id/ScoreFragment"
+        android:name="com.debtdestroyer.android.ui.trivia.score.ScoreFragment"
+        android:label="Score"
+        tools:layout="@layout/fragment_score">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/ScholarshipFragment"
+        android:name="com.debtdestroyer.android.ui.trivia.scholarship.ScholarshipFragment"
+        android:label="@string/title_scholarship"
+        tools:layout="@layout/fragment_scholarship" />
+
+    <!--SettingsFragment-->
+    <fragment
+        android:id="@+id/SettingsFragment"
+        android:name="com.debtdestroyer.android.ui.trivia.settings.SettingsFragment"
+        android:label="@string/title_settings"
+        tools:layout="@layout/fragment_settings">
+
+        <action
+            android:id="@+id/settings_animation"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+
+        <action
+            android:id="@+id/action_SettingsFragment_to_ConnectedAccountsFragment"
+            app:destination="@id/ConnectedAccountsFragment" />
+
+        <action
+            android:id="@+id/action_SettingsFragment_to_LDFragment"
+            app:destination="@id/LDFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/ConnectedAccountsFragment"
+        android:name="com.debtdestroyer.android.ui.trivia.settings.connectedaccount.ConnectedAccountsFragment"
+        android:label=""
+        tools:layout="@layout/fragment_list" />
+
+    <fragment
+        android:id="@+id/LDFragment"
+        android:name="com.debtdestroyer.android.ui.trivia.settings.ld.LDFragment"
+        android:label=""
+        tools:layout="@layout/fragment_list">
+
+    </fragment>
+
+</navigation>

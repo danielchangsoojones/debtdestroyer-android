@@ -8,9 +8,11 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.CallSuper
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
+import com.debtdestroyer.android.utils.showCustomToast
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -63,5 +65,14 @@ abstract class BaseActivity<B : ViewBinding> : AppCompatActivity(),
             snackbar.show()
         } catch (ex: Exception) {
         }
+    }
+
+    fun showToast(title: String, error: String) {
+        Toast(this).showCustomToast(title, error, this)
+    }
+
+    fun hideKeyBoard(view: View) {
+        val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
     }
 }

@@ -116,6 +116,9 @@ dependencies {
     implementation "com.github.parse-community.Parse-SDK-Android:coroutines:$parseVersion"
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0' // for logging API calls to LogCat
 
+    //json
+    implementation 'com.google.code.gson:gson:2.9.0'
+
     //Player view
     implementation 'com.google.android.exoplayer:exoplayer:2.18.1'
 
@@ -124,6 +127,9 @@ dependencies {
 
     //Timber for logs
     implementation 'com.jakewharton.timber:timber:5.0.1'
+
+    //dps
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

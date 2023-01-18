@@ -15,6 +15,15 @@
         <item name="shapeAppearance">@style/AppShapeAppearance.SmallComponent</item>
         <item name="android:textAppearance">@style/Debt.Destroyer.ButtonTextStyle</item>
         <item name="android:layout_marginBottom">3dp</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <style name="Debt.Destroyer.RoundedButton" parent="Debt.Destroyer.Button">
+        <item name="shapeAppearance">@style/AppShapeAppearance.Rounded</item>
+        <item name="android:background">@drawable/bg_button_primary_rounded</item>
+    </style>
+    <style name="Debt.Destroyer.RoundedButtonPurple" parent="Debt.Destroyer.RoundedButton">
+        <item name="android:background">@drawable/bg_button_purple_rounded</item>
     </style>
 
     <style name="Debt.Destroyer.Button.Small" parent="Debt.Destroyer.Button">
@@ -47,6 +56,7 @@
         <item name="android:layout_marginEnd">@dimen/button_margin_horizontal</item>
         <item name="android:textAppearance">@style/Debt.Destroyer.ButtonTextStyle</item>
         <item name="shapeAppearance">@style/AppShapeAppearance.SmallComponent</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
         <item name="android:layout_marginBottom">3dp</item>
     </style>
 
@@ -68,7 +78,7 @@
         <item name="cornerSize">6dp</item>
     </style>
     <style name="AppShapeAppearance.Rounded" parent="ShapeAppearance.MaterialComponents.SmallComponent">
-        <item name="cornerSize">20dp</item>
+        <item name="cornerSize">@dimen/_25sdp</item>
     </style>
 
     <style name="AppShapeAppearance.IconComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">

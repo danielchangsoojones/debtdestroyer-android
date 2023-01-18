@@ -24,7 +24,6 @@ class PhoneNumberVM @Inject constructor(
         get() = _res
 
     fun onNextClicked(view: View) {
-        Timber.e("Number ${phoneNumber.value.toString().trim().isEmpty()}")
         if (phoneNumber.value.toString().trim().isEmpty()) {
             _res.postValue(Resource.error("Please enter phone number!", null))
         } else {
@@ -35,9 +34,9 @@ class PhoneNumberVM @Inject constructor(
 
     private fun callUpdateAPI() = viewModelScope.launch {
         val parseUser = ParseUser.getCurrentUser()
-        parseUser.put("phone", phoneNumber.value.toString().trim())
+        parseUser.put(User.KEY_PHONE_NUMBER, phoneNumber.value.toString().trim())
 
-        repository.savePhoneNumber(parseUser, this@PhoneNumberVM)
+        repository.updateUserDetails(parseUser, this@PhoneNumberVM)
     }
 
     override fun onReceive(res: Resource<ParseUser>) {
