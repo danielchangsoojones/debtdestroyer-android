@@ -66,6 +66,9 @@ class DailyFragment : BaseFragmentNoAnim<FragmentDailyBinding>() {
                 Status.SUCCESS -> {
                     it.data?.let { quizList ->
                         if (quizList.isNotEmpty()) {
+                            quizList.forEach {
+                                Timber.e("QD :::: $it")
+                            }
                             updateUI(quizList.first())
                         }
                     }
@@ -88,12 +91,12 @@ class DailyFragment : BaseFragmentNoAnim<FragmentDailyBinding>() {
         binding.titleBottomTextView.text = firstQuizTopic.name
         binding.subTitleBottomTextView.text = firstQuizTopic.ticker
 
-        val prizeAmount = firstQuizTopic.prize_amount / 100
+        val prizeAmount = firstQuizTopic.prizeAmount?.div(100)
         val prizeAmountStr = "$prizeAmount"
         binding.actionPrice.text = prizeAmountStr
 
-        val apiDate = firstQuizTopic.start_time
-        binding.dateTextView.text = firstQuizTopic.start_time.iso
+        val apiDate = firstQuizTopic.startTime
+        binding.dateTextView.text = firstQuizTopic.startTime.toString()
 
         Timber.e("API Date :: $apiDate")
     }

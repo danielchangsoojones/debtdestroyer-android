@@ -2,19 +2,48 @@ package com.debtdestroyer.android.model
 
 import com.parse.ParseClassName
 import com.parse.ParseObject
+import com.parse.ktx.putOrIgnore
+import java.util.*
+import javax.inject.Inject
 
 @ParseClassName("QuizTopic")
-data class QuizTopicParse(
-    var prize_amount: Int = 0,
-    var name: String = "",
-    var ticker: String = "",
-    var start_time: StartTime,
-    var current_time_seconds: Int = 0
-) : SuperParseObject() {
+class QuizTopicParse @Inject constructor() : SuperParseObject() {
 
-    override fun toString(): String {
-        return "QuizTopicParse(prize_amount=$prize_amount, name='$name', ticker='$ticker', start_time=$start_time, current_time_seconds=$current_time_seconds)"
+    var prizeAmount: Int?
+        get() = get(KEY_PRICE_AMOUNT) as Int
+        set(value) = putOrIgnore(KEY_PRICE_AMOUNT, value)
+
+    var currentTimeSeconds: Int?
+        get() = get(KEY_CURRENT_TIME_SECONDS) as Int
+        set(value) = putOrIgnore(KEY_CURRENT_TIME_SECONDS, value)
+
+    var startTime: Date?
+        get() = get(KEY_START_TIME) as Date
+        set(value) = putOrIgnore(KEY_START_TIME, value)
+
+    var name: String?
+        get() = get(KEY_NAME).toString()
+        set(value) = putOrIgnore(KEY_NAME, value)
+
+    var ticker: String?
+        get() = get(KEY_TICKER).toString()
+        set(value) = putOrIgnore(KEY_TICKER, value)
+
+    companion object {
+        const val KEY_PRICE_AMOUNT = "prize_amount"
+        const val KEY_NAME = "name"
+        const val KEY_TICKER = "ticker"
+        const val KEY_START_TIME = "start_time"
+        const val KEY_CURRENT_TIME_SECONDS = "current_time_seconds"
     }
 }
 
-data class StartTime(var iso: String = "")
+class StartTime(val iso: String = "") {
+    /* var iso: String?
+         get() = get(KEY_ISO).toString()
+         set(value) = putOrIgnore(KEY_ISO, iso)
+
+     companion object {
+         const val KEY_ISO = "iso"
+     }*/
+}
