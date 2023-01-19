@@ -18,8 +18,8 @@ class DebtDestroyerApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        setUpTimber()
         setUpParse()
+        setUpTimber()
     }
 
     private fun setUpTimber() {
@@ -35,9 +35,9 @@ class DebtDestroyerApplication : Application() {
         ParseObject.registerSubclass(User::class.java)
         ParseObject.registerSubclass(QuizDataParse::class.java)
         ParseObject.registerSubclass(QuizTopicParse::class.java)
+
         ParseObject.registerSubclass(SweepParse::class.java)
         ParseObject.registerSubclass(TransactionParse::class.java)
-
 
         val logger = HttpLoggingInterceptor()
         logger.level = HttpLoggingInterceptor.Level.BODY
@@ -47,19 +47,14 @@ class DebtDestroyerApplication : Application() {
             .readTimeout(100, TimeUnit.SECONDS)
             .connectTimeout(100, TimeUnit.SECONDS)
 
-
         Parse.initialize(
             Parse.Configuration.Builder(this)
-                .clientBuilder(httpsClient)
                 .applicationId(BuildConfig.P_APP_ID) // if defined
                 .clientKey(BuildConfig.P_CLIENT_ID)
                 .server(BuildConfig.SERVER_ENDPOINT)
+                .clientBuilder(httpsClient)
                 .build()
         )
-    }
-
-    private fun setUpParseQueryClient() {
-
     }
 
     private class CrashReportingTree : Tree() {

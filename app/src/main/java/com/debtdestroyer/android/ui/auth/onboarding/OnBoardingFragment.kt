@@ -25,12 +25,11 @@ class OnBoardingFragment : BaseDialogFragment<FragmentOnBoardingBinding>() {
         if (user != null) {
             startActivity(Intent(requireContext(), TriviaActivity::class.java))
             activity?.finish()
-            //navigateTo(OnBoardingFragmentDirections.actionOnBoardingFragmentToHomeFragment())
             return
         }
 
         binding.termsTextView.setOnClickListener {
-            getUrlFromIntent("http://www.google.com")
+            getUrlFromIntent("https://www.debtdestroyer.app/terms-and-services")
         }
 
         binding.actionLogin.setOnClickListener {
