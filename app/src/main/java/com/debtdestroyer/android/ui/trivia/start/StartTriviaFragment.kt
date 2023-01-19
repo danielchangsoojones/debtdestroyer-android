@@ -13,7 +13,7 @@ import com.debtdestroyer.android.ui.trivia.TriviaVM
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class TriviaFragment : BaseFragmentNoAnim<FragmentTriviaBinding>() {
+class StartTriviaFragment : BaseFragmentNoAnim<FragmentTriviaBinding>() {
     private val viewModel: TriviaVM by activityViewModels()
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentTriviaBinding

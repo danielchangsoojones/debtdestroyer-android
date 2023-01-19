@@ -37,13 +37,3 @@ class QuizTopicParse @Inject constructor() : SuperParseObject() {
         const val KEY_CURRENT_TIME_SECONDS = "current_time_seconds"
     }
 }
-
-class StartTime(val iso: String = "") {
-    /* var iso: String?
-         get() = get(KEY_ISO).toString()
-         set(value) = putOrIgnore(KEY_ISO, iso)
-
-     companion object {
-         const val KEY_ISO = "iso"
-     }*/
-}

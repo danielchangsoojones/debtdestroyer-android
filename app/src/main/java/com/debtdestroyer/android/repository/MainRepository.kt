@@ -98,6 +98,21 @@ class MainRepository @Inject constructor(
             }
         }
 
+    fun getLeaderboard(response: ResponseCallback<ArrayList<QuizScoreParse>>) =
+        ParseCloud.callFunctionInBackground<ArrayList<QuizScoreParse>>(
+            Params.API_GET_LEADERSHIP,
+            emptyParams
+        ) { result, e ->
+            response.onReceive(Resource.loading())
+            if (e == null) {
+                response.onReceive(Resource.success(result))
+                Timber.e("leadership $result")
+            } else {
+                response.onReceive(Resource.error(e.localizedMessage, null))
+                Timber.e("exception ${e.localizedMessage}")
+            }
+        }
+
     //Not in use
     fun getHomeSweepStakeInfo(response: ResponseCallback<Map<String, *>>) =
         ParseCloud.callFunctionInBackground<Map<String, *>>(

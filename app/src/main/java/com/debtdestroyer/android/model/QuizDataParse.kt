@@ -20,7 +20,7 @@ class QuizDataParse @Inject constructor() : SuperParseObject() {
         set(value) = putOrIgnore(KEY_VIDEO_URL_STRING, value)
 
     var order: Int?
-        get() = get(User.KEY_IS_DELETED) as Int?
+        get() = get(KEY_ORDER) as Int?
         set(value) = putOrIgnore(KEY_ORDER, value)
 
     var startQuestionPromptSeconds: Any?
@@ -33,7 +33,7 @@ class QuizDataParse @Inject constructor() : SuperParseObject() {
 
     var quizTopic: QuizTopicParse
         get() = get(KEY_QUIZ_TOPIC) as QuizTopicParse
-        set(value) = putOrIgnore(KEY_ANSWERS, value)
+        set(value) = putOrIgnore(KEY_QUIZ_TOPIC, value)
 
     companion object {
         const val KEY_ANSWERS = "answers"
