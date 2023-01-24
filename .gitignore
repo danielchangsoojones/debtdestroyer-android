@@ -91,3 +91,11 @@ proguard/*
 build_overrides.gradle
 *~
 /release
+app/src/main/res/.DS_Store
+app/src/main/java/com/debtdestroyer/android/ui/auth/.DS_Store
+app/src/main/java/com/debtdestroyer/android/ui/.DS_Store
+app/src/main/java/com/debtdestroyer/android/.DS_Store
+app/src/main/java/com/debtdestroyer/.DS_Store
+app/src/main/java/com/.DS_Store
+app/src/main/java/.DS_Store
+app/src/main/.DS_Store
