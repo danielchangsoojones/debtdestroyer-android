@@ -2,6 +2,14 @@ package com.debtdestroyer.android.callback
 
 object Params {
 
+    const val DATE_FORMAT_FROM_API = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+
+    //URLs
+    const val URL_TERMS_AND_SERVICES = "https://www.debtdestroyer.app/terms-and-services"
+    const val URL_GAME_RULES = "https://www.debtdestroyer.app/tie-breaker-rules"
+    const val URL_WINNERS_INFORMATION = "https://airtable.com/shr4ZTlvbRUqAGswk"
+    const val CONTACT_NUMBER = "3176905323"
+
     const val API_SAVING_INFO = "getSavingsInfo"
     const val ticketCount = "ticketCount"
     const val totalAmountPaidToLoan = "totalAmountPaidToLoan"

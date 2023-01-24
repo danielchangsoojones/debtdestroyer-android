@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.debtdestroyer.android.callback.Params.CONTACT_NUMBER
 
 
 inline fun <reified T : Any> Context.launchActivity(
@@ -32,7 +33,7 @@ fun Context.launchActivity(
 inline fun <reified T : Any> newIntent(context: Context): Intent = Intent(context, T::class.java)
 
 fun Context.getSmsIntent() {
-    val uri = Uri.parse("smsto:3176905323")
+    val uri = Uri.parse("smsto:$CONTACT_NUMBER")
     val i = Intent(Intent.ACTION_SENDTO, uri)
     i.putExtra("sms_body", "Please help me reset my password for debtdestroyer")
     startActivity(i)

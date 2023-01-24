@@ -56,6 +56,7 @@ class ScoreFragment : BaseFragmentNoAnim<FragmentScoreBinding>() {
         list.add("John Jacob")
         list.add("Chrome mac")
         list.add("Issihi Issiac")
+
         mAdapter.submitList(list.toMutableList())
     }
 }

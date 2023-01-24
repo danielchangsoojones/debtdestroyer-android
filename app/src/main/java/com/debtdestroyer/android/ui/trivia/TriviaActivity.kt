@@ -32,7 +32,7 @@ class TriviaActivity : BaseActivity<ActivityTriviaBinding>(),
         hideActionBar()
 
         val navView: BottomNavigationView = binding.navView
-        val navController = findNavController(R.id.nav_host_fragment_activity_quiz_main)
+        val navController = findNavController(R.id.nav_host_fragment_trivia_main)
 
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -41,7 +41,7 @@ class TriviaActivity : BaseActivity<ActivityTriviaBinding>(),
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        val navController = findNavController(R.id.nav_host_fragment_trivia_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
@@ -66,7 +66,7 @@ class TriviaActivity : BaseActivity<ActivityTriviaBinding>(),
         supportActionBar?.hide()
     }
 
-    fun showActionBar() {
-        supportActionBar?.hide()
+    private fun showActionBar() {
+        supportActionBar?.show()
     }
 }

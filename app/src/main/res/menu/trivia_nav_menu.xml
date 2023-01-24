@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/HomeFragment"
+        android:id="@+id/DailyFragment"
         android:icon="@drawable/ic_tickets"
         android:title="@string/title_home" />
 
@@ -14,12 +14,11 @@
     <item
         android:id="@+id/ScholarshipFragment"
         android:icon="@drawable/ic_scholarship"
-        android:title="@string/title_scholarship" />
+        android:title="@string/title_scholarship"
+        android:visible="false" />
 
     <item
         android:id="@+id/SettingsFragment"
         android:icon="@drawable/ic_settings"
         android:title="@string/title_settings" />
-
-
 </menu>

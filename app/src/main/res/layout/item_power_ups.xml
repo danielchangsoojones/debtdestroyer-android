@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.debtdestroyer.android.model.Accounts" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin_medium_small">
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/CardStyle"
+            android:layout_marginHorizontal="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_medium"
+            app:cardElevation="@dimen/margin_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_medium">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/arrow_image_view"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:padding="1dp"
+                    android:src="@drawable/ic_chevron_right"
+                    android:tint="?attr/colorControlNormal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/item_title_textview"
+                    style="@style/Debt.Destroyer.SubHeading"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:text="@string/earn_10x_tickets_and_more"
+                    app:layout_constraintEnd_toStartOf="@+id/arrow_image_view"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/balance_textview"
+                    style="@style/Debt.Destroyer.Body"
+                    android:layout_width="0dp"
+                    android:textColor="@color/textRed"
+                    android:layout_margin="@dimen/margin_small"
+                    android:text="@string/when_you_upgrade_to_the_diamond_subscription"
+                    app:layout_constraintEnd_toStartOf="@+id/arrow_image_view"
+                    app:layout_constraintStart_toStartOf="@+id/item_title_textview"
+                    app:layout_constraintTop_toBottomOf="@+id/item_title_textview" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -42,5 +42,6 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="banner_height">200dp</dimen>
+    <dimen name="grid_item_height">@dimen/_100sdp</dimen>
 
 </resources>

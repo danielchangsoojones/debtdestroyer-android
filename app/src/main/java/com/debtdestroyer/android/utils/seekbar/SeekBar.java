@@ -1,4 +1,4 @@
-package com.debtdestroyer.android.utils;
+package com.debtdestroyer.android.utils.seekbar;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -25,6 +25,7 @@ import androidx.annotation.IntDef;
 import androidx.core.content.ContextCompat;
 
 import com.debtdestroyer.android.R;
+import com.debtdestroyer.android.utils.Utils;
 
 import java.text.DecimalFormat;
 
@@ -112,7 +113,7 @@ public class SeekBar {
         TypedArray t = getContext().obtainStyledAttributes(attrs, R.styleable.RangeSeekBar);
         if (t == null) return;
         indicatorMargin = (int) t.getDimension(R.styleable.RangeSeekBar_rsb_indicator_margin, 0);
-        indicatorDrawableId = t.getResourceId(R.styleable.RangeSeekBar_rsb_indicator_drawable, R.drawable.ic_ticket_indicator_default);
+        indicatorDrawableId = t.getResourceId(R.styleable.RangeSeekBar_rsb_indicator_drawable, R.drawable.ic_ticket_indicator);
         indicatorShowMode = t.getInt(R.styleable.RangeSeekBar_rsb_indicator_show_mode, INDICATOR_ALWAYS_HIDE);
         indicatorHeight = t.getLayoutDimension(R.styleable.RangeSeekBar_rsb_indicator_height, WRAP_CONTENT);
         indicatorWidth = t.getLayoutDimension(R.styleable.RangeSeekBar_rsb_indicator_width, WRAP_CONTENT);

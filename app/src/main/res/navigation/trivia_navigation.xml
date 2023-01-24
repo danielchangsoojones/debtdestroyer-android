@@ -5,25 +5,37 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/DailyFragment">
 
-    <!--Home-->
+    <!--Daily-->
     <fragment
         android:id="@+id/DailyFragment"
         android:name="com.debtdestroyer.android.ui.trivia.daily.DailyFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home">
+        tools:layout="@layout/fragment_daily">
 
         <action
-            android:id="@+id/action_onTriviaFragment_to_QuizFragment"
-            app:destination="@id/TriviaFragment" />
+            android:id="@+id/action_from_DailyFragment_to_QuizFragment"
+            app:destination="@id/QuizFragment" />
+        <action
+            android:id="@+id/action_DailyFragment_to_WaitlistFragment"
+            app:destination="@id/WaitlistFragment" />
     </fragment>
 
-    <!--Start Trivia-->
-
+    <!--Wait list-->
     <fragment
-        android:id="@+id/TriviaFragment"
+        android:id="@+id/WaitlistFragment"
         android:name="com.debtdestroyer.android.ui.trivia.start.StartTriviaFragment"
+        android:label="Waitlist"
+        tools:layout="@layout/fragment_waitlist">
+
+    </fragment>
+
+
+    <!--QuizFragment-->
+    <fragment
+        android:id="@+id/QuizFragment"
+        android:name="com.debtdestroyer.android.ui.trivia.quiz.QuizFragment"
         android:label="Quiz"
-        tools:layout="@layout/fragment_trivia">
+        tools:layout="@layout/fragment_quiz_options">
 
     </fragment>
 

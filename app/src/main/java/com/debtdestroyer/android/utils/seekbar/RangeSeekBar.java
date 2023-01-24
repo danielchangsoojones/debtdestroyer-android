@@ -1,4 +1,4 @@
-package com.debtdestroyer.android.utils;
+package com.debtdestroyer.android.utils.seekbar;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -22,14 +22,16 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.debtdestroyer.android.utils.SeekBar.INDICATOR_ALWAYS_HIDE;
-import static com.debtdestroyer.android.utils.SeekBar.INDICATOR_ALWAYS_SHOW;
+import static com.debtdestroyer.android.utils.seekbar.SeekBar.INDICATOR_ALWAYS_HIDE;
+import static com.debtdestroyer.android.utils.seekbar.SeekBar.INDICATOR_ALWAYS_SHOW;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.IntDef;
 
 import com.debtdestroyer.android.R;
+import com.debtdestroyer.android.utils.SavedState;
+import com.debtdestroyer.android.utils.Utils;
 
 
 public class RangeSeekBar extends View {
