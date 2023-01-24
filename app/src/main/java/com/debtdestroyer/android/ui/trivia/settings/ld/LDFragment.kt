@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.debtdestroyer.android.callback.Params.URL_GAME_RULES
+import com.debtdestroyer.android.callback.Params.URL_TERMS_AND_SERVICES
 import com.debtdestroyer.android.databinding.FragmentLdBinding
 import com.debtdestroyer.android.ui.base.BaseFragmentNoAnim
 import com.debtdestroyer.android.ui.base.getUrlFromIntent
@@ -22,10 +24,10 @@ class LDFragment : BaseFragmentNoAnim<FragmentLdBinding>() {
             getUrlFromIntent("https://www.lavadrop.io")
         }
         binding.termsOfServiceTextview.setOnClickListener {
-            getUrlFromIntent("https://www.lavadrop.io")
+            getUrlFromIntent(URL_TERMS_AND_SERVICES)
         }
-        binding.sweepstakeRulesTextview.setOnClickListener {
-            getUrlFromIntent("https://www.lavadrop.io")
+        binding.gameRulesTextview.setOnClickListener {
+            getUrlFromIntent(URL_GAME_RULES)
         }
     }
 }

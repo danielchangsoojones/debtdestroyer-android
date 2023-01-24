@@ -42,10 +42,12 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_18sdp"
             android:background="@drawable/bg_button_primary_rounded"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/tab_background"
             android:gravity="center"
+            app:tabBackground="@drawable/tab_selector"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:tabSelectedTextColor="@color/textBlack"
             app:layout_constraintTop_toBottomOf="@+id/start_text_view"
             app:tabIndicatorHeight="0dp"
             app:tabTextAppearance="@style/Debt.Destroyer.SubHeading.Bold">

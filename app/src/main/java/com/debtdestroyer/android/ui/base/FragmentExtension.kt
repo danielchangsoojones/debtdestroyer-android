@@ -11,6 +11,7 @@ import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.debtdestroyer.android.R
+import com.debtdestroyer.android.callback.Params.CONTACT_NUMBER
 import com.debtdestroyer.android.ui.base.adapter.ItemSelectionCallback
 import com.debtdestroyer.android.ui.auth.AuthActivity
 import com.debtdestroyer.android.utils.showCustomToast
@@ -112,7 +113,7 @@ fun Fragment.getUrlFromIntent(url: String) {
 }
 
 fun Fragment.getSmsIntent() {
-    val uri = Uri.parse("smsto:3176905323")
+    val uri = Uri.parse("smsto:$CONTACT_NUMBER")
     val i = Intent(Intent.ACTION_SENDTO, uri)
     i.putExtra("sms_body", "Please help me reset my password for debtdestroyer")
     startActivity(i)

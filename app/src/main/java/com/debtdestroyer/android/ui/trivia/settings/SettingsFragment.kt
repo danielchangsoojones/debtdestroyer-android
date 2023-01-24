@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.debtdestroyer.android.R
+import com.debtdestroyer.android.callback.Params.URL_WINNERS_INFORMATION
 import com.debtdestroyer.android.callback.Status
 import com.debtdestroyer.android.databinding.FragmentSettingsBinding
 import com.debtdestroyer.android.model.DataSettings
@@ -70,7 +71,7 @@ class SettingsFragment : BaseFragmentNoAnim<FragmentSettingsBinding>() {
             mAdapter = SettingsAdapter(onItemClick = { data, type ->
                 when (data.type) {
                     Setting.WINNER_INFORMATION -> {
-                        getUrlFromIntent("https://airtable.com/shr4ZTlvbRUqAGswk")
+                        getUrlFromIntent(URL_WINNERS_INFORMATION)
                     }
                     Setting.CONNECTED_ACCOUNTS -> {
                         navigateTo(SettingsFragmentDirections.actionSettingsFragmentToConnectedAccountsFragment())

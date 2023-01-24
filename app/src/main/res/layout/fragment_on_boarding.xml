@@ -12,7 +12,7 @@
         android:layout_width="@dimen/_180sdp"
         android:layout_height="@dimen/_180sdp"
         android:layout_margin="2dp"
-        android:src="@drawable/ic_star_logo"
+        android:src="@drawable/ic_pinkstar_logo"
         app:layout_constraintBottom_toTopOf="@+id/appNameTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.debtdestroyer.android.callback.Params.URL_TERMS_AND_SERVICES
 import com.debtdestroyer.android.databinding.FragmentOnBoardingBinding
 import com.debtdestroyer.android.ui.base.BaseDialogFragment
 import com.debtdestroyer.android.ui.base.getUrlFromIntent
@@ -29,7 +30,7 @@ class OnBoardingFragment : BaseDialogFragment<FragmentOnBoardingBinding>() {
         }
 
         binding.termsTextView.setOnClickListener {
-            getUrlFromIntent("https://www.debtdestroyer.app/terms-and-services")
+            getUrlFromIntent(URL_TERMS_AND_SERVICES)
         }
 
         binding.actionLogin.setOnClickListener {

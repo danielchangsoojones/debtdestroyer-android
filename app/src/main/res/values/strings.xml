@@ -68,6 +68,7 @@
     <string name="privacy_policy">Privacy Policy</string>
     <string name="terms_of_service">Terms of Service</string>
     <string name="sweepstake_rules">Sweepstake Rules</string>
+    <string name="game_rules">Game Rules</string>
 
     <string name="title_activity_bottom_nav_main">BottomNavMainActivity</string>
     <string name="title_home">Home</string>
@@ -85,6 +86,9 @@
     <string name="when_you_upgrade_to_the_diamond_subscription">When you upgrade to the Diamond subscription</string>
     <string name="loan_payment">Loan Payment</string>
 
+    <!--Waitlist-->
+    <string name="waitlist_title">Debt Destroyed Waitlist</string>
+    <string name="waitlist_content">There has been a surge in users joiing Debt Destroyed. You\'ve been temporarily placed on out waitlist, and we\'ll notify you by email when a spot opens. Thanks for your patience.</string>
     <!--Trivia-->
     <string name="trivia">Trivia</string>
     <string name="debt_destroyed">Debt Destroyed</string>
@@ -106,5 +110,6 @@
     <string name="find_scholarships_grants">Find scholarships and grants.</string>
     <string name="find_scholarships_grants_subtitle">We\'ll notify you when new scholarships become available that fit your profile!</string>
     <string name="title_scholarship">Scholarships</string>
+    <string name="action_contact_us">Contact\nUs</string>
 
 </resources>

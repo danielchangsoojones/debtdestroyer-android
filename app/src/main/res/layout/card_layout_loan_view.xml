@@ -117,7 +117,7 @@
         </com.google.android.material.card.MaterialCardView>
 
 
-        <com.debtdestroyer.android.utils.RangeSeekBar
+        <com.debtdestroyer.android.utils.seekbar.RangeSeekBar
             android:id="@+id/seek_bar_indicator_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

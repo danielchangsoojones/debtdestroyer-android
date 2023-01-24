@@ -1,4 +1,4 @@
-package com.debtdestroyer.android.utils;
+package com.debtdestroyer.android.utils.seekbar;
 
 /**
  * ================================================

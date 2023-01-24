@@ -36,6 +36,9 @@ class DailyFragment : BaseFragmentNoAnim<FragmentDailyBinding>() {
     private fun setupObservers() {
         shouldShowEarningObserver()
         quizDataObserver()
+        binding.actionPrice.setOnClickListener {
+            navigateQuiz()
+        }
     }
 
     private fun shouldShowEarningObserver() {
@@ -96,9 +99,9 @@ class DailyFragment : BaseFragmentNoAnim<FragmentDailyBinding>() {
         binding.actionPrice.text = prizeAmountStr
 
         val apiDate = firstQuizTopic.startTime
+
         binding.dateTextView.text = firstQuizTopic.startTime.toString()
 
-        Timber.e("API Date :: $apiDate")
     }
 
     private fun setupUI() {
@@ -128,5 +131,12 @@ class DailyFragment : BaseFragmentNoAnim<FragmentDailyBinding>() {
         }
 
         binding.videoView.setOnCompletionListener { binding.videoView.start() }
+    }
+
+    private fun navigateWaitList() {
+        navigateTo(DailyFragmentDirections.actionDailyFragmentToWaitlistFragment())
+    }
+    private fun navigateQuiz() {
+        navigateTo(DailyFragmentDirections.actionFromDailyFragmentToQuizFragment())
     }
 }

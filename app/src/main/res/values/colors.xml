@@ -5,6 +5,7 @@
     <color name="colorSecondary">#FF2078</color>
     <color name="colorBlue">#38C4F6</color>
     <color name="colorPurple">#B54C9F</color>
+
     <color name="teal_200">@color/colorPrimary</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
@@ -33,5 +34,13 @@
     <color name="textDarkGrey">@color/darkgrey</color>
     <color name="textLightGrey">@color/lightgrey</color>
     <color name="textRed">#D52020</color>
+
+    <color name="tab_background">#E6E6E6</color>
+    <color name="tab_item_background">#FFFFFF</color>
+
+    <!--Quiz Colors-->
+    <color name="quiz_normal">#B03CF0</color>
+    <color name="quiz_correct_answer">#2BEDD3</color>
+    <color name="quiz_wrong_answer">#EC7474</color>
 
 </resources>
