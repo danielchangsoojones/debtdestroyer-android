@@ -64,7 +64,22 @@ class MainRepository @Inject constructor(
             response.onReceive(Resource.loading())
             if (e == null) {
                 response.onReceive(Resource.success(result))
-                Timber.e("hoooo $result")
+                Timber.e("checkIfMethodAuthed $result")
+            } else {
+                response.onReceive(Resource.error(e.localizedMessage, null))
+                Timber.e("exception ${e.localizedMessage}")
+            }
+        }
+
+    fun checkWaitlist(response: ResponseCallback<Map<String, *>>) =
+        ParseCloud.callFunctionInBackground<Map<String, *>>(
+            Params.API_CHECK_WAITLIST,
+            emptyParams
+        ) { result, e ->
+            response.onReceive(Resource.loading())
+            if (e == null) {
+                response.onReceive(Resource.success(result))
+                Timber.e("checkWaitlist:: $result")
             } else {
                 response.onReceive(Resource.error(e.localizedMessage, null))
                 Timber.e("exception ${e.localizedMessage}")
@@ -78,6 +93,7 @@ class MainRepository @Inject constructor(
             response.onReceive(Resource.loading())
             if (e == null) {
                 response.onReceive(Resource.success(result))
+                Timber.e("shouldShowEarning:: $result")
             } else {
                 response.onReceive(Resource.error(e.localizedMessage, null))
             }
@@ -91,15 +107,15 @@ class MainRepository @Inject constructor(
             response.onReceive(Resource.loading())
             if (e == null) {
                 response.onReceive(Resource.success(result))
-                Timber.e("quiz $result")
+                Timber.e("getDemoQuizData:: $result")
             } else {
                 response.onReceive(Resource.error(e.localizedMessage, null))
                 Timber.e("exception ${e.localizedMessage}")
             }
         }
 
-    fun getLeaderboard(response: ResponseCallback<ArrayList<QuizScoreParse>>) =
-        ParseCloud.callFunctionInBackground<ArrayList<QuizScoreParse>>(
+    fun getLeaderboard(response: ResponseCallback<Map<String, *>>) =
+        ParseCloud.callFunctionInBackground<Map<String, *>>(
             Params.API_GET_LEADERSHIP,
             emptyParams
         ) { result, e ->

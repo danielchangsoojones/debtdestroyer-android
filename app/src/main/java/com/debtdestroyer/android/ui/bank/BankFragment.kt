@@ -19,10 +19,14 @@ class BankFragment : BaseFragmentNoAnim<FragmentBankBinding>() {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentBankBinding
         get() = FragmentBankBinding::inflate
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setupObservers()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupUI()
-        setupObservers()
     }
 
     private fun setupUI() {
@@ -35,7 +39,7 @@ class BankFragment : BaseFragmentNoAnim<FragmentBankBinding>() {
 
 
     private fun setUpAccountsObserver() {
-        viewModel.res.observe(viewLifecycleOwner) {
+        viewModel.res.observe(this) {
             when (it.status) {
                 Status.SUCCESS -> {
                     /*val map = it.data

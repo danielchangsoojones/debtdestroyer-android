@@ -33,6 +33,7 @@ object Params {
     const val API_GET_QUIZ_DATA = "getQuizData"
     const val API_SHOULD_SHOW_EARNINGS = "shouldShowEarnings"
     const val API_GET_LEADERSHIP = "getLeaderboard"
+    const val API_CHECK_WAITLIST = "checkWaitlist"
 
     const val KEY_APP_VERSION = "app_version"
     const val KEY_DEVICE_TYPE = "deviceType"

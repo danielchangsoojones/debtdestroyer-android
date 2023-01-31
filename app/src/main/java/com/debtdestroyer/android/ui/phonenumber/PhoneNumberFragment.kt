@@ -20,11 +20,14 @@ class PhoneNumberFragment : BaseFragment<FragmentPhoneNumberBinding>() {
         get() = FragmentPhoneNumberBinding::inflate
     private val viewModel: PhoneNumberVM by viewModels()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setupObserver()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.viewModel = viewModel
-
-        setupObserver()
 
         addWatcherOnNumberFormatOnInputField()
     }
@@ -41,7 +44,7 @@ class PhoneNumberFragment : BaseFragment<FragmentPhoneNumberBinding>() {
     }
 
     private fun setupObserver() {
-        viewModel.res.observe(viewLifecycleOwner) {
+        viewModel.res.observe(this) {
             when (it.status) {
                 Status.SUCCESS -> {
                     hideProgressBar()

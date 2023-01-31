@@ -8,12 +8,12 @@ import javax.inject.Inject
 @ParseClassName("QuizScore")
 class QuizScoreParse @Inject constructor() : SuperParseObject() {
 
-    var score: Int?
-        get() = get(KEY_SCORE) as Int?
-        set(value) = putOrIgnore(KEY_SCORE, value)
+    var deadlineMessage: String?
+        get() = get(KEY_DEADLINE_MSG) as String?
+        set(value) = putOrIgnore(KEY_DEADLINE_MSG, value)
 
     companion object {
-        const val KEY_SCORE = "score"
+        const val KEY_DEADLINE_MSG = "deadlineMessage"
     }
 
 }

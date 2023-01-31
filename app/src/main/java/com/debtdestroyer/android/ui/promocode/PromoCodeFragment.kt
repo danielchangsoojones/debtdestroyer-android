@@ -1,33 +1,24 @@
-package com.debtdestroyer.android.ui.auth.login
+package com.debtdestroyer.android.ui.promocode
 
-import android.content.Intent
 import android.os.Bundle
-import android.telephony.PhoneNumberFormattingTextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.debtdestroyer.android.R
-import com.debtdestroyer.android.callback.AuthResponseCallback
 import com.debtdestroyer.android.callback.Status
-import com.debtdestroyer.android.databinding.FragmentLoginBinding
-import com.debtdestroyer.android.model.User
+import com.debtdestroyer.android.databinding.FragmentPromoCodeBinding
 import com.debtdestroyer.android.ui.base.*
-import com.debtdestroyer.android.ui.trivia.TriviaActivity
-import com.parse.LogInCallback
-import com.parse.ParseUser
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
-import timber.log.Timber
 
 @AndroidEntryPoint
-class LoginFragment : BaseFragment<FragmentLoginBinding>() {
+class PromoCodeFragment : BaseFragment<FragmentPromoCodeBinding>() {
 
-    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentLoginBinding
-        get() = FragmentLoginBinding::inflate
+    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentPromoCodeBinding
+        get() = FragmentPromoCodeBinding::inflate
 
-    private val viewModel: LoginVM by viewModels()
+    private val viewModel: PromoCodeVM by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,13 +28,13 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.viewModel = viewModel
-        setupClickListener()
+        getArgs()
     }
 
-    private fun setupClickListener() {
-        binding.actionForgotPassword.setOnClickListener {
-            navigateTo(LoginFragmentDirections.actionLoginFragmentToForgotPasswordFragment())
-        }
+    private fun getArgs() {
+        val args: PromoCodeFragmentArgs by navArgs()
+        viewModel.fName.postValue(args.fname)
+        viewModel.lName.postValue(args.lname)
     }
 
     private fun setupObserver() {
@@ -51,9 +42,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
             when (it.status) {
                 Status.SUCCESS -> {
                     hideProgressBar()
-                    //navigateTo(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
-                    startActivity(Intent(requireContext(), TriviaActivity::class.java))
-                    activity?.finish()
+                    navigateTo(PromoCodeFragmentDirections.actionPromoCodeFragmentToTriviaActivity())
                 }
                 Status.ERROR -> {
                     showToast(getString(R.string.invalid_input), it.message)
@@ -71,6 +60,4 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
         super.onDestroy()
         viewModel.res.removeObservers(this)
     }
-
-
 }

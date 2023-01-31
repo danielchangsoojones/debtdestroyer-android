@@ -29,12 +29,17 @@ class HomeFragment : BaseFragmentNoAnim<FragmentHomeBinding>() {
 
     private val viewModel: HomeVM by viewModels()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setupObservers()
+    }
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.viewModel = viewModel
 
         setupUI()
-        setupObservers()
     }
 
     private fun setupObservers() {
@@ -50,7 +55,7 @@ class HomeFragment : BaseFragmentNoAnim<FragmentHomeBinding>() {
     }
 
     private fun setUpSavingsObserver() {
-        viewModel.res.observe(viewLifecycleOwner) {
+        viewModel.res.observe(this) {
             when (it.status) {
                 Status.SUCCESS -> {
                     val map = it.data
@@ -69,7 +74,7 @@ class HomeFragment : BaseFragmentNoAnim<FragmentHomeBinding>() {
     }
 
     private fun setUpSweepStackObserver() {
-        viewModel.sweepRes.observe(viewLifecycleOwner) {
+        viewModel.sweepRes.observe(this) {
             when (it.status) {
                 Status.SUCCESS -> {
                     val map = it.data
@@ -88,7 +93,7 @@ class HomeFragment : BaseFragmentNoAnim<FragmentHomeBinding>() {
     }
 
     private fun setUpWinnersObserver() {
-        viewModel.winners.observe(viewLifecycleOwner) {
+        viewModel.winners.observe(this) {
             when (it.status) {
                 Status.SUCCESS -> {
                     hideProgressBar()

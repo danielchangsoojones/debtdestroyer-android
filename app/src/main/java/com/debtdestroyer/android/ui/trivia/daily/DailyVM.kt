@@ -39,6 +39,15 @@ class DailyVM @Inject constructor(
         }, map)
     }
 
+    fun checkWaitList() = viewModelScope.launch {
+
+        repository.checkWaitlist(object : ResponseCallback<Map<String, *>> {
+            override fun onReceive(res: Resource<Map<String, *>>) {
+                _checkWL.postValue(res)
+            }
+        })
+    }
+
 
     fun getDemoQuizData() = viewModelScope.launch {
         repository.getDemoQuizData(object : ResponseCallback<ArrayList<QuizDataParse>> {
@@ -51,6 +60,10 @@ class DailyVM @Inject constructor(
     private val _res = MutableLiveData<Resource<Boolean>>()
     val res: LiveData<Resource<Boolean>>
         get() = _res
+
+    private val _checkWL = MutableLiveData<Resource<Map<String, *>>>()
+    val checkWL: LiveData<Resource<Map<String, *>>>
+        get() = _checkWL
 
     private val _quiz =  MutableLiveData<Resource<ArrayList<QuizDataParse>>>()
     val quiz: LiveData<Resource<ArrayList<QuizDataParse>>>

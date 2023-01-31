@@ -2,6 +2,11 @@ package com.debtdestroyer.android
 
 import android.app.Application
 import com.debtdestroyer.android.model.*
+import com.google.android.play.core.appupdate.AppUpdateManager
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory
+import com.google.android.play.core.appupdate.AppUpdateOptions
+import com.google.android.play.core.install.model.AppUpdateType
+import com.google.android.play.core.install.model.UpdateAvailability
 import com.parse.Parse
 import com.parse.ParseObject
 import dagger.hilt.android.HiltAndroidApp
@@ -15,12 +20,32 @@ import java.util.concurrent.TimeUnit
 
 @HiltAndroidApp
 class DebtDestroyerApplication : Application() {
+    val DAYS_FOR_FLEXIBLE_UPDATE = 5
+
+    lateinit var appUpdateManager: AppUpdateManager
 
     override fun onCreate() {
         super.onCreate()
+        //inAppUpdate()
         setUpParse()
         setUpTimber()
     }
+
+    private fun inAppUpdate() {
+        appUpdateManager = AppUpdateManagerFactory.create(this) // Returns an intent object that you use to check for an update.
+        val appUpdateInfoTask = appUpdateManager.appUpdateInfo
+        appUpdateInfoTask.addOnSuccessListener { appUpdateInfo ->
+            // This example applies an immediate update. To apply a flexible update // instead, pass in AppUpdateType.FLEXIBLE
+            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
+
+            }
+            //Use clientVersionStalenessDays() to check the number of days since the update became available on the Play Store:
+            /*if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE && (appUpdateInfo.clientVersionStalenessDays() ?: -1) >= DAYS_FOR_FLEXIBLE_UPDATE && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE)) {
+                // Request the update.
+            }*/
+        }
+    }
+
 
     private fun setUpTimber() {
         if (BuildConfig.DEBUG) {
@@ -36,6 +61,7 @@ class DebtDestroyerApplication : Application() {
         ParseObject.registerSubclass(QuizDataParse::class.java)
         ParseObject.registerSubclass(QuizTopicParse::class.java)
 
+        ParseObject.registerSubclass(QuizScoreParse::class.java)
         ParseObject.registerSubclass(SweepParse::class.java)
         ParseObject.registerSubclass(TransactionParse::class.java)
 

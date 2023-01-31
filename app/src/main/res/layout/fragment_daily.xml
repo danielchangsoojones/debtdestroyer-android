@@ -102,8 +102,19 @@
                 android:gravity="center_vertical"
                 android:paddingHorizontal="@dimen/_12sdp"
                 android:paddingTop="@dimen/margin_medium"
-                android:paddingBottom="@dimen/margin_large"
                 android:text="Answer all 15 questions correctly to win $14000 towards your loans!"
+                app:fontFamily="@font/montserrat_regular"
+                app:layout_constraintBottom_toTopOf="@+id/tie_break_rules_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tie_break_rules_text_view"
+                style="@style/Debt.Destroyer.SubHeading.Bold.White"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingBottom="@dimen/margin_large"
+                android:text="@string/see_tiebreakrules"
                 app:fontFamily="@font/montserrat_regular"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

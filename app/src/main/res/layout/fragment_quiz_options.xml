@@ -1,288 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:grid="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white">
-
-    <VideoView
-        android:id="@+id/videoView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/alphaBlack"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    xmlns:grid="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/fullscreen_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:keepScreenOn="true"
-        android:padding="@dimen/_8sdp">
+        android:background="@color/white">
 
-        <LinearLayout
+        <VideoView
+            android:id="@+id/videoView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true" />
 
-            <EditText
-                android:id="@+id/et_timer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter value"
-                android:inputType="number" />
-
-            <ProgressBar
-                android:id="@+id/view_progress_bar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
-                android:layout_centerInParent="true"
-                android:layout_gravity="center"
-                android:progressDrawable="@drawable/drawable_circularprogressbar" />
-
-
-            <TextView
-                android:id="@+id/tv_timer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true" />
-        </LinearLayout>
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/_28sdp"
-            android:layout_height="@dimen/_28sdp"
-            android:padding="@dimen/_3sdp"
-            android:src="@drawable/ic_close"
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/alphaBlack"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <RelativeLayout
-            android:id="@+id/progress_layout"
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_margin="@dimen/_10sdp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fullscreen_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:keepScreenOn="true"
+            android:padding="@dimen/_8sdp">
 
-            <com.google.android.material.progressindicator.LinearProgressIndicator
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerInParent="true"
-                android:progress="30"
-                app:indicatorColor="@color/black"
-                app:trackColor="@color/grey" />
-
-            <com.google.android.material.textview.MaterialTextView
-                style="@style/Debt.Destroyer.Body"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:text="21"
-                android:textColor="@color/white"
+            <RelativeLayout
+                android:id="@+id/progress_layout"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_margin="@dimen/_10sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </RelativeLayout>
+                app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/title_text_view"
-            style="@style/Debt.Destroyer.SubHeading.White"
-            android:paddingHorizontal="@dimen/_12sdp"
-            android:text="question 2 of 10"
-            app:layout_constraintBottom_toTopOf="@+id/heading_textview"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:progress="30"
+                    app:indicatorColor="@color/black"
+                    app:trackColor="@color/grey" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/heading_textview"
-            style="@style/Debt.Destroyer.Heading.White"
-            android:layout_marginVertical="@dimen/_15sdp"
-            android:paddingHorizontal="@dimen/_12sdp"
-            android:paddingTop="@dimen/_5sdp"
-            android:text="What is the largest city in the world?"
-            android:textSize="@dimen/heading_medium_text_size"
-            app:layout_constraintBottom_toTopOf="@+id/grid_radio_grp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Debt.Destroyer.Body"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:text="21"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </RelativeLayout>
 
-        <com.debtdestroyer.android.utils.radio.RadioGridGroup
-            android:id="@+id/grid_radio_grp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_8sdp"
-            android:orientation="vertical"
-            app:columnCount="2"
-            app:columnOrderPreserved="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:useDefaultMargins="true">
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/title_text_view"
+                style="@style/Debt.Destroyer.SubHeading.White"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:text="@string/question_2_of_10"
+                app:layout_constraintBottom_toTopOf="@+id/heading_textview"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/radioButton1"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/grid_item_height"
-                android:layout_gravity="start"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:button="@null"
-                android:checked="true"
-                android:drawableEnd="@drawable/ic_bank"
-                android:drawablePadding="8dp"
-                android:drawableTint="@color/radio_icon_color"
-                android:text="Berlin"
-                android:textAppearance="@style/Debt.Destroyer.SubHeading"
-                grid:layout_columnWeight="1" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/heading_textview"
+                style="@style/Debt.Destroyer.Heading.White"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:text="What is the largest city in the world?"
+                android:textSize="@dimen/heading_medium_text_size"
+                app:layout_constraintBottom_toTopOf="@+id/grid_radio_grp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/radioButton2"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/grid_item_height"
-                android:layout_gravity="start"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:button="@null"
-                android:drawableEnd="@drawable/ic_bank"
-                android:drawablePadding="8dp"
-                android:drawableTint="@color/radio_icon_color"
-                android:text="Berlin"
-                android:textAppearance="@style/Debt.Destroyer.SubHeading"
-                grid:layout_columnWeight="1" />
-
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/radioButton3"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/grid_item_height"
-                android:layout_gravity="start"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:button="@null"
-                android:drawableEnd="@drawable/ic_bank"
-                android:drawablePadding="8dp"
-                android:drawableTint="@color/radio_icon_color"
-                android:text="Berlin"
-                android:textAppearance="@style/Debt.Destroyer.SubHeading"
-                grid:layout_columnWeight="1" />
-
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/radioButton4"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/grid_item_height"
-                android:layout_gravity="start"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:button="@null"
-                android:drawableEnd="@drawable/ic_bank"
-                android:drawablePadding="8dp"
-                android:drawableTint="@color/radio_icon_color"
-                android:text="Berlin"
-                android:textAppearance="@style/Debt.Destroyer.SubHeading"
-                grid:layout_columnWeight="1" />
-
-        </com.debtdestroyer.android.utils.radio.RadioGridGroup>
-
-        <RadioGroup
-            android:id="@+id/radio_grp"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="@dimen/_12sdp"
-            android:layout_marginVertical="@dimen/_20sdp"
-            android:orientation="vertical"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/heading_textview">
-
-            <com.google.android.material.radiobutton.MaterialRadioButton
-                android:layout_width="match_parent"
+            <com.debtdestroyer.android.utils.radio.RadioGridGroup
+                android:id="@+id/grid_radio_grp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:button="@null"
-                android:checked="true"
-                android:text="iuiui u" />
+                android:layout_margin="@dimen/_8sdp"
+                android:orientation="vertical"
+                app:columnCount="2"
+                app:columnOrderPreserved="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:useDefaultMargins="true">
 
-            <com.google.android.material.radiobutton.MaterialRadioButton
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/radioButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/grid_item_height"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableEnd="@drawable/ic_bank"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/radio_icon_color"
+                    android:text="Berlin"
+                    android:textAppearance="@style/Debt.Destroyer.SubHeading"
+                    grid:layout_columnWeight="1" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/grid_item_height"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:button="@null"
+                    android:drawableEnd="@drawable/ic_bank"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/radio_icon_color"
+                    android:text="Berlin"
+                    android:textAppearance="@style/Debt.Destroyer.SubHeading"
+                    grid:layout_columnWeight="1" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/radioButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/grid_item_height"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:button="@null"
+                    android:drawableEnd="@drawable/ic_bank"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/radio_icon_color"
+                    android:text="Berlin"
+                    android:textAppearance="@style/Debt.Destroyer.SubHeading"
+                    grid:layout_columnWeight="1" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/radioButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/grid_item_height"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:button="@null"
+                    android:drawableEnd="@drawable/ic_bank"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/radio_icon_color"
+                    android:text="Berlin"
+                    android:textAppearance="@style/Debt.Destroyer.SubHeading"
+                    grid:layout_columnWeight="1" />
+
+            </com.debtdestroyer.android.utils.radio.RadioGridGroup>
+
+            <RadioGroup
+                android:id="@+id/radio_grp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:button="@null"
-                android:checked="true"
-                android:text="iuiui u" />
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginVertical="@dimen/_20sdp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/heading_textview">
 
-            <com.google.android.material.radiobutton.MaterialRadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:button="@null"
-                android:checked="true"
-                android:text="iuiui u" />
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="iuiui u" />
 
-            <com.google.android.material.radiobutton.MaterialRadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:button="@null"
-                android:checked="true"
-                android:text="iuiui u" />
+            </RadioGroup>
 
-        </RadioGroup>
-
-        <!--
-                    <com.google.android.material.radiobutton.MaterialRadioButton
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_42sdp"
-                        android:layout_marginVertical="@dimen/_10sdp"
-                        android:button="@null"
-                        android:checked="false"
-                        android:drawableEnd="@drawable/ic_check"
-                        android:drawableTint="@color/radio_icon_color"
-                        android:text="Bremen"
-                        android:textAppearance="@style/Debt.Destroyer.SubHeading" />
-
-                    <com.google.android.material.radiobutton.MaterialRadioButton
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_42sdp"
-                        android:layout_marginVertical="@dimen/_10sdp"
-                        android:button="@null"
-                        android:drawableEnd="@drawable/ic_check"
-                        android:drawableTint="@color/radio_icon_color"
-                        android:text="Hamberg"
-                        android:textAppearance="@style/Debt.Destroyer.SubHeading" />
-
-                    <com.google.android.material.radiobutton.MaterialRadioButton
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_42sdp"
-                        android:layout_marginVertical="@dimen/_10sdp"
-                        android:button="@null"
-                        android:drawableEnd="@drawable/ic_check"
-                        android:drawableTint="@color/radio_icon_color"
-                        android:text="Norden"
-                        android:textAppearance="@style/Debt.Destroyer.SubHeading" />
-
-                    <com.google.android.material.radiobutton.MaterialRadioButton
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_42sdp"
-                        android:layout_marginVertical="@dimen/_10sdp"
-                        android:button="@null"
-                        android:drawableEnd="@drawable/ic_check"
-                        android:drawableTint="@color/radio_icon_color"
-                        android:text="Berlin"
-                        android:textAppearance="@style/Debt.Destroyer.SubHeading" />-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
