@@ -30,11 +30,14 @@ class ScholarshipFragment : BaseFragmentNoAnim<FragmentScholarshipBinding>() {
 
     private val viewModel: ScholarshipVM by viewModels()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setupObservers()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.viewModel = viewModel
-
-        setupObservers()
     }
 
     private fun setupObservers() {

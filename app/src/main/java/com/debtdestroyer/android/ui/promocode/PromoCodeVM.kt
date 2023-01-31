@@ -1,4 +1,4 @@
-package com.debtdestroyer.android.ui.userinfo
+package com.debtdestroyer.android.ui.promocode
 
 import android.view.View
 import androidx.lifecycle.*
@@ -13,10 +13,11 @@ import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
-class UserInfoVM @Inject constructor(
+class PromoCodeVM @Inject constructor(
     private val repository: MainRepository
 ) : ViewModel(), LifecycleObserver, AuthResponseCallback<ParseUser> {
 
+    val promoCode = MutableLiveData("")
     val fName = MutableLiveData("")
     val lName = MutableLiveData("")
 
@@ -25,22 +26,18 @@ class UserInfoVM @Inject constructor(
         get() = _res
 
     fun onNextClicked(view: View) {
-        Timber.e("Name ${fName.value.toString().trim()} ${lName.value.toString().trim()}")
-        if (fName.value.toString().trim().isEmpty()) {
-            _res.postValue(Resource.error("Please input your first name!", null))
-        } else if (lName.value.toString().trim().isEmpty()) {
-            _res.postValue(Resource.error("Please input your last name!", null))
-        } else {
-            _res.postValue(Resource.success(null))
-        }
+        Timber.e("promoCode ${promoCode.value.toString().trim()}")
+        _res.postValue(Resource.loading())
+        callUpdateAPI()
     }
 
     private fun callUpdateAPI() = viewModelScope.launch {
         val parseUser = ParseUser.getCurrentUser()
         parseUser.put(User.KEY_F_NAME, fName.value.toString().trim())
         parseUser.put(User.KEY_L_NAME, lName.value.toString().trim())
+        parseUser.put(User.KEY_PROMO_CODE, promoCode.value.toString().trim())
 
-        repository.updateUserDetails(parseUser, this@UserInfoVM)
+        repository.updateUserDetails(parseUser, this@PromoCodeVM)
     }
 
     override fun onReceive(res: Resource<ParseUser>) {

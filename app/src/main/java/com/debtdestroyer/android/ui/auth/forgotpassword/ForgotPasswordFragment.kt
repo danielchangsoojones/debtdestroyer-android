@@ -19,15 +19,18 @@ class ForgotPasswordFragment : BaseFragment<FragmentForgotPasswordBinding>() {
 
     private val viewModel: ForgotPasswordVM by viewModels()
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.viewModel = viewModel
-
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         setupObserver()
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.viewModel = viewModel
+    }
+
     private fun setupObserver() {
-        viewModel.res.observe(viewLifecycleOwner) {
+        viewModel.res.observe(this) {
             when (it.status) {
                 Status.SUCCESS -> {
                     hideProgressBar()

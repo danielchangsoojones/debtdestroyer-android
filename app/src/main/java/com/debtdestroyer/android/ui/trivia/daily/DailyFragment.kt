@@ -7,11 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.debtdestroyer.android.R
+import com.debtdestroyer.android.callback.Params
 import com.debtdestroyer.android.callback.Status
 import com.debtdestroyer.android.databinding.FragmentDailyBinding
 import com.debtdestroyer.android.model.QuizDataParse
 import com.debtdestroyer.android.model.User
 import com.debtdestroyer.android.ui.base.*
+import com.debtdestroyer.android.ui.trivia.score.ScoreVM
 import com.debtdestroyer.android.utils.DAILY_TRIVIA_URL
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
@@ -25,26 +27,68 @@ class DailyFragment : BaseFragmentNoAnim<FragmentDailyBinding>() {
 
     private val viewModel: DailyVM by viewModels()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setupObservers()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.viewModel = viewModel
 
+        //Check Force Update
+        checkForceUpdate()
         setupUI()
-        setupObservers()
+    }
+
+    private fun checkForceUpdate() {
+
     }
 
     private fun setupObservers() {
         shouldShowEarningObserver()
+        checkWaitlistObserver()
         quizDataObserver()
+    }
+
+    private fun setUpClickListener() {
+
         binding.actionPrice.setOnClickListener {
             navigateQuiz()
+        }
+        binding.tieBreakRulesTextView.setOnClickListener {
+            getUrlFromIntent(Params.URL_GAME_RULES)
+        }
+    }
+
+    private fun checkWaitlistObserver() {
+        viewModel.checkWL.observe(this) {
+            when (it.status) {
+                Status.SUCCESS -> {
+                    Timber.e("RESULT IN OBSERVER :: ${it.data}")
+                    val map = it.data!!
+                    if (map.containsKey("isOnWaitlist")) {
+                        if (it.data["isOnWaitlist"] == true) {
+                            navigateWaitList()
+                        } else {
+                            //timer
+                        }
+                    }
+                    hideProgressBar()
+                }
+                Status.ERROR -> {
+                    hideProgressBar()
+                    showToast(getString(R.string.invalid_input), it.message)
+                }
+                Status.LOADING -> {
+                    showProgressBar()
+                }
+            }
         }
     }
 
     private fun shouldShowEarningObserver() {
-        viewModel.loadShouldShowEarnings()
-
-        viewModel.res.observe(viewLifecycleOwner) {
+        viewModel.res.observe(this) {
             when (it.status) {
                 Status.SUCCESS -> {
                     User.KEY_SHOULD_SHOW_EARNINGS = it.data!!
@@ -64,14 +108,11 @@ class DailyFragment : BaseFragmentNoAnim<FragmentDailyBinding>() {
     }
 
     private fun quizDataObserver() {
-        viewModel.quiz.observe(viewLifecycleOwner) {
+        viewModel.quiz.observe(this) {
             when (it.status) {
                 Status.SUCCESS -> {
                     it.data?.let { quizList ->
                         if (quizList.isNotEmpty()) {
-                            quizList.forEach {
-                                Timber.e("QD :::: $it")
-                            }
                             updateUI(quizList.first())
                         }
                     }
@@ -99,12 +140,23 @@ class DailyFragment : BaseFragmentNoAnim<FragmentDailyBinding>() {
         binding.actionPrice.text = prizeAmountStr
 
         val apiDate = firstQuizTopic.startTime
-
         binding.dateTextView.text = firstQuizTopic.startTime.toString()
-
     }
 
     private fun setupUI() {
+        setUpClickListener()
+
+        setVideoContent()
+
+        setApiData()
+    }
+
+    private fun setApiData() {
+        viewModel.getDemoQuizData()
+        viewModel.checkWaitList()
+    }
+
+    private fun setVideoContent() {
         setupVideoPlayer()
         setupVideoUrlInLoop()
     }
@@ -136,7 +188,9 @@ class DailyFragment : BaseFragmentNoAnim<FragmentDailyBinding>() {
     private fun navigateWaitList() {
         navigateTo(DailyFragmentDirections.actionDailyFragmentToWaitlistFragment())
     }
+
     private fun navigateQuiz() {
         navigateTo(DailyFragmentDirections.actionFromDailyFragmentToQuizFragment())
     }
+
 }

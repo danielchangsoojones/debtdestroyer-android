@@ -19,13 +19,16 @@ class StartTriviaFragment : BaseFragmentNoAnim<FragmentTriviaBinding>() {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentTriviaBinding
         get() = FragmentTriviaBinding::inflate
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        setupObservers()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.viewModel = viewModel
-
         setupUI()
-        setupObservers()
-
     }
 
     private fun setupUI() {
@@ -41,7 +44,7 @@ class StartTriviaFragment : BaseFragmentNoAnim<FragmentTriviaBinding>() {
 
     private fun setupQuizDataObserver() {
 
-        viewModel.res.observe(viewLifecycleOwner) {
+        viewModel.res.observe(this) {
             when (it.status) {
                 Status.SUCCESS -> {
                     hideProgressBar()
@@ -58,7 +61,7 @@ class StartTriviaFragment : BaseFragmentNoAnim<FragmentTriviaBinding>() {
     }
 
     private fun setupShowEarningsObserver() {
-        viewModel.showEarnings.observe(viewLifecycleOwner) {
+        viewModel.showEarnings.observe(this) {
             when (it.status) {
                 Status.SUCCESS -> {
                     hideProgressBar()

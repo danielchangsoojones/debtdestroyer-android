@@ -20,16 +20,24 @@ class DOBFragment : BaseFragment<FragmentDobBinding>() {
         get() = FragmentDobBinding::inflate
 
     private val viewModel: DobVM by viewModels()
+    //signup
+    // {"objectId":"HqNl0PBrea","createdAt":"2023-01-31T13:23:26.285Z","sessionToken":"r:069cfb740ea2013a57aa764445192db2"}
+    //phone
+    //{"updatedAt":"2023-01-31T13:24:34.129Z"}
+    //
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setupObserver()
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.viewModel = viewModel
-
-        setupObserver()
     }
 
     private fun setupObserver() {
-        viewModel.res.observe(viewLifecycleOwner) {
+        viewModel.res.observe(this) {
             when (it.status) {
                 Status.SUCCESS -> {
                     hideProgressBar()

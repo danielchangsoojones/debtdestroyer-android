@@ -23,21 +23,22 @@ class UserInfoFragment : BaseFragment<FragmentUserInfoBinding>() {
         get() = FragmentUserInfoBinding::inflate
     private val viewModel: UserInfoVM by viewModels()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setupObserver()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.viewModel = viewModel
-
-        setupObserver()
-
     }
 
     private fun setupObserver() {
-        viewModel.res.observe(viewLifecycleOwner) {
+        viewModel.res.observe(this) {
             when (it.status) {
                 Status.SUCCESS -> {
                     hideProgressBar()
-                    startActivity(Intent(requireContext(), TriviaActivity::class.java))
-                    activity?.finish()
+                    navigateTo(UserInfoFragmentDirections.actionUserInfoFragmentToPromoCodeFragment("${viewModel.fName.value}", "${viewModel.lName.value}"))
                 }
                 Status.ERROR -> {
                     showToast(getString(R.string.invalid_input), it.message)

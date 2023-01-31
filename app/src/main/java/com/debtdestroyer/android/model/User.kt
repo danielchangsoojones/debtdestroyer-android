@@ -44,6 +44,10 @@ class User @Inject constructor() : ParseUser() {
         get() = get(KEY_L_NAME).toString()
         set(value) = putOrIgnore(KEY_L_NAME, lname)
 
+    var promoCode: String
+        get() = get(KEY_PROMO_CODE).toString()
+        set(value) = putOrIgnore(KEY_PROMO_CODE, promoCode)
+
 /*
     var shouldShowEarning: Boolean
         get() = get(KEY_SHOULD_SHOW_EARNINGS) as Boolean
@@ -139,6 +143,7 @@ class User @Inject constructor() : ParseUser() {
         const val KEY_NAME = "name"
         const val KEY_F_NAME = "firstName"
         const val KEY_L_NAME = "lastName"
+        const val KEY_PROMO_CODE = "promoCode"
         const val KEY_SESSION_TOKEN = "sessionToken"
         //const val KEY_SHOULD_SHOW_EARNINGS = "shouldShowEarning"
         const val KEY_CREATED_AT = "createdAt"

@@ -32,11 +32,10 @@ class SettingsFragment : BaseFragmentNoAnim<FragmentSettingsBinding>() {
 
         setupUI()
         setupObserver()
-
     }
 
     private fun setupObserver() {
-        viewModel.res.observe(viewLifecycleOwner) {
+        viewModel.res.observe(this) {
             when (it.status) {
                 Status.SUCCESS -> {
                     hideProgressBar()
