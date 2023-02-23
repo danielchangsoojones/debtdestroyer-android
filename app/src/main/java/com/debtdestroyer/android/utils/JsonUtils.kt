@@ -2,8 +2,8 @@ package com.debtdestroyer.android.utils
 
 import android.content.Context
 import com.debtdestroyer.android.model.ScholarshipModel
-import com.google.common.reflect.TypeToken
 import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import java.io.IOException
 
 class JsonUtils {

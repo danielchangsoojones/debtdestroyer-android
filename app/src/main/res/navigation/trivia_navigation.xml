@@ -77,6 +77,10 @@
             android:id="@+id/action_SettingsFragment_to_LDFragment"
             app:destination="@id/LDFragment" />
 
+        <action
+            android:id="@+id/action_SettingsFragment_to_TaskFragment"
+            app:destination="@id/taskFragment" />
+
     </fragment>
 
     <fragment
@@ -92,5 +96,15 @@
         tools:layout="@layout/fragment_list">
 
     </fragment>
+
+    <!--Leaderboard-->
+    <fragment
+        android:id="@+id/taskFragment"
+        android:name="com.debtdestroyer.android.ui.task.TaskFragment"
+        android:label="Task"
+        tools:layout="@layout/fragment_task">
+
+    </fragment>
+
 
 </navigation>

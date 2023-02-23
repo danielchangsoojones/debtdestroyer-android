@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/screen_horizontal_margin"
+        android:paddingVertical="@dimen/screen_vertical_margin">
+
+        <!--<com.google.android.material.textview.MaterialTextView
+            style="@style/Debt.Destroyer.Body.Medium"
+            android:layout_width="match_parent"
+            android:text="Reminder Texts Before Every Game"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatRadioButton xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:grid="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/radioButton"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/grid_item_height"
+    android:layout_gravity="start"
+    android:background="@drawable/trivia_radio_button_selector"
+    android:button="@null"
+    android:checked="true"
+    android:drawablePadding="8dp"
+    android:textAppearance="@style/Debt.Destroyer.SubHeading"
+    android:textColor="@color/radio_text_color"
+    grid:layout_columnWeight="1" />

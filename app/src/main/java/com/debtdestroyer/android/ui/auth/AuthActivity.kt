@@ -47,7 +47,7 @@ class AuthActivity : BaseActivity<ActivityMainBinding>(), NavController.OnDestin
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         val item = menu.findItem(R.id.action_help)
-        val mButton: GradientTextView = item.actionView.findViewById(R.id.title_help_textview)
+        val mButton: GradientTextView = item.actionView!!.findViewById(R.id.title_help_textview)
 
         mButton.setOnClickListener {
             getSmsIntent()

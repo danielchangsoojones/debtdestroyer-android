@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.debtdestroyer.android.ui.task.TaskVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/screen_horizontal_margin"
+        android:paddingVertical="@dimen/screen_vertical_margin"
+        tools:context=".ui.phonenumber.PhoneNumberFragment">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signUpPromoCodeInputLayout"
+            style="@style/DebtDestroyer.TextInputLayout"
+            android:layout_marginTop="@dimen/margin_large"
+            android:hint="@string/hint_promocode_input"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fname_input_edit_text"
+                style="@style/DebtDestroyerTextInputEditText"
+                android:inputType="textPersonName"
+                android:nextFocusForward="@+id/lname_input_edit_text"
+                android:text="@={viewModel.promoCode}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/caption_tv"
+            style="@style/Debt.Destroyer.Caption.Grey"
+            android:padding="@dimen/_7sdp"
+            android:text="@string/hint_promocode_input_notes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signUpPromoCodeInputLayout" />
+
+        <com.debtdestroyer.android.utils.emojireactionlibrary.EmojiReactionView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/reactionView"
+            android:src="@drawable/logoicon"
+            app:emojis="@array/emoji" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/action_reaction"
+            android:layout_width="@dimen/image_buttons_height"
+            android:layout_height="@dimen/image_buttons_height"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:background="@drawable/bg_button_primary_circular"
+            android:onClickListener="@{viewModel::onNextClicked}"
+            android:padding="@dimen/margin_medium"
+            android:src="@drawable/ic_reaction_picture"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/caption_tv"
+            app:useCompatPadding="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
