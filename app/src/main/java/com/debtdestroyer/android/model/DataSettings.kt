@@ -19,5 +19,6 @@ enum class Setting {
     LEGAL_DISCLOSURE,
     LEAVE_FEEDBACK,
     LOGOUT,
-    DELETE_ACCOUNT
+    DELETE_ACCOUNT,
+    TASK
 }

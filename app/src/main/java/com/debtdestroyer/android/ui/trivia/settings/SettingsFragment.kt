@@ -27,11 +27,16 @@ class SettingsFragment : BaseFragmentNoAnim<FragmentSettingsBinding>() {
 
     private val viewModel: SettingsVM by viewModels()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        setupObserver()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         setupUI()
-        setupObserver()
     }
 
     private fun setupObserver() {
@@ -63,6 +68,7 @@ class SettingsFragment : BaseFragmentNoAnim<FragmentSettingsBinding>() {
         list.add(DataSettings(getString(R.string.settings_leave_feedback), R.drawable.ic_settings_feedback, Setting.LEAVE_FEEDBACK))
         //list.add(DataSettings(getString(R.string.settings_delete_account), R.drawable.ic_settings_delete, Setting.DELETE_ACCOUNT))
         list.add(DataSettings(getString(R.string.settings_logout), R.drawable.ic_settings_logout, Setting.LOGOUT))
+        list.add(DataSettings("Task", R.drawable.ic_settings_disclosure, Setting.TASK))
 
         var mAdapter: SettingsAdapter
         binding.recyclerViewSettings.apply {
@@ -86,6 +92,9 @@ class SettingsFragment : BaseFragmentNoAnim<FragmentSettingsBinding>() {
                         viewModel.onLogoutClicked()
                     }
                     Setting.DELETE_ACCOUNT -> {}
+                    Setting.TASK -> {
+                        navigateTo(SettingsFragmentDirections.actionSettingsFragmentToTaskFragment())
+                    }
                     else -> {
                         return@SettingsAdapter
                     }

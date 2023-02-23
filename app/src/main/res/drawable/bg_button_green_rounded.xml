@@ -5,9 +5,9 @@
     <size android:height="@dimen/buttons_height_primary" />
     <gradient
         android:angle="270"
-        android:centerColor="#7B5CE3"
-        android:endColor="#B8A4F8"
-        android:startColor="#7B5CE3"
+        android:centerColor="#8BC34A"
+        android:endColor="#D1FAA2"
+        android:startColor="#6CA12F"
         android:type="linear" />
 
     <corners android:radius="@dimen/background_corners" />

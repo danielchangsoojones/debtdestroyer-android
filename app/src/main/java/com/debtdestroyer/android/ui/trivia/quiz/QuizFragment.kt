@@ -1,6 +1,7 @@
 package com.debtdestroyer.android.ui.trivia.quiz
 
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -67,7 +68,7 @@ class QuizFragment : BaseFragmentNoAnim<FragmentQuizBinding>() {
     private fun updateAdapter(quizList: ArrayList<QuizDataParse>) {
         if (quizList.isEmpty())
             return
-        Timber.e("QuizFragment:: updateAdapter=${quizList.size}")
+        Timber.e("QuizFragment:: updateAdapter= ${quizList.size}")
         quizList.sortBy {
             it.order
         }

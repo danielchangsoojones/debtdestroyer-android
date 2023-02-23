@@ -115,6 +115,13 @@
     <string name="title_scholarship">Scholarships</string>
     <string name="action_contact_us">Contact\nUs</string>
     <string name="question_2_of_10">question %1$d of %2$d</string>
+    <string name="seconds_left">%1$d seconds</string>
     <string name="see_tiebreakrules">See <u>tiebreaker rules.</u></string>
 
+    <!--dummy-->
+    <array name="emoji">
+        <item>@drawable/emo1</item>
+        <item>@drawable/emo2</item>
+        <item>@drawable/emo3</item>
+    </array>
 </resources>
