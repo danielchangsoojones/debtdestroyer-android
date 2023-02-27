@@ -2,7 +2,10 @@ package com.debtdestroyer.android.ui.trivia
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
+import androidx.annotation.StringRes
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
@@ -14,11 +17,19 @@ import com.debtdestroyer.android.R
 import com.debtdestroyer.android.databinding.ActivityTriviaBinding
 import com.debtdestroyer.android.ui.base.BaseActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import timber.log.Timber
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class TriviaActivity : BaseActivity<ActivityTriviaBinding>(),
     NavController.OnDestinationChangedListener {
+
+    //@Inject
+    //lateinit var networkConnectionManager: NetworkConnectionManager
 
     private val viewModel: TriviaVM by viewModels()
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -28,8 +39,9 @@ class TriviaActivity : BaseActivity<ActivityTriviaBinding>(),
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         hideActionBar()
+        connectionRegister()
+        onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
 
         val navView: BottomNavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_trivia_main)
@@ -37,9 +49,49 @@ class TriviaActivity : BaseActivity<ActivityTriviaBinding>(),
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
         viewModel.load()
+        checkUpdates()
     }
 
+    private fun connectionRegister() {
+        /*networkConnectionManager.startListenNetworkState()
+        networkConnectionManager.isNetworkConnectedFlow
+            .onEach {
+                @StringRes val res = if (it) {
+                    R.string.network_is_connected
+                } else {
+                    R.string.network_is_disconnected
+                }
+                showToast("Connection Error","$it")
+            }
+            .launchIn(lifecycleScope)*/
+    }
+
+    private fun checkUpdates() {
+        try {
+            appUpdateManager = AppUpdateManagerFactory.create(this)
+            appUpdateManager.registerListener(updateListener)
+            checkForUpdate()
+        } catch (e: Exception) {
+            Timber.e("update01:Update e1 ${e.message}")
+        }
+    }
+
+    private val onBackPressedCallback = object : OnBackPressedCallback(true) {
+        override fun handleOnBackPressed() {
+            try {
+                appUpdateManager.unregisterListener(updateListener)
+            } catch (e: Exception) {
+                Timber.e("update01:Update e2 ${e.message}")
+            }
+        }
+    }
+
+    override fun onDestroy() {
+        //networkConnectionManager.stopListenNetworkState()
+        super.onDestroy()
+    }
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_trivia_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()

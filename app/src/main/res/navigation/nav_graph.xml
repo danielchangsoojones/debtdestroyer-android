@@ -75,6 +75,9 @@
         <action
             android:id="@+id/action_UserInfoFragment_to_PromoCodeFragment"
             app:destination="@id/PromoCodeFragment" />
+        <action
+            android:id="@+id/action_UserInfoFragment_to_TriviaActivity"
+            app:destination="@id/TriviaActivity" />
     </fragment>
 
     <fragment

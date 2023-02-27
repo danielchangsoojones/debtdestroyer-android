@@ -17,6 +17,8 @@ import com.debtdestroyer.android.ui.trivia.score.ScoreVM
 import com.debtdestroyer.android.utils.DAILY_TRIVIA_URL
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
+import java.text.NumberFormat
+import java.util.*
 
 
 @AndroidEntryPoint
@@ -136,7 +138,10 @@ class DailyFragment : BaseFragmentNoAnim<FragmentDailyBinding>() {
         binding.subTitleBottomTextView.text = firstQuizTopic.ticker
 
         val prizeAmount = firstQuizTopic.prizeAmount?.div(100)
-        val prizeAmountStr = "$prizeAmount"
+        val prizeFormat = NumberFormat.getCurrencyInstance(Locale.US)
+        prizeFormat.maximumFractionDigits = 0
+
+        val prizeAmountStr = "${prizeFormat.format(prizeAmount)} Prize"
         binding.actionPrice.text = prizeAmountStr
 
         val apiDate = firstQuizTopic.startTime

@@ -11,6 +11,7 @@ import com.debtdestroyer.android.R
 import com.debtdestroyer.android.callback.Status
 import com.debtdestroyer.android.databinding.FragmentPhoneNumberBinding
 import com.debtdestroyer.android.databinding.FragmentUserInfoBinding
+import com.debtdestroyer.android.ui.auth.AuthActivity
 import com.debtdestroyer.android.ui.base.*
 import com.debtdestroyer.android.ui.trivia.TriviaActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -38,7 +39,11 @@ class UserInfoFragment : BaseFragment<FragmentUserInfoBinding>() {
             when (it.status) {
                 Status.SUCCESS -> {
                     hideProgressBar()
-                    navigateTo(UserInfoFragmentDirections.actionUserInfoFragmentToPromoCodeFragment("${viewModel.fName.value}", "${viewModel.lName.value}"))
+                    if(AuthActivity.SHOW_PROMO_CODE)
+                        navigateTo(UserInfoFragmentDirections.actionUserInfoFragmentToPromoCodeFragment("${viewModel.fName.value}", "${viewModel.lName.value}"))
+                    else
+                        navigateTo(UserInfoFragmentDirections.actionUserInfoFragmentToTriviaActivity())
+
                 }
                 Status.ERROR -> {
                     showToast(getString(R.string.invalid_input), it.message)
