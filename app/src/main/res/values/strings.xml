@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">DebtDestroyed</string>
     <string name="action_settings">Settings</string>
+    <!--Connection-->
+    <string name="network_is_connected">Network is connected</string>
+    <string name="network_is_disconnected">Network is disconnected</string>
+
     <!-- Strings used for fragments for navigation -->
     <string name="login_fragment_label">Login</string>
     <string name="signup_fragment_label">Sign Up</string>

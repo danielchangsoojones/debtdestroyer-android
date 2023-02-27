@@ -20,9 +20,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class AuthActivity : BaseActivity<ActivityMainBinding>(), NavController.OnDestinationChangedListener {
+class AuthActivity : BaseActivity<ActivityMainBinding>(),
+    NavController.OnDestinationChangedListener {
 
-    override val bindingInflater: (LayoutInflater) -> ActivityMainBinding = ActivityMainBinding::inflate
+    override val bindingInflater: (LayoutInflater) -> ActivityMainBinding =
+        ActivityMainBinding::inflate
 
     private lateinit var appBarConfiguration: AppBarConfiguration
 
@@ -95,5 +97,9 @@ class AuthActivity : BaseActivity<ActivityMainBinding>(), NavController.OnDestin
 
     fun showMessage(message: String) {
         showSnackBar(Color.parseColor("#efd539"), message)
+    }
+
+    companion object {
+        const val SHOW_PROMO_CODE = true
     }
 }
