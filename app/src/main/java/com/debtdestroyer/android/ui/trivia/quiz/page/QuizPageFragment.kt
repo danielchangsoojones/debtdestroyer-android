@@ -1,5 +1,7 @@
 package com.debtdestroyer.android.ui.trivia.quiz.page
 
+import android.content.Context
+import android.media.AudioManager
 import android.net.Uri
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -49,6 +51,23 @@ class QuizPageFragment(var quizDataParse: QuizDataParse, var position: Int, var 
         setPlayerContent()
         setupRadioOptions()
         setCounterOnProgress()
+        updateAudioVolume()
+
+    }
+
+    private fun updateAudioVolume() {
+        if (isMute()) {
+            binding.muteIv.setImageResource(R.drawable.ic_state_mute)
+        } else
+            binding.muteIv.setImageResource(R.drawable.ic_state_unmute)
+
+        binding.muteIv.setOnClickListener {
+            updateMuteState(!isMute())
+            if (isMute()) {
+                binding.muteIv.setImageResource(R.drawable.ic_state_mute)
+            } else
+                binding.muteIv.setImageResource(R.drawable.ic_state_unmute)
+        }
     }
 
     private fun setQuizContent() {
@@ -159,4 +178,30 @@ class QuizPageFragment(var quizDataParse: QuizDataParse, var position: Int, var 
             //group.sele.setBackgroundResource(R.drawable.bg_button_green_rounded)
         }
     }
+    /**
+     * To Mute or Un-mute using Audio Manager
+     */
+    private fun updateMuteState(mute: Boolean) {
+        activity?.let {
+            getAudioManager(it).adjustStreamVolume(AudioManager.STREAM_MUSIC, if (mute) -100 else 100, 0)
+
+        }
+    }
+
+    /**
+     * Return true -> audio player is in mute state, false otherwise
+     */
+    private fun isMute(): Boolean {
+        activity?.let {
+            getAudioManager(it).getStreamVolume(AudioManager.STREAM_MUSIC).let { volume ->
+                return volume == 0
+            }
+        }
+        return false
+    }
+
+    /**
+     * To Get the Audio Manager
+     */
+    private fun getAudioManager(context: Context) = context.getSystemService(Context.AUDIO_SERVICE) as AudioManager
 }

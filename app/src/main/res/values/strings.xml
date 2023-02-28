@@ -128,4 +128,10 @@
         <item>@drawable/emo2</item>
         <item>@drawable/emo3</item>
     </array>
+
+    <!--Reminder Popup-->
+    <string name="reminder_texts_before_every_game">Reminder Texts Before Every Game</string>
+    <string name="reminder_popup_content">By enabling, you authorize Debt Destroyer to send recurring automated reminder messages at the mobile number used to sign up. Consent is not a condition of any purchase. Reply HELP for help and STOP to cancel. Msg frequency varies. Msg and data rates may apply. <u>Privacy Policy Terms of Use</u> Questions: danieljones@nomadmoments.com</string>
+    <string name="enable_reminder_texts">Enable Reminder Texts</string>
+    <string name="no_thanks">No Thanks</string>
 </resources>
