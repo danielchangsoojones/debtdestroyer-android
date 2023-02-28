@@ -45,11 +45,11 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/mute_iv"
-                android:layout_width="@dimen/image_buttons_height"
-                android:layout_height="@dimen/image_buttons_height"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
                 android:layout_margin="@dimen/margin_medium"
                 android:gravity="center"
-                android:src="@drawable/ic_mute"
+                android:padding="@dimen/margin_medium"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

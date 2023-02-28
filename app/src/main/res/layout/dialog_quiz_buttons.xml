@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/alphaBlack">
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/CardStyle"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/margin_large"
+        app:cardCornerRadius="@dimen/_18sdp"
+        app:contentPadding="@dimen/margin_large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/Debt.Destroyer.Body.Medium"
+                            android:layout_width="wrap_content"
+                            android:drawableStart="@drawable/ic_person_fill"
+                            android:drawablePadding="@dimen/margin_small"
+                            android:text="23k"
+                            android:textColor="@color/textLightGrey"
+                            app:fontFamily="@font/montserrat_bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/Debt.Destroyer.Button.Small"
+                            android:layout_width="60dp"
+                            android:layout_height="@dimen/_16sdp"
+                            android:backgroundTint="#D4D4D5"
+                            android:padding="0dp"
+                            android:text="230"
+                            android:textColor="@color/textBlack"
+                            app:fontFamily="@font/montserrat_bold"
+                            app:layout_constraintEnd_toStartOf="@+id/hq_tv"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/hq_tv"
+                            style="@style/Debt.Destroyer.Body.Medium"
+                            android:layout_width="wrap_content"
+                            android:text="HQ"
+                            android:textColor="@color/textLightGrey"
+                            app:fontFamily="@font/montserrat_bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_100sdp"
+                        android:layout_gravity="center">
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="@dimen/_70sdp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/dummy_reminder_notify" />
+
+                        <com.google.android.material.progressindicator.CircularProgressIndicator
+                            android:id="@+id/linear_progress_indicator"
+                            android:layout_width="@dimen/_90sdp"
+                            android:layout_height="@dimen/_90sdp"
+                            android:layout_centerInParent="true"
+                            android:progress="100"
+                            app:indicatorColor="@color/colorPurple"
+                            app:trackColor="@color/alphaBlackProgress"
+                            app:trackThickness="@dimen/_5sdp" />
+
+                    </RelativeLayout>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/Debt.Destroyer.Heading.Black"
+                        android:gravity="center"
+                        android:paddingHorizontal="@dimen/margin_medium"
+                        android:paddingVertical="@dimen/margin_medium"
+                        android:text="Which of these places is naturally home to penguins?" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/margin_large"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatRadioButton
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="Alaka" />
+
+                        <androidx.appcompat.widget.AppCompatRadioButton
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="Alaka" />
+
+                        <androidx.appcompat.widget.AppCompatRadioButton
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="Alaka" />
+                    </RadioGroup>
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
